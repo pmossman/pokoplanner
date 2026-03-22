@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { sharedFavorites } from '../utils/pokemonUtils';
-import { getHabitatBadgeColor, getFavoriteStyle, HabitatTypeIcon } from '../utils/themeColors';
+import { getHabitatBadgeColor, getFavoriteStyle, getLocationInfo, HabitatTypeIcon } from '../utils/themeColors';
 import './PokemonDetail.css';
 
 function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPokemon, ownedPokemon, onToggleOwned }) {
@@ -87,7 +87,21 @@ function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPo
         </div>
 
         <div className="detail-section">
-          <h3>Habitats</h3>
+          <h3>Location</h3>
+          <div className="detail-location">
+            {(() => {
+              const locInfo = getLocationInfo(pokemon.primaryLocation);
+              return (
+                <span className="location-badge" style={{ backgroundColor: locInfo.bg, color: locInfo.color, borderColor: locInfo.color }}>
+                  {locInfo.Icon && <locInfo.Icon size={14} />} {pokemon.primaryLocation}
+                </span>
+              );
+            })()}
+          </div>
+        </div>
+
+        <div className="detail-section">
+          <h3>Encounter Spots</h3>
           <ul className="habitat-list">
             {pokemon.habitats.map((h) => (
               <li key={h.name}>

@@ -1,0 +1,1194 @@
+.adventure-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Location Selector ── */
+.location-selector {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0;
+}
+
+.location-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 110px;
+  flex-shrink: 0;
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+}
+
+.location-card:hover:not(.locked) {
+  filter: brightness(0.96);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.location-card.selected {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.location-card.locked {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.location-card.drag-over:not(.selected) {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  filter: brightness(0.94);
+}
+
+.location-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lock-icon {
+  font-size: 0.7rem;
+}
+
+.location-card-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.location-card-count {
+  font-size: 0.7rem;
+  color: #888;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.05rem 0.35rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.unlock-btn {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #666;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.unlock-btn:hover {
+  background: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+/* ── Onboarding ── */
+.adventure-onboarding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.adventure-onboarding h2 {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #444;
+}
+
+.onboarding-subtitle {
+  color: #777;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.onboarding-squirtle {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: #f0f8ff;
+  border: 1px solid #d0e4f0;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+}
+
+.onboarding-sprite {
+  width: 80px;
+  height: 80px;
+  image-rendering: pixelated;
+}
+
+.onboarding-squirtle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.onboarding-meet {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.onboarding-register-btn {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #4080a0;
+  border-radius: 10px;
+  background: #4080a0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.15s;
+  align-self: flex-start;
+}
+
+.onboarding-register-btn:hover {
+  background: #2a6080;
+  border-color: #2a6080;
+}
+
+.onboarding-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #bbb;
+  font-size: 0.8rem;
+}
+
+.onboarding-divider::before,
+.onboarding-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.onboarding-search {
+  width: 100%;
+}
+
+/* ── Location View ── */
+.location-view {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e0e0de;
+  padding: 1.25rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.location-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid;
+}
+
+.location-view-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.location-view-title h2 {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.location-pokemon-count {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 600;
+}
+
+.register-toggle-btn {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.15s;
+}
+
+.register-toggle-btn:hover {
+  background: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+.register-toggle-btn.active {
+  background: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+/* ── Register Panel ── */
+.register-panel {
+  background: #fafaf8;
+  border: 1px solid #e8e8e6;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.register-hint {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  color: #999;
+  font-style: italic;
+}
+
+.register-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.register-search-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.9rem;
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+}
+
+.register-search-input::placeholder {
+  color: #aaa;
+}
+
+.register-search-input:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.register-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.8rem;
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+}
+
+.register-results {
+  max-height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.register-result-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.register-result-item.owned {
+  background: rgba(0, 120, 80, 0.06);
+}
+
+.register-result-sprite {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.register-result-name {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.register-result-location {
+  font-size: 0.7rem;
+  color: #999;
+  font-weight: 600;
+}
+
+.register-check {
+  color: #2e9464;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.habitat-badge.small {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.35rem;
+}
+
+/* ── Pokemon Pool ── */
+.location-pool {
+  margin-top: 0.25rem;
+}
+
+
+/* Pool type groups */
+.pool-type-group {
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  padding: 0.4rem;
+  border: 1px solid transparent;
+}
+
+.pool-type-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+  padding: 0.25rem 0.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+}
+
+.pool-type-header:hover {
+  opacity: 0.8;
+}
+
+.pool-type-count {
+  font-size: 0.7rem;
+  color: #999;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.pool-type-recommended {
+  font-size: 0.6rem;
+  color: #2e9464;
+  font-weight: 700;
+  background: rgba(46, 148, 100, 0.1);
+  padding: 0.05rem 0.35rem;
+  border-radius: 6px;
+}
+
+.pool-type-group.recommended {
+  border-color: rgba(46, 148, 100, 0.3) !important;
+  box-shadow: 0 0 0 1px rgba(46, 148, 100, 0.1);
+}
+
+.pool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 0.25rem;
+}
+
+/* Placed Pokemon section */
+.pool-placed-section {
+  margin-top: 0.5rem;
+  border-top: 1px solid #e8e8e6;
+  padding-top: 0.35rem;
+}
+
+.pool-placed-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: #aaa;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  padding: 0.25rem 0;
+}
+
+.pool-placed-toggle:hover {
+  color: #888;
+}
+
+.pool-placed-arrow {
+  font-size: 0.6rem;
+}
+
+.pool-placed-grid {
+  margin-top: 0.25rem;
+}
+
+.location-pokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.3rem;
+  border-radius: 10px;
+  position: relative;
+  transition: background 0.15s, opacity 0.2s;
+  cursor: grab;
+}
+
+.location-pokemon:active {
+  cursor: grabbing;
+}
+
+.location-pokemon.in-habitat {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.location-pokemon.in-habitat .location-pokemon-sprite {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.location-pokemon:hover:not(.in-habitat) {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.location-pokemon-sprite {
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.location-pokemon:not(.in-habitat) .location-pokemon-sprite:hover {
+  transform: scale(1.1);
+}
+
+.location-pokemon-sprite img {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+}
+
+.location-pokemon-name {
+  font-size: 0.6rem;
+  color: #555;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ── Empty State ── */
+.location-empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.location-empty-visual {
+  margin-bottom: 1rem;
+}
+
+.location-empty-circle {
+  width: 120px;
+  height: 120px;
+  border: 2px dashed #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.location-empty-icon {
+  opacity: 0.3;
+}
+
+.location-empty-title {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #666;
+}
+
+.location-empty-hint {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: #999;
+  line-height: 1.4;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Location Habitats ── */
+.location-habitats-section {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e8e8e6;
+}
+
+/* Habitat tab bar */
+.location-habitat-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.location-habitat-tabs h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.location-habitat-tab-list {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding: 0.15rem 0;
+}
+
+.location-habitat-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  background: #f5f5f3;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  color: #666;
+  transition: all 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.location-habitat-tab:hover {
+  filter: brightness(0.96);
+}
+
+.location-habitat-tab.active {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location-habitat-tab.drag-over {
+  transform: scale(1.05);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.location-habitat-tab.good-fit {
+  box-shadow: 0 0 0 2px rgba(46, 148, 100, 0.4);
+  transform: scale(1.03);
+}
+
+.location-habitat-tab.new-tab {
+  background: transparent;
+  border: 1px dashed #ccc;
+  color: #999;
+}
+
+.location-habitat-tab.new-tab:hover {
+  border-color: #888;
+  color: #666;
+}
+
+.tab-fit-indicator {
+  color: #2e9464;
+  font-size: 0.65rem;
+}
+
+.tab-habitat-name {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-habitat-count {
+  font-size: 0.7rem;
+  color: #999;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.05rem 0.3rem;
+  border-radius: 6px;
+}
+
+/* Empty habitat prompt within location */
+.location-habitat-empty-prompt {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+/* ── Drag-active state ── */
+
+/* Cursor during drag */
+.location-view.is-dragging,
+.adventure-mode.is-dragging {
+  cursor: grabbing;
+}
+
+/* Dim the pool when dragging so drop targets stand out */
+.location-builder-layout.is-dragging .pool-scroll {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Habitat nav items become dashed drop targets */
+.location-builder-layout.is-dragging .habitat-nav-item {
+  border: 2px dashed #aaa;
+  transition: all 0.2s;
+  transform: scale(1.02);
+}
+
+.location-builder-layout.is-dragging .habitat-nav-item.good-fit-nav {
+  border-color: #2e9464;
+  background-color: rgba(46, 148, 100, 0.04);
+  transform: scale(1.04);
+}
+
+/* Habitat nav item drag-over state */
+.habitat-nav-item.drag-over {
+  border: 2px solid #2e9464 !important;
+  background: rgba(46, 148, 100, 0.08) !important;
+  transform: scale(1.06);
+  box-shadow: 0 4px 16px rgba(46, 148, 100, 0.2);
+}
+
+/* Drop prompt text shown on drag-over */
+.drop-prompt {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2e9464;
+  padding: 0.5rem 0.25rem;
+  line-height: 1.3;
+}
+
+/* Habitat circle becomes a dashed drop target when active */
+.location-builder-layout.is-dragging .habitat-space,
+.location-builder-layout.is-dragging .empty-habitat-circle {
+  outline: 2.5px dashed #2e9464;
+  outline-offset: 4px;
+  transition: outline 0.2s;
+}
+
+/* Drop target visual feedback on circle (actual hover) */
+.drag-over-circle {
+  outline: 3px dashed #2e9464 !important;
+  outline-offset: 4px;
+  background-color: rgba(46, 148, 100, 0.05) !important;
+}
+
+.drag-over-ring {
+  border-color: #2e9464 !important;
+  background: rgba(46, 148, 100, 0.04);
+}
+
+/* Location cards become dashed drop targets during drag */
+.location-card.drop-hint {
+  border: 2px dashed var(--loc-color, #888) !important;
+  transform: scale(1.04);
+  transition: all 0.2s;
+}
+
+/* Suggest button */
+.location-habitat-tab.suggest-tab {
+  background: transparent;
+  border: 1px solid #2e9464;
+  color: #2e9464;
+  font-weight: 700;
+}
+
+.location-habitat-tab.suggest-tab:hover {
+  background: #2e9464;
+  color: #fff;
+}
+
+/* ── Recommendations Panel ── */
+.recommendations-panel {
+  background: #fff;
+  border: 1px solid #e0e0de;
+  border-radius: 14px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.recommendations-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.recommendations-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #444;
+  font-weight: 700;
+}
+
+.recommendations-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rec-create-all-btn {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #2e9464;
+  border-radius: 8px;
+  background: #2e9464;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.15s;
+}
+
+.rec-create-all-btn:hover {
+  background: #257a52;
+  border-color: #257a52;
+}
+
+.rec-dismiss-btn {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+}
+
+.rec-dismiss-btn:hover {
+  background: #f0f0ee;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.recommendation-card {
+  border-radius: 14px;
+  border: 1.5px solid #e0e0de;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.recommendation-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.rec-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.rec-card-count {
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: 600;
+}
+
+.rec-card-circle {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06), inset 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: width 0.25s, height 0.25s;
+}
+
+.rec-card-pokemon {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rec-card-pokemon:hover {
+  transform: scale(1.15);
+  z-index: 2;
+}
+
+.rec-card-pokemon img {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.rec-pokemon-name {
+  font-size: 0;
+  opacity: 0;
+  transition: font-size 0.2s, opacity 0.2s;
+  color: #555;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.recommendation-card:hover .rec-pokemon-name {
+  font-size: 0.55rem;
+  opacity: 1;
+}
+
+.rec-card-favs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.rec-create-btn {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background: transparent;
+  color: #555;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.15s;
+}
+
+.rec-create-btn:hover {
+  background: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+/* Reuse favorite tags from location habitats */
+.rec-card-favs .location-habitat-fav-tag {
+  font-size: 0.6rem;
+  padding: 0.1rem 0.35rem;
+}
+
+/* ── Side-by-side Builder Layout ── */
+.location-builder-layout {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+}
+
+.location-pool-panel {
+  flex: 0 0 240px;
+  max-height: calc(100vh - 240px);
+  display: flex;
+  flex-direction: column;
+  background: #fafaf8;
+  border: 1px solid #e8e8e6;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pool-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e8e8e6;
+  background: #fafaf8;
+  flex-shrink: 0;
+}
+
+.pool-search-input {
+  flex: 1;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.8rem;
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+  min-width: 0;
+}
+
+.pool-search-input::placeholder {
+  color: #bbb;
+}
+
+.pool-search-input:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.pool-header-count {
+  font-size: 0.7rem;
+  color: #aaa;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pool-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+/* Active habitat content (center) */
+.location-builder-layout > .habitat-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Pool-focused mode: no habitat selected, pool expands */
+.location-builder-layout.pool-focused .location-pool-panel {
+  flex: 1;
+  max-height: calc(100vh - 240px);
+}
+
+.location-builder-layout.pool-focused .pool-type-groups-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.location-builder-layout.pool-focused .pool-type-group {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #e8e8e6;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 0;
+}
+
+.location-builder-layout.pool-focused .location-pool-panel .pool-grid {
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+}
+
+.location-builder-layout.pool-focused .location-pokemon-sprite img {
+  width: 56px;
+  height: 56px;
+}
+
+.location-builder-layout.pool-focused .location-pokemon-name {
+  font-size: 0.65rem;
+}
+
+/* Close habitat button */
+.close-habitat-btn {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: #999;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.15rem 0.45rem;
+  transition: all 0.15s;
+  margin-left: auto;
+}
+
+.close-habitat-btn:hover {
+  background: #f0f0ee;
+  color: #666;
+  border-color: #999;
+}
+
+.location-habitat-sidebar {
+  flex: 0 0 220px;
+  max-height: min(600px, calc(100vh - 240px));
+  overflow-y: auto;
+  background: #fafaf8;
+  border: 1px solid #e8e8e6;
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.location-habitat-sidebar .sidebar-header {
+  padding: 0.25rem 0.25rem 0.5rem;
+}
+
+.location-habitat-sidebar .habitat-list-nav {
+  gap: 0.35rem;
+}
+
+.location-habitat-sidebar .sidebar-empty {
+  padding: 0.75rem 0.5rem;
+  font-size: 0.78rem;
+}
+
+/* Habitat sidebar hover expansion */
+.location-habitat-sidebar .habitat-nav-item {
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.location-habitat-sidebar .habitat-nav-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  transform: scale(1.03);
+}
+
+.location-habitat-sidebar .habitat-nav-subtitle {
+  transition: all 0.2s;
+}
+
+.location-habitat-sidebar .habitat-nav-item:hover .habitat-nav-subtitle {
+  white-space: normal;
+  overflow: visible;
+}
+
+.location-habitat-sidebar .habitat-nav-sprites {
+  transition: all 0.2s;
+}
+
+.location-habitat-sidebar .habitat-nav-item:hover .habitat-nav-sprite {
+  width: 32px;
+  height: 32px;
+}
+
+.location-habitat-sidebar .habitat-nav-item:hover .habitat-nav-sprites {
+  gap: 0.2rem;
+  margin-top: 0.25rem;
+}
+
+/* Suggest habitats button in pool panel */
+.suggest-btn {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid #2e9464;
+  border-radius: 10px;
+  background: transparent;
+  color: #2e9464;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.15s;
+}
+
+.suggest-btn:hover {
+  background: #2e9464;
+  color: #fff;
+}
+
+/* All placed message */
+.pool-all-placed {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.8rem;
+  font-style: italic;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+/* Good fit highlight on sidebar nav items during drag */
+.habitat-nav-item.good-fit-nav {
+  box-shadow: 0 0 0 2px rgba(46, 148, 100, 0.4);
+  transform: scale(1.02);
+}
+
+/* Location view actions row */
+.location-view-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 900px) {
+  .location-builder-layout {
+    flex-direction: column;
+  }
+
+  .location-pool-panel {
+    flex: none;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .pool-scroll {
+    overflow: visible;
+  }
+
+  .location-pool-panel .pool-grid {
+    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  }
+
+  .location-builder-layout > .habitat-content {
+    width: 100%;
+    order: 2;
+  }
+
+  .location-habitat-sidebar {
+    flex: none;
+    width: 100%;
+    max-height: none;
+    order: 1;
+  }
+
+  .location-habitat-sidebar .habitat-list-nav {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.35rem;
+  }
+
+  .location-habitat-sidebar .habitat-nav-item {
+    flex-shrink: 0;
+    min-width: 160px;
+  }
+}

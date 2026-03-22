@@ -12076,5 +12076,13 @@
     "Transform",
     "Water",
     "Yawn"
+  ],
+  "allLocations": [
+    "Bleak Beach",
+    "Dream Island",
+    "Palette Town",
+    "Rocky Ridges",
+    "Sparkling Skylands",
+    "Withered Wastelands"
   ]
 }

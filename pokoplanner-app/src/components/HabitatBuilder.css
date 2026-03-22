@@ -105,6 +105,13 @@
   white-space: nowrap;
 }
 
+.habitat-nav-location {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
 .rename-input {
   flex: 1;
   background: #f8f8f6;
@@ -138,6 +145,54 @@
 
 .habitat-nav-delete:hover {
   color: #d94040;
+}
+
+/* Delete confirmation inline */
+.delete-confirm {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.delete-confirm-label {
+  font-size: 0.7rem;
+  color: #d94040;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.delete-confirm-yes,
+.delete-confirm-no {
+  padding: 0.15rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.delete-confirm-yes {
+  background: #d94040;
+  color: #fff;
+  border: 1px solid #d94040;
+}
+
+.delete-confirm-yes:hover {
+  background: #c03030;
+  border-color: #c03030;
+}
+
+.delete-confirm-no {
+  background: transparent;
+  color: #888;
+  border: 1px solid #ccc;
+}
+
+.delete-confirm-no:hover {
+  background: #f0f0ee;
 }
 
 .reset-name-btn {
@@ -781,6 +836,71 @@
   background: #d94040;
 }
 
+/* Compatibility warning indicator */
+.habitat-warning-dot {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #e8a735;
+  border: 1.5px solid #fff;
+  cursor: help;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #fff;
+  z-index: 3;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.habitat-warning-dot::before {
+  content: '!';
+}
+
+.habitat-space-pokemon.has-warning img {
+  filter: drop-shadow(0 0 3px rgba(232, 167, 53, 0.5));
+}
+
+.habitat-warning-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin-bottom: 4px;
+  pointer-events: none;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.habitat-warning-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #333;
+}
+
+.habitat-warning-dot:hover .habitat-warning-tooltip {
+  display: flex;
+}
+
 /* Habitat list sprites */
 .habitat-item-sprite {
   width: 32px;
@@ -801,6 +921,59 @@
 .favorite-breakdown,
 .suggestions {
   margin-bottom: 1.5rem;
+}
+
+/* Side-by-side circle + favorites layout */
+.habitat-circle-and-favs {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.habitat-circle-and-favs .current-pokemon {
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+.habitat-circle-and-favs .favorite-breakdown {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.habitat-circle-and-favs .favorite-breakdown h3 {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.habitat-circle-and-favs .fav-hint {
+  font-size: 0.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.fav-more-toggle {
+  display: block;
+  font-size: 0.7rem;
+  color: #999;
+  font-style: italic;
+  margin-top: 0.25rem;
+  padding: 0.15rem 0.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+}
+
+.fav-more-toggle:hover {
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .habitat-circle-and-favs {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .habitat-pokemon-list {

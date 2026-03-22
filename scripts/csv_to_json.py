@@ -81,12 +81,14 @@ def convert():
     all_favorites = sorted(set(f for p in pokemon_list for f in p["favorites"]))
     all_ideal_habitats = sorted(set(p["idealHabitat"] for p in pokemon_list))
     all_specialties = sorted(set(s for p in pokemon_list for s in p["specialties"]))
+    all_locations = sorted(set(p["primaryLocation"] for p in pokemon_list))
 
     output = {
         "pokemon": pokemon_list,
         "allFavorites": all_favorites,
         "allIdealHabitats": all_ideal_habitats,
         "allSpecialties": all_specialties,
+        "allLocations": all_locations,
     }
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)

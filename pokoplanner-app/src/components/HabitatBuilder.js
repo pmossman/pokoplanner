@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef } from 'react';
 import { favoriteCounts, rankByCompatibility, filterPokemon, suggestSplit, suggestHabitatTypeSplit } from '../utils/pokemonUtils';
-import { getHabitatBadgeColor, getFavoriteStyle, getHabitatTheme, getHabitatInfo, getDominantHabitat, HabitatTypeIcon } from '../utils/themeColors';
+import { getHabitatBadgeColor, getFavoriteStyle, getHabitatTheme, getHabitatInfo, getDominantHabitat, getLocationInfo, HabitatTypeIcon } from '../utils/themeColors';
 import PokemonCard from './PokemonCard';
 import './HabitatBuilder.css';
 
@@ -26,8 +26,8 @@ function HabitatBuilder({
   const [sameHabitatOnly, setSameHabitatOnly] = useState(true);
   const [ownedOnly, setOwnedOnly] = useState(false);
   const [notInHabitatOnly, setNotInHabitatOnly] = useState(false);
-  const [editingName, setEditingName] = useState(null);
-  const [nameInput, setNameInput] = useState('');
+  const [renamingId, setRenamingId] = useState(null);
+  const [renameValue, setRenameValue] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [searchHabitat, setSearchHabitat] = useState('');
   const [searchFavorite, setSearchFavorite] = useState('');
@@ -35,6 +35,9 @@ function HabitatBuilder({
   const [showBrowse, setShowBrowse] = useState(false);
   const [highlightFav, setHighlightFav] = useState(null);
   const [highlightHabitat, setHighlightHabitat] = useState(null);
+  const [confirmDelete, setConfirmDelete] = useState(null);
+  const [confirmClear, setConfirmClear] = useState(false);
+  const [showAllFavs, setShowAllFavs] = useState(false);
   const searchRef = useRef(null);
 
   const activeHabitat = habitats.find((h) => h.id === activeHabitatId) || null;
@@ -127,6 +130,30 @@ function HabitatBuilder({
     [habitatPokemon]
   );
 
+  // Per-pokemon compatibility warnings
+  const pokemonWarnings = useMemo(() => {
+    if (habitatPokemon.length < 2) return {};
+    const dom = dominantHabitat;
+    const domType = dom?.type;
+    const favTotals = {};
+    for (const p of habitatPokemon) {
+      for (const f of p.favorites) favTotals[f] = (favTotals[f] || 0) + 1;
+    }
+    const warnings = {};
+    for (const p of habitatPokemon) {
+      const issues = [];
+      if (domType && p.idealHabitat !== domType && !dom.tied) {
+        issues.push(`Prefers ${p.idealHabitat} habitat (group is ${domType})`);
+      }
+      const sharedCount = p.favorites.filter((f) => favTotals[f] > 1).length;
+      if (sharedCount <= 1) {
+        issues.push(`Shares ${sharedCount === 0 ? 'no' : 'only 1'} favorite${sharedCount === 1 ? '' : 's'} with the group`);
+      }
+      if (issues.length > 0) warnings[p.id] = issues;
+    }
+    return warnings;
+  }, [habitatPokemon, dominantHabitat]);
+
   const starterHabitats = useMemo(() => {
     const findPokemon = (ids) => ids.map((id) => allPokemon.find((p) => p.id === id)).filter(Boolean);
     return [
@@ -177,21 +204,23 @@ function HabitatBuilder({
     return joined.length > 30 ? joined.slice(0, 27) + '...' : joined;
   };
 
-  const startRename = (habitat) => {
-    setEditingName(habitat.id);
-    setNameInput(habitat.customName || '');
+  const handleRename = (habitat) => {
+    setRenamingId(habitat.id);
+    setRenameValue(habitat.customName || '');
   };
 
   const commitRename = () => {
-    if (editingName) {
-      const trimmed = nameInput.trim();
-      onRename(editingName, trimmed || null);
+    if (renamingId) {
+      const trimmed = renameValue.trim();
+      onRename(renamingId, trimmed || null);
     }
-    setEditingName(null);
+    setRenamingId(null);
+    setRenameValue('');
   };
 
-  const clearCustomName = (habitatId) => {
-    onRename(habitatId, null);
+  const cancelRename = () => {
+    setRenamingId(null);
+    setRenameValue('');
   };
 
   const habitatSubtitle = (h) => {
@@ -243,16 +272,16 @@ function HabitatBuilder({
               onClick={() => { onSelectHabitat(h.id); setHighlightFav(null); setHighlightHabitat(null); }}
             >
               <div className="habitat-nav-info">
-                {editingName === h.id ? (
+                {renamingId === h.id ? (
                   <input
                     className="rename-input"
-                    value={nameInput}
+                    value={renameValue}
                     placeholder={habitatDisplayName(h)}
-                    onChange={(e) => setNameInput(e.target.value)}
-                    onBlur={commitRename}
+                    onChange={(e) => setRenameValue(e.target.value)}
+                    
                     onKeyDown={(e) => {
                       if (e.key === 'Enter') commitRename();
-                      if (e.key === 'Escape') setEditingName(null);
+                      if (e.key === 'Escape') cancelRename();
                     }}
                     autoFocus
                     onClick={(e) => e.stopPropagation()}
@@ -262,7 +291,7 @@ function HabitatBuilder({
                     className="habitat-nav-name"
                     onDoubleClick={(e) => {
                       e.stopPropagation();
-                      startRename(h);
+                      handleRename(h);
                     }}
                     title="Double-click to rename"
                   >
@@ -272,7 +301,7 @@ function HabitatBuilder({
                         className="reset-name-btn"
                         onClick={(e) => {
                           e.stopPropagation();
-                          clearCustomName(h.id);
+                          onRename(h.id, null);
                         }}
                         title="Reset to auto-name"
                       >
@@ -282,6 +311,15 @@ function HabitatBuilder({
                   </span>
                 )}
                 <span className="habitat-nav-subtitle">
+                  {h.location && (() => {
+                    const locInfo = getLocationInfo(h.location);
+                    return (
+                      <span className="habitat-nav-location" style={{ color: locInfo.color }}>
+                        {locInfo.Icon && <locInfo.Icon size={10} />} {h.location}
+                        {' · '}
+                      </span>
+                    );
+                  })()}
                   {habitatSubtitle(h)}
                 </span>
                 {h.pokemon.length > 0 && (
@@ -306,16 +344,24 @@ function HabitatBuilder({
               <span className="habitat-nav-count">
                 {h.pokemon.length}
               </span>
-              <button
-                className="habitat-nav-delete"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onDelete(h.id);
-                }}
-                title="Delete habitat"
-              >
-                &times;
-              </button>
+              {confirmDelete === h.id ? (
+                <div className="delete-confirm" onClick={(e) => e.stopPropagation()}>
+                  <span className="delete-confirm-label">Delete?</span>
+                  <button className="delete-confirm-yes" onClick={() => { onDelete(h.id); setConfirmDelete(null); }}>Yes</button>
+                  <button className="delete-confirm-no" onClick={() => setConfirmDelete(null)}>No</button>
+                </div>
+              ) : (
+                <button
+                  className="habitat-nav-delete"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setConfirmDelete(h.id);
+                  }}
+                  title="Delete habitat"
+                >
+                  &times;
+                </button>
+              )}
             </li>
             );
           })}
@@ -397,23 +443,23 @@ function HabitatBuilder({
         ) : (
           <>
             <div className="builder-header">
-              {editingName === activeHabitat.id ? (
+              {renamingId === activeHabitat.id ? (
                 <input
                   className="builder-rename-input"
-                  value={nameInput}
+                  value={renameValue}
                   placeholder={habitatDisplayName(activeHabitat)}
-                  onChange={(e) => setNameInput(e.target.value)}
-                  onBlur={commitRename}
+                  onChange={(e) => setRenameValue(e.target.value)}
+                  
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') commitRename();
-                    if (e.key === 'Escape') setEditingName(null);
+                    if (e.key === 'Escape') cancelRename();
                   }}
                   autoFocus
                 />
               ) : (
                 <h2
                   className="builder-habitat-name"
-                  onDoubleClick={() => startRename(activeHabitat)}
+                  onDoubleClick={() => handleRename(activeHabitat)}
                   title="Double-click to rename"
                 >
                   {habitatDisplayName(activeHabitat)}
@@ -425,21 +471,22 @@ function HabitatBuilder({
               <div className="builder-actions">
                 <button
                   className="rename-btn"
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    if (editingName === activeHabitat.id) {
-                      commitRename();
-                    } else {
-                      startRename(activeHabitat);
-                    }
-                  }}
+                  onClick={() => handleRename(activeHabitat)}
                 >
-                  {editingName === activeHabitat.id ? 'Done' : 'Rename'}
+                  Rename
                 </button>
                 {habitatPokemon.length > 0 && (
-                  <button className="clear-btn" onClick={onClear}>
+                  confirmClear ? (
+                    <span className="delete-confirm">
+                      <span className="delete-confirm-label">Clear all?</span>
+                      <button className="delete-confirm-yes" onClick={() => { onClear(); setConfirmClear(false); }}>Yes</button>
+                      <button className="delete-confirm-no" onClick={() => setConfirmClear(false)}>No</button>
+                    </span>
+                  ) : (
+                  <button className="clear-btn" onClick={() => setConfirmClear(true)}>
                     Clear Pokemon
                   </button>
+                  )
                 )}
               </div>
             </div>
@@ -559,7 +606,7 @@ function HabitatBuilder({
             )}
 
             {habitatPokemon.length > 0 && (
-              <>
+              <div className="habitat-circle-and-favs">
                 <section className="current-pokemon">
                   <h3>Habitat ({habitatPokemon.length})</h3>
                   <div className="habitat-space" style={{ background: habitatTheme.circleGradient }}>
@@ -572,10 +619,11 @@ function HabitatBuilder({
                       const y = centerY + Math.sin(angle) * radius - 28;
                       const dimmed = (highlightFav && !p.favorites.includes(highlightFav))
                         || (highlightHabitat && p.idealHabitat !== highlightHabitat);
+                      const warnings = pokemonWarnings[p.id];
                       return (
                         <div
                           key={p.id}
-                          className="habitat-space-pokemon"
+                          className={`habitat-space-pokemon ${warnings ? 'has-warning' : ''}`}
                           style={{
                             left: `${x}px`,
                             top: `${y}px`,
@@ -587,6 +635,11 @@ function HabitatBuilder({
                             <img src={p.sprite} alt={p.name} />
                           )}
                           <span className="habitat-space-name">{p.name}</span>
+                          {warnings && (
+                            <span className="habitat-warning-dot" title={warnings.join('\n')}>
+                              <span className="habitat-warning-tooltip">{warnings.map((w, wi) => <span key={wi}>{w}</span>)}</span>
+                            </span>
+                          )}
                           <button
                             className="habitat-space-remove"
                             onClick={(e) => {
@@ -684,15 +737,15 @@ function HabitatBuilder({
                   <h3>Favorite Overlap {highlightFav && <span className="highlight-label">— filtering: {highlightFav} <button className="clear-highlight" onClick={() => setHighlightFav(null)}>&times;</button></span>}{highlightHabitat && <span className="highlight-label">— showing: {highlightHabitat} <button className="clear-highlight" onClick={() => setHighlightHabitat(null)}>&times;</button></span>}</h3>
                   {!highlightFav && !highlightHabitat && <p className="fav-hint">Click a row to highlight Pokemon with that favorite</p>}
                   <div className="fav-bars">
-                    {favCounts.map(({ favorite, count }, i) => {
+                    {(showAllFavs ? favCounts : favCounts.slice(0, 5)).map(({ favorite, count }, i) => {
                       const ratio = count / habitatPokemon.length;
                       const isTop = topFavorites.has(favorite);
                       const isMid = !isTop && ratio >= 0.5;
                       const favStyle = getFavoriteStyle(favorite);
                       const tier = isTop ? 'top' : isMid ? 'mid' : 'low';
-                      const labelColor = isTop ? favStyle.text : isMid ? favStyle.text : '#bbb';
-                      const trackBg = isTop ? favStyle.bg : isMid ? favStyle.bg : '#f0f0ee';
-                      const fillBg = isTop ? favStyle.border : isMid ? favStyle.border : '#ddd';
+                      const labelColor = isTop ? favStyle.text : isMid ? favStyle.text : '#888';
+                      const trackBg = isTop ? favStyle.bg : isMid ? favStyle.bg : '#e8e8e4';
+                      const fillBg = isTop ? favStyle.border : isMid ? favStyle.border : '#bbb';
                       return (
                         <div
                           key={favorite}
@@ -715,10 +768,15 @@ function HabitatBuilder({
                         </div>
                       );
                     })}
+                    {favCounts.length > 5 && (
+                      <button className="fav-more-toggle" onClick={() => setShowAllFavs(!showAllFavs)}>
+                        {showAllFavs ? 'Show less' : `${favCounts.length - 5} more with low overlap`}
+                      </button>
+                    )}
                   </div>
                 </section>
 
-              </>
+              </div>
             )}
           </>
         )}

@@ -1,4 +1,4 @@
-import { TbSun, TbFlame, TbSnowflake, TbMoon, TbDroplet, TbCactus } from 'react-icons/tb';
+import { TbSun, TbFlame, TbSnowflake, TbMoon, TbDroplet, TbCactus, TbSkull, TbPalette, TbBeach, TbMountain, TbSparkles, TbMoonStars } from 'react-icons/tb';
 
 /**
  * Color mappings for favorites and habitat types.
@@ -115,6 +115,21 @@ export const HABITAT_ICONS = {
   Humid:  TbDroplet,
   Dry:    TbCactus,
 };
+
+/** Game location colors, icons, and display info */
+export const LOCATION_INFO = {
+  'Withered Wastelands': { color: '#8a7040', bg: '#f0e8d4', gradient: 'linear-gradient(135deg, #f4ede0 0%, #e0d4b8 100%)', Icon: TbSkull,     order: 0, startUnlocked: true },
+  'Palette Town':        { color: '#4a8a50', bg: '#d8f0dc', gradient: 'linear-gradient(135deg, #e0f4e4 0%, #c0dcc4 100%)', Icon: TbPalette,   order: 1, startUnlocked: true },
+  'Bleak Beach':         { color: '#4080a0', bg: '#d4e8f0', gradient: 'linear-gradient(135deg, #dceef4 0%, #b8d8e8 100%)', Icon: TbBeach,     order: 2, startUnlocked: false },
+  'Rocky Ridges':        { color: '#7a6050', bg: '#e4dcd4', gradient: 'linear-gradient(135deg, #e8e0d8 0%, #d0c4b8 100%)', Icon: TbMountain,  order: 3, startUnlocked: false },
+  'Sparkling Skylands':  { color: '#8060a0', bg: '#e4d8f0', gradient: 'linear-gradient(135deg, #ece0f8 0%, #d0c0e4 100%)', Icon: TbSparkles,  order: 4, startUnlocked: false },
+  'Dream Island':        { color: '#a06080', bg: '#f0d8e4', gradient: 'linear-gradient(135deg, #f4e0ec 0%, #e0c4d4 100%)', Icon: TbMoonStars, order: 5, startUnlocked: false },
+};
+
+/** Get location info with defaults */
+export function getLocationInfo(location) {
+  return LOCATION_INFO[location] || { color: '#888', bg: '#f0f0f0', gradient: '', Icon: null, order: 99, startUnlocked: false };
+}
 
 /** Get the icon component for a habitat type */
 export function getHabitatIcon(type) {

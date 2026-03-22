@@ -226,6 +226,67 @@ export function suggestHabitatTypeSplit(group) {
 }
 
 /**
+ * Given a set of unplaced Pokemon, recommend optimal habitat groupings.
+ * Groups by ideal habitat type first, then subdivides large type groups
+ * by favorite overlap using the split algorithm.
+ *
+ * Returns array of { pokemon, type, cohesion, topFavorites }
+ */
+export function suggestHabitatGroupings(pokemon, maxSize = 6) {
+  if (pokemon.length === 0) return [];
+
+  // Step 1: Group by ideal habitat type
+  const byType = {};
+  for (const p of pokemon) {
+    if (!byType[p.idealHabitat]) byType[p.idealHabitat] = [];
+    byType[p.idealHabitat].push(p);
+  }
+
+  const result = [];
+
+  // Step 2: For each type, subdivide if needed
+  for (const [type, group] of Object.entries(byType)) {
+    const subgroups = splitIntoGroups(group, maxSize);
+    for (const sg of subgroups) {
+      result.push({ pokemon: sg, type });
+    }
+  }
+
+  // Compute cohesion and top favorites for each group
+  return result
+    .map((g) => ({
+      ...g,
+      cohesion: groupCohesion(g.pokemon),
+      topFavorites: favoriteCounts(g.pokemon).slice(0, 3),
+    }))
+    .sort((a, b) => b.pokemon.length - a.pokemon.length || b.cohesion - a.cohesion);
+}
+
+function splitIntoGroups(group, maxSize) {
+  if (group.length <= maxSize) return [group];
+
+  const split = suggestSplit(group);
+  if (split) {
+    return [
+      ...splitIntoGroups(split.groupA, maxSize),
+      ...splitIntoGroups(split.groupB, maxSize),
+    ];
+  }
+
+  // Fallback: split by sorting on most common favorite
+  const sorted = [...group].sort((a, b) => {
+    const fa = a.favorites[0] || '';
+    const fb = b.favorites[0] || '';
+    return fa.localeCompare(fb);
+  });
+  const mid = Math.ceil(sorted.length / 2);
+  return [
+    ...splitIntoGroups(sorted.slice(0, mid), maxSize),
+    ...splitIntoGroups(sorted.slice(mid), maxSize),
+  ];
+}
+
+/**
  * Search/filter Pokemon list.
  */
 export function filterPokemon(allPokemon, { query, idealHabitat, favorite }) {
