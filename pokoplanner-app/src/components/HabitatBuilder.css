@@ -1,0 +1,1020 @@
+.habitat-builder-layout {
+  display: flex;
+  gap: 1.5rem;
+  min-height: 60vh;
+}
+
+/* Sidebar — neutral so it doesn't compete with habitat */
+.habitat-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 14px;
+  padding: 0.75rem;
+  border: 1px solid #e0e0de;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 700;
+}
+
+.new-habitat-btn {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+}
+
+.new-habitat-btn:hover {
+  background: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+.habitat-list-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.habitat-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.habitat-nav-item:hover {
+  background: #f4f4f2;
+}
+
+.habitat-nav-item.active {
+  background: #f0f0ee;
+  border-left: 3px solid #888;
+}
+
+.habitat-nav-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.habitat-nav-name {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.habitat-nav-subtitle {
+  font-size: 0.7rem;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rename-input {
+  flex: 1;
+  background: #f8f8f6;
+  border: 2px solid #aaa;
+  border-radius: 6px;
+  color: #333;
+  padding: 0.15rem 0.3rem;
+  font-size: 0.85rem;
+  font-family: 'Nunito', sans-serif;
+  outline: none;
+}
+
+.habitat-nav-count {
+  font-size: 0.75rem;
+  color: #999;
+  background: #f0f0ee;
+  padding: 0.1rem 0.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.habitat-nav-delete {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 0.2rem;
+  line-height: 1;
+}
+
+.habitat-nav-delete:hover {
+  color: #d94040;
+}
+
+.reset-name-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.reset-name-btn:hover {
+  color: #d94040;
+}
+
+.habitat-nav-sprites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem;
+  margin-top: 0.15rem;
+  align-items: center;
+}
+
+.habitat-nav-sprite {
+  width: 24px;
+  height: 24px;
+  image-rendering: pixelated;
+}
+
+.habitat-nav-more {
+  font-size: 0.65rem;
+  color: #999;
+  margin-left: 0.1rem;
+}
+
+.sidebar-empty {
+  color: #999;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Main content — themed by habitat */
+.habitat-main {
+  flex: 1;
+  min-width: 0;
+  border-radius: 14px;
+  padding: 1.25rem;
+  border: 2px solid #e0e0de;
+  transition: background 0.4s, border-color 0.4s;
+}
+
+/* Welcome state — no habitats yet */
+.welcome-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.welcome-top {
+  text-align: center;
+  max-width: 480px;
+}
+
+.welcome-top h2 {
+  margin: 0 0 0.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #444;
+}
+
+.welcome-subtitle {
+  color: #777;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+
+.welcome-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-circle-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed #ccc;
+  border-radius: 50%;
+}
+
+.welcome-circle-label {
+  font-size: 0.8rem;
+  color: #aaa;
+  text-align: center;
+  padding: 1.5rem;
+  line-height: 1.4;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.welcome-create-btn {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.15s;
+}
+
+.welcome-create-btn:hover {
+  background: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+.welcome-or {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.starter-habitats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 780px;
+}
+
+.starter-card {
+  background: #fff;
+  border: 1px solid #e0e0de;
+  border-radius: 14px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s;
+}
+
+.starter-card:hover {
+  border-color: #bbb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.starter-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #444;
+}
+
+.starter-desc {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.3;
+}
+
+.starter-sprites {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.starter-sprite {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+}
+
+.starter-favs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.starter-fav-tag {
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border: 1px solid;
+}
+
+.starter-use-btn {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.15s;
+  margin-top: auto;
+}
+
+.starter-use-btn:hover {
+  background: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+/* Empty habitat — created but no Pokemon */
+.empty-habitat {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.empty-habitat-circle {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-habitat-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed #ccc;
+  border-radius: 50%;
+}
+
+.empty-habitat-hint {
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: center;
+  padding: 2rem;
+  line-height: 1.4;
+}
+
+.builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.builder-header h2 {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: #444;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  cursor: default;
+}
+
+.builder-habitat-name {
+  cursor: pointer;
+}
+
+.auto-name-hint {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  color: #aaa;
+  font-weight: 400;
+  margin-left: 0.5rem;
+  letter-spacing: 0;
+}
+
+.builder-rename-input {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: #444;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  background: #fff;
+  outline: none;
+  min-width: 200px;
+}
+
+.builder-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rename-btn {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.rename-btn:hover {
+  background: #666;
+  border-color: #666;
+  color: #fff;
+}
+
+.clear-btn {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #daa;
+  border-radius: 8px;
+  background: transparent;
+  color: #c55;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.clear-btn:hover {
+  background: #d94040;
+  color: white;
+}
+
+/* Search */
+.builder-search {
+  margin-bottom: 1.25rem;
+}
+
+.search-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.builder-search-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.8);
+  color: #333;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+}
+
+.builder-search-input::placeholder {
+  color: #aaa;
+}
+
+.builder-search-input:focus {
+  outline: none;
+  border-color: #999;
+  background: #fff;
+}
+
+.search-select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.8);
+  color: #333;
+  font-size: 0.85rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.search-results-area {
+  margin-top: 0.75rem;
+}
+
+.search-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.result-count {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.browse-toggle {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+}
+
+.browse-toggle:hover {
+  background: #f0f0ee;
+}
+
+.builder-search-results-inline {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.builder-search-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.builder-search-item:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.search-result-sprite {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.search-result-name {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.inline-add-btn {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+}
+
+.inline-add-btn:hover {
+  background: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+.builder-search-item.unowned {
+  opacity: 0.5;
+}
+
+.builder-search-item.unowned:hover {
+  opacity: 0.8;
+}
+
+.owned-toggle-sm {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: transparent;
+  cursor: pointer;
+  font-size: 0.65rem;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.owned-toggle-sm.is-owned {
+  background: #666;
+  border-color: #666;
+  color: white;
+}
+
+.owned-count {
+  color: #999;
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+/* Habitat space — visual Pokemon arrangement */
+.habitat-space {
+  position: relative;
+  min-height: 200px;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+.habitat-space-pokemon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.habitat-space-pokemon:hover {
+  transform: scale(1.15);
+  z-index: 2;
+}
+
+.habitat-space-pokemon img {
+  width: 56px;
+  height: 56px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.habitat-space-name {
+  font-size: 0.65rem;
+  color: #555;
+  font-weight: 600;
+  text-align: center;
+  margin-top: -2px;
+  text-shadow: 0 0 3px rgba(255,255,255,0.8), 0 0 3px rgba(255,255,255,0.8);
+}
+
+.habitat-space-remove {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  font-size: 0.6rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.habitat-space-pokemon:hover .habitat-space-remove {
+  display: flex;
+}
+
+.habitat-space-remove:hover {
+  background: #d94040;
+}
+
+/* Habitat list sprites */
+.habitat-item-sprite {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.current-pokemon h3,
+.favorite-breakdown h3,
+.suggestions h3 {
+  margin: 0 0 0.75rem;
+  color: #555;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.current-pokemon,
+.favorite-breakdown,
+.suggestions {
+  margin-bottom: 1.5rem;
+}
+
+.habitat-pokemon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.habitat-pokemon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  transition: opacity 0.2s;
+}
+
+.habitat-pokemon-item .pokemon-name {
+  flex: 1;
+  margin: 0;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.remove-btn {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid #dbb;
+  border-radius: 6px;
+  background: transparent;
+  color: #b88;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+}
+
+.remove-btn:hover {
+  border-color: #d94040;
+  color: #d94040;
+}
+
+/* Favorite overlap bars */
+.fav-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.fav-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fav-bar-row.clickable {
+  cursor: pointer;
+  padding: 0.15rem 0.3rem;
+  margin: -0.15rem -0.3rem;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.fav-bar-row.clickable:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.fav-bar-row.clickable.active {
+  background: rgba(0, 0, 0, 0.06);
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.highlight-label {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+}
+
+.clear-highlight {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0 0.2rem;
+}
+
+.clear-highlight:hover {
+  color: #d94040;
+}
+
+.habitat-pokemon-item.dimmed {
+  opacity: 0.35;
+}
+
+.fav-hint {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.fav-label {
+  width: 140px;
+  font-size: 0.8rem;
+  color: #666;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.fav-bar-track {
+  flex: 1;
+  height: 16px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fav-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.3s;
+}
+
+.fav-count {
+  width: 36px;
+  font-size: 0.8rem;
+  color: #888;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+/* Split section */
+.split-section {
+  margin-bottom: 1.5rem;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.split-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.split-header h3 {
+  margin: 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+.split-toggle-btn {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+}
+
+.split-toggle-btn:hover {
+  background: #666;
+  border-color: #666;
+  color: #fff;
+}
+
+.split-description {
+  color: #888;
+  font-size: 0.85rem;
+  margin: 0.75rem 0;
+}
+
+.split-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.split-group {
+  background: rgba(255,255,255,0.5);
+  border-radius: 10px;
+  padding: 0.75rem;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.split-group h4 {
+  margin: 0 0 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.split-pokemon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.split-pokemon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.split-fav-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.split-fav-bars .fav-label {
+  width: 100px;
+  font-size: 0.7rem;
+}
+
+.split-fav-bars .fav-count {
+  font-size: 0.7rem;
+}
+
+.apply-split-btn {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  background: transparent;
+  color: #555;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+}
+
+.apply-split-btn:hover {
+  background: #555;
+  border-color: #555;
+  color: white;
+}
+
+/* Suggestions */
+.suggestions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.suggestions-filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #666;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-toggle input {
+  cursor: pointer;
+  accent-color: #666;
+}
+
+.no-suggestions {
+  color: #999;
+  font-style: italic;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}

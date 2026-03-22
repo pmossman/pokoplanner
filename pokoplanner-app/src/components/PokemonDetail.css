@@ -1,0 +1,175 @@
+.detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.detail-panel {
+  background: #fff;
+  border: 1px solid #e0e0de;
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.detail-sprite {
+  width: 80px;
+  height: 80px;
+  image-rendering: pixelated;
+}
+
+.detail-title {
+  flex: 1;
+}
+
+.detail-title .dex-number {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.detail-header h2 {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+}
+
+.habitat-badge.large {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.75rem;
+}
+
+.habitat-badge.small {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.4rem;
+}
+
+.owned-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.owned-btn.is-owned {
+  border-color: #888;
+  color: #555;
+  background: #f0f0ee;
+}
+
+.owned-btn:hover {
+  border-color: #888;
+  color: #555;
+}
+
+.detail-section {
+  margin-bottom: 1.25rem;
+}
+
+.detail-section h3 {
+  margin: 0 0 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.specialties-list {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.specialty-tag {
+  padding: 0.2rem 0.5rem;
+  background: #f0f0ee;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.habitat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.habitat-list li {
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.compat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.compat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: #f8f8f6;
+  border: 1px solid #e8e8e6;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.compat-sprite {
+  width: 28px;
+  height: 28px;
+  image-rendering: pixelated;
+}
+
+.compat-name {
+  font-weight: 700;
+  color: #333;
+  min-width: 120px;
+}
+
+.compat-count {
+  color: #888;
+  font-size: 0.75rem;
+  flex: 1;
+}

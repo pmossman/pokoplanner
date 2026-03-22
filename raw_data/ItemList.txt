@@ -1,0 +1,1587 @@
+Items
+
+Like most Pokémon games, Pokémon Pokopia has a myriad of items including Materials and cosmetic items you can use to decaorate the islands and houses throughout the game. This page is to list all the items and will add their locations over time as we figure exact locations out.
+Anchors 	Materials 	Food 	Furniture 	Misc. 	Outdoor
+Utilities 	Nature 	Buildings 	Blocks 	Kits
+Key Items 	Other 	Lost Relics (L) 	Lost Relics (S) 	Fossils
+
+List of Materials
+
+Picture 	Name 	Description 	Locations
+Honey	Honey 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Sturdy stick	Sturdy stick 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Stone	Stone 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Leaf	Leaf 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Palette Town (Natural)
+Small log	Small log 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Vine rope	Vine rope 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Palette Town (Natural)
+Glowing mushrooms	Glowing mushrooms 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Twine	Twine 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Sea glass fragments	Sea glass fragments 		Bleak Beach (Natural)
+Palette Town (Natural)
+Seashell	Seashell 		Bleak Beach (Natural)
+Nonburnable garbage	Nonburnable garbage 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Squishy clay	Squishy clay 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Fluff	Fluff 		
+Wastepaper	Wastepaper 		Sparkling Skylands (Natural)
+Palette Town (Natural)
+Copper ore	Copper ore 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Palette Town (Natural)
+Iron ore	Iron ore 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Palette Town (Natural)
+Gold ore	Gold ore 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Palette Town (Natural)
+Palette Town (Natural)
+Pokémetal fragment	Pokémetal fragment 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Rare Pokémetal fragment	Rare Pokémetal fragment 		Rocky Ridges (Natural)
+Crystal fragment	Crystal fragment 		
+Lumber	Lumber 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Brick	Brick 		
+Copper ingot	Copper ingot 		
+Iron ingot	Iron ingot 		
+Gold ingot	Gold ingot 		
+Pokémetal	Pokémetal 		
+Rare Pokémetal	Rare Pokémetal 		
+Glass	Glass 		
+Concrete	Concrete 		
+Paper	Paper 		
+Tinkagear	Tinkagear 		
+Strange strings	Strange strings 		
+Armor fragment	Armor fragment 		
+Stardust	Stardust 		
+Red paint	Red paint 		
+Blue paint	Blue paint 		
+Green paint	Green paint 		
+Yellow paint	Yellow paint 		
+Pink paint	Pink paint 		
+Cyan paint	Cyan paint 		
+White paint	White paint 		
+Black paint	Black paint 		
+Mossy Stone	Mossy Stone 	
+Note: Not registered in collection 	Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Cotton Spores	Cotton Spores 	Small, white tufts of cotton. Bring them to Hoppip! 	Dream Island
+
+List of Food
+
+Picture 	Name 	Description 	Locations
+Leppa Berry	Leppa Berry 	A berry with a rather unremarkable flavor. Restores some PP when eaten. 	Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Chesto Berry	Chesto Berry 	A rock-hard berry with a dry flavor. Restores some PP when eaten 	
+Rawst Berry	Rawst Berry 	The longer and more curled the leaves are, the more bitter this berry tastes. Restores some PP when eaten 	
+Aspear Berry	Aspear Berry 	This berry has a distinctively sharp sour taste. Restores some PP when eaten. 	
+Pecha Berry	Pecha Berry 	A sweet, delicious berry. Restores some PP when eaten. 	
+Lum Berry	Lum Berry 	A berry that has a well-balanced flavor. Restores some PP when eaten. 	
+Bean	Bean 	Small beans that are jam-packed with nutrients. Restores some PP when eaten 	Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Tomato	Tomato 	A round, tasty-looking tomato. Restores some PP when eaten 	Sparkling Skylands (Natural)
+Wheat	Wheat 	They're actually edible raw! Restores some PP when eaten. 	Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Potato	Potato 	A delicious potato-even with the skin still on! Restores some PP when eaten 	
+Fresh carrot	Fresh carrot 	You can harvest these spicy carrots by pulling up on their leaves. Restores some PP when eaten. 	Withered Wastelands (Natural)
+Palette Town (Natural)
+Seaweed	Seaweed 	Seaweed that has washed ashore. Restores some PP when eaten 	Bleak Beach (Natural)
+Palette Town (Natural)
+Cave mushrooms	Cave mushrooms 	Mushrooms that grow in damp places such as caves or under shady trees. Restores some PP when eaten 	Rocky Ridges (Natural)
+Simple salad	Simple salad 	An ordinary salad made with leaves. Powers up Leafage when eaten. 	
+Leppa salad	Leppa salad 	A sweet salad made with Leppa Berries. Powers up Leafage when eaten. 	
+Seaweed salad	Seaweed salad 	A bitter-tasting salad made with seaweed. Powers up Leafage when eaten. 	
+Shredded salad	Shredded salad 	A sour salad made with finely chopped leaves. Powers up Leafage when eaten. 	
+Crushed-berry salad	Crushed-berry salad 	A salad with a dry flavor, made with crushed Chesto Berries. Powers up Leafage when eaten. 	
+Crouton salad	Crouton salad 	A spicy salad with a delightfully crunchy texture. Powers up Leafage when eaten. 	
+Simple soup	Simple soup 	An ordinary soup made with Fresh Water. Powers up Water Gun when eaten. 	
+Seaweed soup	Seaweed soup 	A bitter-tasting soup made with seaweed.. Powers up Water Gun when eaten. 	
+Mushroom soup	Mushroom soup 	A soup with a dry flavor made with mushroom broth.. Powers up Water Gun when eaten. 	
+Electrifying soup	Electrifying soup 	A shockingly spicy soup.. Powers up Water Gun when eaten. 	
+Healthy soup	Healthy soup 	A spicy soup with an aromatic bean flavor.. Powers up Water Gun when eaten. 	
+Flavorful soup	Flavorful soup 	A sour soup bursting with flavor. Powers up Water Gun when eaten. 	
+Simple bread	Simple bread 	Ordinary wheat bread. Powers up Cut when eaten. 	
+Leppa bread	Leppa bread 	Sour-tasting bread made with Leppa Berry jam.. Powers up Cut when eaten. 	
+Carrot bread	Carrot bread 	Spicy bread with an intense carrot flavor. Powers up Cut when eaten. 	
+Recycled bread	Recycled bread 	Bitter-tasting bread made by reusing other bread. Powers up Cut when eaten 	
+Fluffy bread	Fluffy bread 	Sweet bread made with Pecha Berries. Powers up cut when eaten. 	
+Bread bowl	Bread bowl 	Spicy bread that's delicious even when burnt. Powers up Cut when eaten. 	
+Simple hamburger steak	Simple hamburger steak 	An ordinary hamburger steak, made with beans. Powers up Rock Smash when eaten. 	
+Mushroom hamburger steak	Mushroom hamburger steak 	A hamburger steak with an intensely dry, mushroomy flavor. Powers up Rock Smash when eaten. 	
+Tomato hamburger steak	Tomato hamburger steak 	A hamburger steak that brings out the sour flavor of its ingredients.. Powers up Rock Smash when eaten. 	
+Potato hamburger steak	Potato hamburger steak 	A satisfyingly sweet hamburger steak. Powers up Rock Smash a lot when eaten. 	
+Bitter hamburger steak	Bitter hamburger steak 	A bitter-tasting hamberuger steak topped with leaves. Powers up Rock Smash when eaten 	
+Vibrant hamburger steak	Vibrant hamburger steak 	A hamburger steak made with lots of ingredients. Powers up Rock Smash a lot when eaten 	
+Bruised berry	Bruised berry 	A bruised berry you got from Chef Dente. Restores a bit of PP when eaten 	
+Common candy	Common candy 	A piece of candy you got from Chef Dente. Restores some PP when eaten. 	
+Curry and rice	Curry and rice 	An absolutely essential meal for any party. Enjoy some tasty food alongside other Pokémon! 	
+Fresh Water	Fresh Water 	Delicious water that's perfect for making soup. Drink some and spit it out to make things wet. 	
+Soda Pop	Soda Pop 	Fizzy, sparkling soda. If you take a sip and spit it out, it becomes seawater 	
+Moomoo Milk Coffee	Moomoo Milk Coffee 	Milky coffee with a comfortingly sweet taste. If you take a sip and spit it out, it becomes muddy water! 	
+Roserade Tea	Roserade Tea 	Tea with a delicate, elegant aroma. If you take a sip and spit it out, it becomes a hot spring! 	
+Chili sauce	Chili sauce 	Sauce with an enticingly spicy flavor. If you take a sip and spit it out, it becomes lava! 	
+
+List of Furniture
+
+Picture 	Name 	Description 	Locations
+Storage Box	Storage Box 		Craft from recipe
+Big storage box	Big storage box 		Craft from recipe
+Plain chest	Plain chest 		Craft from recipe
+Gaming fridge	Gaming fridge 		Craft from recipe
+Poké Ball Chest	Poké Ball Chest 		Craft from recipe
+Antique chest	Antique chest 		Craft from recipe
+Plain closet	Plain closet 		Craft from recipe
+Office locker	Office locker 		Craft from recipe
+Antique closet	Antique closet 		
+Office shelf	Office shelf 		
+Polygonal Shelf	Polygonal Shelf 		
+Straw table	Straw table 		Craft from recipe
+Log table	Log table 		Craft from recipe
+Side table	Side table 		Craft from recipe
+Garden table	Garden table 		Craft from recipe
+Wooden table	Wooden table 		Craft from recipe
+Counter	Counter 		Craft from recipe
+Wall-mounted table	Wall-mounted table 		Craft from recipe
+Pokémon Center counter	Pokémon Center counter 		Craft from recipe
+Kitchen table	Kitchen table 		
+Push cart	Push cart 		Craft from recipe
+Exhibition stand	Exhibition stand 		Craft from recipe
+Mysterious pedestal	Mysterious pedestal 		Palette Town (Natural)
+Plain stand	Plain stand 		
+Iron stand	Iron stand 		Craft from recipe
+Food counter	Food counter 		Craft from recipe
+Plain table	Plain table 		Craft from recipe
+Antique table	Antique table 		
+Industrial desk	Industrial desk 		Craft from recipe
+Iron table	Iron table 		Craft from recipe
+Office desk	Office desk 		Craft from recipe
+Stone table	Stone table 		Craft from recipe
+Cute table	Cute table 		
+Iron rack	Iron rack 		Craft from recipe
+Resort table	Resort table 		Craft from recipe
+Chic table	Chic table 		Craft from recipe
+Pop art table	Pop art table 		Craft from recipe
+Poké Ball table	Poké Ball table 		
+Berry table	Berry table 		
+Luxury table	Luxury table 		
+Office table	Office table 		Craft from recipe
+Avalugg Table	Avalugg Table 		In glowing terrain
+Straw stool	Straw stool 		Craft from recipe
+Berry chair	Berry chair 		Craft from recipe
+Simple cushion	Simple cushion 		Craft from recipe
+Log chair	Log chair 		Craft from recipe
+Plain stool	Plain stool 		Craft from recipe
+Stylish stool	Stylish stool 		Craft from recipe
+Industrial chair	Industrial chair 		Craft from recipe
+Waterproof seat	Waterproof seat 		Craft from recipe
+Wooden stool	Wooden stool 		Craft from recipe
+Iron chair	Iron chair 		Craft from recipe
+Public seat	Public seat 		
+Soft seat	Soft seat 		Craft from recipe
+Box Sofa	Box Sofa 		Craft from recipe
+Plain chair	Plain chair 		Craft from recipe
+Chic chair	Chic chair 		Craft from recipe
+Fancy chair	Fancy chair 		Craft from recipe
+Antique Chair	Antique Chair 		
+Spectator chair	Spectator chair 		
+Garden chair	Garden chair 		Craft from recipe
+Folding chair	Folding chair 		Craft from recipe
+Office chair	Office chair 		Craft from recipe
+Cute chair	Cute chair 		Craft from recipe
+Pop art chair	Pop art chair 		
+Gaming chair	Gaming chair 		Craft from recipe
+Wooden bench	Wooden bench 		Craft from recipe
+Plain sofa	Plain sofa 		Craft from recipe
+Resort sofa	Resort sofa 		Craft from recipe
+Chic sofa	Chic sofa 		
+Antique sofa	Antique sofa 		
+Industrial bench	Industrial bench 		
+Luxury sofa	Luxury sofa 		
+Garden bench	Garden bench 		Craft from recipe
+Cute sofa	Cute sofa 		Craft from recipe
+Pop art sofa	Pop art sofa 		
+Poké Ball Sofa	Poké Ball Sofa 		
+Pikachu sofa	Pikachu sofa 		
+Log Bed	Log Bed 		Craft from recipe
+Iron bed	Iron bed 		Craft from recipe
+Deck chair	Deck chair 		Craft from recipe
+Beach chair	Beach chair 		Craft from recipe
+Straw bed	Straw bed 		Craft from recipe
+Pop art bed	Pop art bed 		
+Poké Ball bed	Poké Ball bed 		
+Berry bed	Berry bed 		Craft from recipe
+Wooden Bed	Wooden Bed 		Craft from recipe
+Plain bed	Plain bed 		Craft from recipe
+Resort hammock	Resort hammock 		Craft from recipe
+Guest-room bed	Guest-room bed 		
+Antique bed	Antique bed 		Craft from recipe
+Industrial bed	Industrial bed 		Craft from recipe
+Luxury bed	Luxury bed 		
+Cute bed	Cute bed 		
+Gaming bed	Gaming bed 		Craft from recipe
+Naptime bed	Naptime bed 		
+Wall mirror	Wall mirror 		Craft from recipe
+Large mirror	Large mirror 		Craft from recipe
+Antique dresser	Antique dresser 		
+Cute dresser	Cute dresser 		
+Wiggly mirror	Wiggly mirror 		
+Flower table	Flower table 	A table with a flower-patterned tablecloth. It makes any meal feel like a picnic 	Pokémon Center Exchange
+Flower cushion	Flower cushion 	A cute flower-shaped cushion. It would look nice on some grassy ground. 	Pokémon Center Exchange
+
+List of Misc.
+
+Picture 	Name 	Description 	Locations
+Wooden plate	Wooden plate 		Craft from recipe
+Plate	Plate 		Craft from recipe
+Party platter	Party platter 		Craft from recipe
+Picnic basket	Picnic basket 		Craft from recipe
+Mug	Mug 		Craft from recipe
+Table setting	Table setting 		Craft from recipe
+Paper Party cups	Paper Party cups 		Craft from recipe
+Pizza	Pizza 		Craft from recipe
+Fried potatoes	Fried potatoes 		Craft from recipe
+Soda float	Soda float 		Craft from recipe
+Afternoon tea set	Afternoon tea set 		Craft from recipe
+Chocolate cookies	Chocolate cookies 		Craft from recipe
+Sandwiches	Sandwiches 		Craft from recipe
+Shaved ice	Shaved ice 		Craft from recipe
+Ribbon cake	Ribbon cake 		Craft from recipe
+Berry basket	Berry basket 		Craft from recipe
+Small vase	Small vase 		Craft from recipe
+Pitcher-plant pot	Pitcher-plant pot 		
+Extravagant flowers	Extravagant flowers 		
+Tall potted plant	Tall potted plant 		
+Flat-leaf plant	Flat-leaf plant 		
+Twisted potted plant	Twisted potted plant 		
+Small garbage can	Small garbage can 		Craft from recipe
+Pencil holder	Pencil holder 		Craft from recipe
+Book	Book 		
+Open Book	Open Book 		Craft from recipe
+Book pile	Book pile 		
+Papers	Papers 		
+Newspaper	Newspaper 		Craft from recipe
+Photo frame	Photo frame 		Craft from recipe
+Wall photo frame	Wall photo frame 		Craft from recipe
+Corkboard	Corkboard 		Craft from recipe
+CD rack	CD rack 		Craft from recipe
+Magazine rack	Magazine rack 		Craft from recipe
+Mini bookcase	Mini bookcase 		Craft from recipe
+Bookcase	Bookcase 		Craft from recipe
+Stone fireplace	Stone fireplace 		Craft from recipe
+Modern sink	Modern sink 		
+Cooking stove	Cooking stove 		Craft from recipe
+Printer	Printer 		Craft from recipe
+Refrigerator	Refrigerator 		Craft from recipe
+Fan	Fan 		Craft from recipe
+Air conditioner	Air conditioner 		
+Washing machine	Washing machine 		Craft from recipe
+Sink	Sink 		Craft from recipe
+Towel rack	Towel rack 		Craft from recipe
+Bathtime set	Bathtime set 		
+Cleaning supplies	Cleaning supplies 		Craft from recipe
+Shower	Shower 		Craft from recipe
+Bathtub	Bathtub 		Craft from recipe
+Bouncy blue bathtub	Bouncy blue bathtub 		In glowing terrain
+Tablet	Tablet 		Craft from recipe
+Laptop	Laptop 		Craft from recipe
+Computer	Computer 		Craft from recipe
+Gaming PC	Gaming PC 		Craft from recipe
+Television	Television 		Craft from recipe
+Wall monitor	Wall monitor 		Craft from recipe
+Arcade machine	Arcade machine 		In glowing terrain
+Alarm Clock	Alarm Clock 		Craft from recipe
+Toy blocks	Toy blocks 		Craft from recipe
+Pinwheels	Pinwheels 		Craft from recipe
+Knitting supplies	Knitting supplies 		Craft from recipe
+Game Boy system	Game Boy system 		Craft from recipe
+Humidifier	Humidifier 		Craft from recipe
+Funky diffuser	Funky diffuser 		In glowing terrain
+First aid kit	First aid kit 		Craft from recipe
+Crystal ball	Crystal ball 		Craft from recipe
+Microscope	Microscope 		Craft from recipe
+Science experiment	Science experiment 		Craft from recipe
+Jumbled cords	Jumbled cords 		Craft from recipe
+CD player	CD player 		Craft from recipe
+Standing mic	Standing mic 		Craft from recipe
+Big drum	Big drum 		Craft from recipe
+Cool electric guitar	Cool electric guitar 		Craft from recipe
+Cool bass guitar	Cool bass guitar 		Craft from recipe
+Audio mixer	Audio mixer 		Craft from recipe
+Speaker	Speaker 		Craft from recipe
+Gold Teeth	Gold Teeth 		In glowing terrain
+Balloons	Balloons 		
+Punching game	Punching game 		Craft from recipe
+Boo-in-the-box	Boo-in-the-box 		In glowing terrain
+Wobbuffet Wobbler	Wobbuffet Wobbler 		In glowing terrain
+Step stool	Step stool 		Craft from recipe
+Cardboard boxes	Cardboard boxes 		Craft from recipe
+Whiteboard	Whiteboard 		Craft from recipe
+Control unit	Control unit 		Craft from recipe
+Auspicious Armor	Auspicious Armor 		Craft from recipe
+Malicious Armor	Malicious Armor 		Craft from recipe
+Clear Bell	Clear Bell 		Craft from recipe
+Tidal Bell	Tidal Bell 		Craft from recipe
+Ship's Wheel	Ship's Wheel 		Craft from recipe
+Mysterious statue	Mysterious statue 		In glowing terrain
+Fiery Magby statue	Fiery Magby statue 		In glowing terrain
+Gym emblem statue	Gym emblem statue 		In glowing terrain
+Spacesuit	Spacesuit 		In glowing terrain
+Model space shuttle	Model space shuttle 		In glowing terrain
+Spaceship	Spaceship 		In glowing terrain
+Wall Calendar	Wall Calendar 		Craft from recipe
+Wreath	Wreath 		Craft from recipe
+Antique clock	Antique clock 		
+Berry clock	Berry clock 		
+Rowlet clock	Rowlet clock 		
+Hanging banner	Hanging banner 		
+Party bunting	Party bunting 		Craft from recipe
+Vine wall decoration	Vine wall decoration 		Craft from recipe
+Berry wall decoration	Berry wall decoration 		Craft from recipe
+Hanging scroll	Hanging scroll 		Craft from recipe
+Ceiling fan	Ceiling fan 		
+Castform weather charm	Castform weather charm 		
+Eevee doll	Eevee doll 		
+Pikachu doll	Pikachu doll 		
+Clefairy doll	Clefairy doll 		
+Arcanine doll	Arcanine doll 		
+Dragonite doll	Dragonite doll 		
+Ditto doll	Ditto doll 		
+Substitute doll	Substitute doll 		
+Grubby Letter	Grubby Letter 		
+Grubby papers	Grubby papers 		
+Grubby tablet	Grubby tablet 		
+Grubby cell phone	Grubby cell phone 		
+Flowery table setting	Flowery table setting 	A set of cute tableward. The placemat has a Jumpluff pattern! 	Pokémon Center Exchange
+Lunch box	Lunch box 	A lunch box packed with Pokémon-shaped food. The perfect meal for a picnic lunch 	Pokémon Center Exchange
+Hoppip water bottle	Hoppip water bottle 	This water bottle with a shoulder strap is perfect for picnics! The Hoopip pattern is very cute. 	Pokémon Center Exchange
+Juice trio	Juice trio 	Bottles of colored juices. One of them is capped off nicely with a flower-shaped lid. 	Pokémon Center Exchange
+Flower garland	Flower garland 	An adorable wall decoration made with a variety of colorful flowers 	Pokémon Center Exchange
+Flower backpack	Flower backpack 	The big flower makes this backpack stand out! Looks like it could hold everything you need for a picnic 	Pokémon Center Exchange
+
+List of Outdoor
+
+Picture 	Name 	Description 	Locations
+Campfire	Campfire 		Craft from recipe
+Torch	Torch 		Craft from recipe
+Slender candle	Slender candle 		Craft from recipe
+Eerie Candle	Eerie Candle 		In glowing terrain
+Firepit	Firepit 		Craft from recipe
+Bonfire	Bonfire 		Craft from recipe
+Tire toy	Tire toy 		Craft from recipe
+Concrete pipe	Concrete pipe 		Craft from recipe
+Punching bag	Punching bag 		
+Slide	Slide 		
+Vending machine	Vending machine 		Craft from recipe
+Chansey plant	Chansey plant 		Craft from recipe
+Bike	Bike 		In glowing terrain
+Planter	Planter 		Craft from recipe
+Cart	Cart 		Craft from recipe
+Perch	Perch 		Craft from recipe
+Wooden birdhouse	Wooden birdhouse 		Craft from recipe
+Mailbox	Mailbox 		
+Weather vane	Weather vane 		Craft from recipe
+Gravestone	Gravestone 		Craft from recipe
+Blank canvas	Blank canvas 		
+Painting (landscape)	Painting (landscape) 		
+Painting (portrait)	Painting (portrait) 		
+Cannon	Cannon 		Craft from recipe
+Bell	Bell 		
+Small stage	Small stage 		Craft from recipe
+Hot-spring spout	Hot-spring spout 		Craft from recipe
+Water basin	Water basin 		Craft from recipe
+Canoe	Canoe 		Craft from recipe
+Inflatable boat	Inflatable boat 		Craft from recipe
+Beach parasol	Beach parasol 		
+Horsea fountain	Horsea fountain 		In glowing terrain
+Fishing rod	Fishing rod 		In glowing terrain
+Arrow sign	Arrow sign 		
+Menu board	Menu board 		Craft from recipe
+Sign	Sign 		Craft from recipe
+Signpost	Signpost 		Craft from recipe
+Information board	Information board 		Craft from recipe
+Raichu sign	Raichu sign 		
+Photo cutout board	Photo cutout board 		In glowing terrain
+Worn wooden crate	Worn wooden crate 		
+Wooden crate	Wooden crate 		
+Barrel	Barrel 		
+Garbage bags	Garbage bags 		Craft from recipe
+Garbage bin	Garbage bin 		Craft from recipe
+Recycle bin	Recycle bin 		
+Grubby rags	Grubby rags 		Sparkling Skylands (Natural)
+Traffic cone	Traffic cone 		
+Sewer-hole cover	Sewer-hole cover 		Craft from recipe
+Fire hydrant	Fire hydrant 		Craft from recipe
+Sandbags	Sandbags 		
+Excavation tools	Excavation tools 		Craft from recipe
+Tires	Tires 		Craft from recipe
+Metal drum	Metal drum 		Craft from recipe
+Iron pipes	Iron pipes 		
+Wheelbarrow	Wheelbarrow 		Craft from recipe
+Large ventilation fan	Large ventilation fan 		
+Icy Rock	Icy Rock 		
+Smooth Rock	Smooth Rock 		
+Damp Rock	Damp Rock 		
+
+List of Utilities
+
+Picture 	Name 	Description 	Locations
+Ditto Flag	Ditto Flag 		Craft from recipe
+Workbench	Workbench 		Craft from recipe
+Community Box	Community Box 		Craft from recipe
+Frame	Frame 		Craft from recipe
+Cutting board	Cutting board 		Craft from recipe
+Frying pan	Frying pan 		Craft from recipe
+Stylish frying pan	Stylish frying pan 		Craft from recipe
+Cooking pot	Cooking pot 		Craft from recipe
+Stylish cooking pot	Stylish cooking pot 		Craft from recipe
+Bread oven	Bread oven 		Craft from recipe
+Smelting furnace	Smelting furnace 		Craft from recipe
+Metallic smelting furnace	Metallic smelting furnace 		Craft from recipe
+Concrete mixer	Concrete mixer 		Craft from recipe
+Railway track	Railway track 		Craft from recipe
+Crossing gate	Crossing gate 		Craft from recipe
+Handcar	Handcar 		Craft from recipe
+Elevator platform	Elevator platform 		Craft from recipe
+Lift platform	Lift platform 		Craft from recipe
+Cash register	Cash register 		Craft from recipe
+Sprinkler	Sprinkler 		Craft from recipe
+Mini floodgate	Mini floodgate 		Craft from recipe
+Utility Pole	Utility Pole 		Craft from recipe
+Wireless power-transmitter switch	Wireless power-transmitter switch 		Craft from recipe
+Complete Porygon's request
+Wireless power transmitter	Wireless power transmitter 		Craft from recipe
+Complete Porygon's request
+Mini generator	Mini generator 		Craft from recipe
+Floor switch	Floor switch 		Craft from recipe
+Wall switch	Wall switch 		Craft from recipe
+Card reader	Card reader 		Craft from recipe
+Laser sensor	Laser sensor 		Craft from recipe
+Security camera	Security camera 		
+Mushroom streetlight	Mushroom streetlight 		Craft from recipe
+Town Streetlight	Town Streetlight 		Craft from recipe
+Harbor streetlight	Harbor streetlight 		Craft from recipe
+Chic streetlight	Chic streetlight 		Craft from recipe
+Double streetlight	Double streetlight 		Craft from recipe
+Mushroom lamp	Mushroom lamp 		Craft from recipe
+Plain lamp	Plain lamp 		Craft from recipe
+Desk light	Desk light 		
+Poké Ball light	Poké Ball light 		Craft from recipe
+Berry table lamp	Berry table lamp 		
+Cute lamp	Cute lamp 		Craft from recipe
+Poké Ball lamp	Poké Ball lamp 		Craft from recipe
+Model planet	Model planet 		
+Red meteor lamp	Red meteor lamp 		In glowing terrain
+Indigo meteor lamp	Indigo meteor lamp 		In glowing terrain
+Violet meteor lamp	Violet meteor lamp 		In glowing terrain
+Luxury lamp	Luxury lamp 		Craft from recipe
+Garden light	Garden light 		Craft from recipe
+Lantern	Lantern 		Craft from recipe
+Seedot Lamp	Seedot Lamp 		In glowing terrain
+Wall light	Wall light 		Craft from recipe
+Shell lamp	Shell lamp 		Craft from recipe
+Fluorescent light	Fluorescent light 		
+Gaming light	Gaming light 		Craft from recipe
+String lights	String lights 		Craft from recipe
+Resort light	Resort light 		Craft from recipe
+Pop art lamp	Pop art lamp 		Craft from recipe
+Berry hanging lamp	Berry hanging lamp 		Craft from recipe
+Surface light	Surface light 		Craft from recipe
+Spotlight	Spotlight 		Craft from recipe
+Antique chandelier	Antique chandelier 		Craft from recipe
+Mirror ball	Mirror ball 		Craft from recipe
+Music mat (low do)	Music mat (low do) 		Craft from recipe
+Music mat (Re)	Music mat (Re) 		Craft from recipe
+Music mat (Mi)	Music mat (Mi) 		Craft from recipe
+Music mat (Fa)	Music mat (Fa) 		Craft from recipe
+Music mat (Sol)	Music mat (Sol) 		Craft from recipe
+Music mat (La)	Music mat (La) 		Craft from recipe
+Music mat (High do)	Music mat (High do) 		Craft from recipe
+Broken streetlight	Broken streetlight 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+
+List of Nature
+
+Picture 	Name 	Description 	Locations
+Leppa Seeds	Leppa Seeds 		
+Chesto Seeds	Chesto Seeds 		
+Rawst seeds	Rawst seeds 		
+Aspear Seeds	Aspear Seeds 		
+Pecha Seeds	Pecha Seeds 		
+Lum seeds	Lum seeds 		
+Palm seeds	Palm seeds 		
+Pointy-tree seeds	Pointy-tree seeds 		
+Wildflower seeds	Wildflower seeds 		
+Seashore-flower seeds	Seashore-flower seeds 		
+Mountain-flower seeds	Mountain-flower seeds 		
+Skyland-flower seeds	Skyland-flower seeds 		
+Beautiful-flower seeds	Beautiful-flower seeds 		
+Cute-flower seeds	Cute-flower seeds 		
+Elegant-flower seeds	Elegant-flower seeds 		
+Robust-flower seeds	Robust-flower seeds 		
+Adorable-hedge seeds	Adorable-hedge seeds 		
+Healthy-hedge seeds	Healthy-hedge seeds 		
+Damp-hedge seeds	Damp-hedge seeds 		
+Stylish-hedge seeds	Stylish-hedge seeds 		
+Square-plant seeds	Square-plant seeds 		
+Bean seeds	Bean seeds 		
+Tomato seeds	Tomato seeds 		
+Wheat seeds	Wheat seeds 		
+Potato seeds	Potato seeds 		
+Tall grass	Tall grass 		Withered Wastelands (Natural)
+Yellow tall grass	Yellow tall grass 		Bleak Beach (Natural)
+Red tall grass	Red tall grass 		
+Pink tall grass	Pink tall grass 		
+Green shoots	Green shoots 		Withered Wastelands (Natural)
+Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Yellow-green shoots	Yellow-green shoots 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Verdant shoots	Verdant shoots 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Blue-green shoots	Blue-green shoots 		Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Duckweed	Duckweed 		Take photo and 3D print, or Magnet Rise and hold Y
+Dense vines	Dense vines 		Charge up powered up Leafage against a wall
+Moss	Moss 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Fern	Fern 		Rocky Ridges (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Leppa tree	Leppa tree 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Palette Town (Natural)
+Large palm tree	Large palm tree 		Bleak Beach (Natural)
+Palette Town (Natural)
+Pointy tree	Pointy tree 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Wildflowers	Wildflowers 		Withered Wastelands (Natural)
+Palette Town (Natural)
+Seashore flowers	Seashore flowers 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Mountain flowers	Mountain flowers 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Skyland flowers	Skyland flowers 		Sparkling Skylands (Natural)
+Beautiful flower	Beautiful flower 		Withered Wastelands (Natural)
+Cute flower	Cute flower 		Bleak Beach (Natural)
+Elegant flower	Elegant flower 		Rocky Ridges (Natural)
+Robust flower	Robust flower 		Sparkling Skylands (Natural)
+Adorable hedge	Adorable hedge 		Withered Wastelands (Natural)
+Healthy hedge	Healthy hedge 		Bleak Beach (Natural)
+Damp hedge	Damp hedge 		Rocky Ridges (Natural)
+Stylish hedge	Stylish hedge 		Sparkling Skylands (Natural)
+Square plant	Square plant 		
+Leppa tree stump	Leppa tree stump 		Take photo and 3D print, or Magnet Rise and hold Y
+Palm tree stump	Palm tree stump 		Take photo and 3D print, or Magnet Rise and hold Y
+Pointy tree stump	Pointy tree stump 		Take photo and 3D print, or Magnet Rise and hold Y
+Driftwood	Driftwood 		Bleak Beach (Natural)
+Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Sticky web	Sticky web 		Rocky Ridges (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Large boulder	Large boulder 		Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Mossy boulder	Mossy boulder 		Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Molten rock	Molten rock 		Rocky Ridges (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Cooled molten rock	Cooled molten rock 		Rocky Ridges (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Stalagmites	Stalagmites 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Stalactites	Stalactites 		Rocky Ridges (Natural)
+Icicle	Icicle 		
+Crystal cluster	Crystal cluster 		Rocky Ridges (Natural)
+Palette Town (Natural)
+Strength rock	Strength rock 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Chesto tree stump	Chesto tree stump 	
+Note: Not registered in collection 	Take photo of tree stump and 3D print, or Magnet Rise and hold Y
+Rawst tree stump	Rawst tree stump 	
+Note: Not registered in collection 	Take photo of tree stump and 3D print, or Magnet Rise and hold Y
+Aspear tree stump	Aspear tree stump 	
+Note: Not registered in collection 	Take photo of tree stump and 3D print, or Magnet Rise and hold Y
+Pecha tree stump	Pecha tree stump 	
+Note: Not registered in collection 	Take photo of tree stump and 3D print, or Magnet Rise and hold Y
+Lum tree stump	Lum tree stump 	
+Note: Not registered in collection 	Take photo of tree stump and 3D print, or Magnet Rise and hold Y
+Dry tall grass	Dry tall grass 	
+Note: Not registered in collection 	Palette Town (Natural)
+Dry wildflowers	Dry wildflowers 	
+Note: Not registered in collection 	Withered Wastelands (Natural)
+Palette Town (Natural)
+Vine	Vine 	
+Note: Not registered in collection 	Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Dry vine	Dry vine 	
+Note: Not registered in collection 	Withered Wastelands (Natural)
+Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Chesto tree	Chesto tree 	
+Note: Not registered in collection 	Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Rawst tree	Rawst tree 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Aspear tree	Aspear tree 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Pecha tree	Pecha tree 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Lum tree	Lum tree 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Stone debris	Stone debris 	
+Note: Not registered in collection 	Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Mud	Mud 	
+Note: Not registered in collection 	Bleak Beach (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Metal Debris	Metal Debris 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Wood fragments	Wood fragments 	
+Note: Not registered in collection 	Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Stone fragments	Stone fragments 	
+Note: Not registered in collection 	Sparkling Skylands (Natural)
+Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Worn lumber	Worn lumber 	
+Note: Not registered in collection 	Sparkling Skylands (Natural)
+Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Arched-tiling fragments	Arched-tiling fragments 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Iron fragments	Iron fragments 	
+Note: Not registered in collection 	Palette Town (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Dry Leppa tree	Dry Leppa tree 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Dry pointy tree	Dry pointy tree 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Dry adorable hedge	Dry adorable hedge 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Dry healthy hedge	Dry healthy hedge 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Dry damp hedge	Dry damp hedge 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Dry stylish hedge	Dry stylish hedge 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Dry stylish hedge	Dry stylish hedge 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Dandy flower seeds	Dandy flower seeds 	Seeds that blossom into dandy flowers once grown. Try planting them in some soil 	Pokémon Center Exchange
+Dandy flowers	Dandy flowers 	Fluffy yellow flowers that seem fine and dandy. They bloom in the sunlight. 	Grow from seeds
+
+List of Buildings
+
+Picture 	Name 	Description 	Locations
+Wooden steps	Wooden steps 		Craft from recipe
+Stylish steps	Stylish steps 		Craft from recipe
+Stone steps	Stone steps 		Craft from recipe
+Concrete steps	Concrete steps 		Craft from recipe
+Brick steps	Brick steps 		Craft from recipe
+Iron steps	Iron steps 		Craft from recipe
+Wooden ladder	Wooden ladder 		Craft from recipe
+Iron ladder	Iron ladder 		Craft from recipe
+Wire	Wire 		Craft from recipe
+Metal chain	Metal chain 		Craft from recipe
+Rope	Rope 		Craft from recipe
+Rustic door	Rustic door 		Craft from recipe
+Simple door	Simple door 		Craft from recipe
+Boat door	Boat door 		Craft from recipe
+Modern door	Modern door 		
+Stylish door	Stylish door 		Craft from recipe
+Brainy door	Brainy door 		Craft from recipe
+Iron door	Iron door 		
+Large wooden door	Large wooden door 		Craft from recipe
+Automatic doors	Automatic doors 		Craft from recipe
+Shutter	Shutter 		Craft from recipe
+Swinging doors	Swinging doors 		Craft from recipe
+Simple curtain (left)	Simple curtain (left) 		Craft from recipe
+Simple curtain (right)	Simple curtain (right) 		Craft from recipe
+Hatch window	Hatch window 		Craft from recipe
+Underground hatch	Underground hatch 		Craft from recipe
+Glass window	Glass window 		Craft from recipe
+Window pane	Window pane 		Craft from recipe
+Stained-glass window (upper)	Stained-glass window (upper) 		Craft from recipe
+Stained-glass window (middle)	Stained-glass window (middle) 		Craft from recipe
+Stained-glass window (lower)	Stained-glass window (lower) 		Craft from recipe
+Sash window	Sash window 		Craft from recipe
+Sloped tiled roof	Sloped tiled roof 		Craft from recipe
+Tiled hipped roof	Tiled hipped roof 		Craft from recipe
+Tiled roof valley	Tiled roof valley 		Craft from recipe
+Flat tiled roof	Flat tiled roof 		Craft from recipe
+Tiled roof decoration	Tiled roof decoration 		Craft from recipe
+Magikarp decoration	Magikarp decoration 		Craft from recipe
+Sloped stone roof	Sloped stone roof 		Craft from recipe
+Skylight	Skylight 		Craft from recipe
+Stone roof valley	Stone roof valley 		Craft from recipe
+Flat stone roof	Flat stone roof 		Craft from recipe
+Stone roof decoration	Stone roof decoration 		Craft from recipe
+Pitched brick roof	Pitched brick roof 		Craft from recipe
+Dormered brick roof	Dormered brick roof 		Craft from recipe
+Brick hipped roof	Brick hipped roof 		Craft from recipe
+Brick roof valley	Brick roof valley 		Craft from recipe
+Flat brick roof	Flat brick roof 		Craft from recipe
+Brick roof decoration	Brick roof decoration 		Craft from recipe
+Sloped tent roof	Sloped tent roof 		Craft from recipe
+Tent hipped roof	Tent hipped roof 		Craft from recipe
+Tent roof valley	Tent roof valley 		Craft from recipe
+Flat tent roof	Flat tent roof 		Craft from recipe
+Glossy awning	Glossy awning 		Craft from recipe
+Corrugated metal	Corrugated metal 		
+Protruding wall	Protruding wall 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Curved eave	Curved eave 		
+Wooden fencing	Wooden fencing 		Craft from recipe
+Wooden enclosure	Wooden enclosure 		Craft from recipe
+Metal fencing	Metal fencing 		
+Boat railing	Boat railing 		Craft from recipe
+Wooden handrail	Wooden handrail 		Craft from recipe
+Harbor pole	Harbor pole 		Craft from recipe
+Arched barrier	Arched barrier 		
+Wooden posts	Wooden posts 		Craft from recipe
+Wooden partition	Wooden partition 		Craft from recipe
+Grate fencing	Grate fencing 		Craft from recipe
+Wooden path	Wooden path 		Craft from recipe
+Stepping stones	Stepping stones 		Craft from recipe
+Walkway	Walkway 		Craft from recipe
+Bridge planks	Bridge planks 		Craft from recipe
+Grate flooring	Grate flooring 		Craft from recipe
+Concrete slab	Concrete slab 		
+Iron scaffold	Iron scaffold 		Craft from recipe
+Arch bridge	Arch bridge 		Craft from recipe
+Wooden corner (line)	Wooden corner (line) 		
+Wooden corner (single)	Wooden corner (single) 		
+Wooden border (corner)	Wooden border (corner) 		Craft from recipe
+Concrete border (line)	Concrete border (line) 		Craft from recipe
+Concrete border (single)	Concrete border (single) 		Craft from recipe
+Concrete border (corner)	Concrete border (corner) 		Craft from recipe
+Brick border (line)	Brick border (line) 		Craft from recipe
+Brick border (single)	Brick border (single) 		Craft from recipe
+Brick border (corner)	Brick border (corner) 		Craft from recipe
+Sideways log	Sideways log 		Bleak Beach (Natural)
+Upright log	Upright log 		Bleak Beach (Natural)
+Iron beam	Iron beam 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Iron column	Iron column 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Iron pillar	Iron pillar 		Craft from recipe
+Extravagant pillar (upper)	Extravagant pillar (upper) 		Rocky Ridges (Natural)
+Craft from recipe
+Extravagant pillar (middle)	Extravagant pillar (middle) 		Rocky Ridges (Natural)
+Craft from recipe
+Extravagant pillar (lower)	Extravagant pillar (lower) 		Rocky Ridges (Natural)
+Craft from recipe
+Round pillar (upper)	Round pillar (upper) 		Craft from recipe
+Round pillar (middle)	Round pillar (middle) 		Craft from recipe
+Round pillar (lower)	Round pillar (lower) 		Craft from recipe
+House partition	House partition 		Craft from recipe
+Simple pillar quarter	Simple pillar quarter 		Craft from recipe
+Water pillar quarter	Water pillar quarter 		Craft from recipe
+Roof support	Roof support 		Craft from recipe
+Iron pipe (horizontal)	Iron pipe (horizontal) 		Craft from recipe
+Iron pipe (downward curve)	Iron pipe (downward curve) 		Craft from recipe
+Iron pipe (vertical cross)	Iron pipe (vertical cross) 		Craft from recipe
+Iron pipe (vertical T)	Iron pipe (vertical T) 		Craft from recipe
+Iron pipe (vertical)	Iron pipe (vertical) 		Craft from recipe
+Iron pipe (upward curve)	Iron pipe (upward curve) 		Craft from recipe
+Iron pipe (upward T)	Iron pipe (upward T) 		Craft from recipe
+Iron pipe (downward T)	Iron pipe (downward T) 		Craft from recipe
+Iron pipe (horizontal curve)	Iron pipe (horizontal curve) 		Craft from recipe
+Iron pipe (horizontal T)	Iron pipe (horizontal T) 		Craft from recipe
+Iron pipe (horizontal cross)	Iron pipe (horizontal cross) 		Craft from recipe
+Broken Window Pane	Broken Window Pane 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+Broken iron steps	Broken iron steps 	
+Note: Not registered in collection 	Take photo and 3D print, or Magnet Rise and hold Y
+
+List of Blocks
+
+Picture 	Name 	Description 	Locations
+Wooden Wall	Wooden Wall 		Craft from recipe
+Light wooden wall	Light wooden wall 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Painted wall	Painted wall 		Rocky Ridges (Natural)
+Craft from recipe
+Plaster wall	Plaster wall 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Cloth wall	Cloth wall 		Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Guest-room wall	Guest-room wall 		Bleak Beach (Natural)
+Starry-sky wall	Starry-sky wall 		Rocky Ridges (Natural)
+Craft from recipe
+Cushy wall	Cushy wall 		Sparkling Skylands (Natural)
+Craft from recipe
+Modern wall	Modern wall 		Craft from recipe
+Broken-tiling wall	Broken-tiling wall 		Sparkling Skylands (Natural)
+Craft from recipe
+Cobblestone wall	Cobblestone wall 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Craft from recipe
+Brick wall	Brick wall 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Stone brick wall	Stone brick wall 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Aged-stone wall	Aged-stone wall 		Withered Wastelands (Natural)
+Palette Town (Natural)
+Craft from recipe
+Patterned aged-stone wall	Patterned aged-stone wall 		Withered Wastelands (Natural)
+Palette Town (Natural)
+Craft from recipe
+Concrete wall	Concrete wall 		Withered Wastelands (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Rough wall	Rough wall 		Sparkling Skylands (Natural)
+Craft from recipe
+Striped wall	Striped wall 		Sparkling Skylands (Natural)
+Craft from recipe
+Iron wall	Iron wall 		Craft from recipe
+Gold wall	Gold wall 		Withered Wastelands (Natural)
+Stylish gold wall	Stylish gold wall 		Withered Wastelands (Natural)
+Craft from recipe
+Crystal wall	Crystal wall 		Craft from recipe
+Warning wall	Warning wall 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Stylish wall (upper)	Stylish wall (upper) 		Craft from recipe
+Stylish wall (middle)	Stylish wall (middle) 		Craft from recipe
+Stylish wall (lower)	Stylish wall (lower) 		Craft from recipe
+Antique wall (upper)	Antique wall (upper) 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Antique wall (middle)	Antique wall (middle) 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Antique wall (lower)	Antique wall (lower) 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Light antique wall (upper)	Light antique wall (upper) 		Rocky Ridges (Natural)
+Craft from recipe
+Light antique wall (middle)	Light antique wall (middle) 		Craft from recipe
+Light antique wall (lower)	Light antique wall (lower) 		Craft from recipe
+Wooden pillar (upper)	Wooden pillar (upper) 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Wooden pillar (middle)	Wooden pillar (middle) 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Wooden pillar (lower)	Wooden pillar (lower) 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Stylish brick wall (upper)	Stylish brick wall (upper) 		Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Stylish brick wall (middle)	Stylish brick wall (middle) 		Bleak Beach (Natural)
+Craft from recipe
+Stylish brick wall (lower)	Stylish brick wall (lower) 		Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Stone pillar (upper)	Stone pillar (upper) 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Craft from recipe
+Stone pillar (middle)	Stone pillar (middle) 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Stone pillar (lower)	Stone pillar (lower) 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Craft from recipe
+Pop art wall (upper)	Pop art wall (upper) 		Sparkling Skylands (Natural)
+Craft from recipe
+Pop art wall (middle)	Pop art wall (middle) 		Sparkling Skylands (Natural)
+Craft from recipe
+Pop art wall (lower)	Pop art wall (lower) 		Sparkling Skylands (Natural)
+Craft from recipe
+Pokémon Center wall (upper)	Pokémon Center wall (upper) 		Craft from recipe
+Pokémon Center wall (middle)	Pokémon Center wall (middle) 		Craft from recipe
+Pokémon Center wall (lower)	Pokémon Center wall (lower) 		Craft from recipe
+Pokémon Center wall (trim)	Pokémon Center wall (trim) 		Craft from recipe
+Confectionery wall (upper)	Confectionery wall (upper) 		Craft from recipe
+Confectionery wall (middle)	Confectionery wall (middle) 		Craft from recipe
+Confectionery wall (lower)	Confectionery wall (lower) 		Craft from recipe
+Wooden flooring	Wooden flooring 		Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Diagonal wooden flooring	Diagonal wooden flooring 		Bleak Beach (Natural)
+Craft from recipe
+Crisscross wooden flooring	Crisscross wooden flooring 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Hardwood flooring	Hardwood flooring 		Sparkling Skylands (Natural)
+Craft from recipe
+Modern carpeting	Modern carpeting 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Woven carpeting	Woven carpeting 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Fluffy flooring	Fluffy flooring 		Craft from recipe
+Soft carpeting	Soft carpeting 		Bleak Beach (Natural)
+Craft from recipe
+Extravagant carpeting	Extravagant carpeting 		Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Felt mat	Felt mat 		Craft from recipe
+Puffy-tree Pillar	Puffy-tree Pillar 		Craft from recipe
+Grass flooring	Grass flooring 		Sparkling Skylands (Natural)
+Craft from recipe
+Simple flooring	Simple flooring 		Rocky Ridges (Natural)
+Craft from recipe
+Marble	Marble 		Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Craft from recipe
+Stone flooring	Stone flooring 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Craft from recipe
+Lined-stone flooring	Lined-stone flooring 		Rocky Ridges (Natural)
+Craft from recipe
+Dark marble flooring	Dark marble flooring 		Rocky Ridges (Natural)
+Craft from recipe
+Light marble flooring	Light marble flooring 		Sparkling Skylands (Natural)
+Craft from recipe
+Aged-stone flooring	Aged-stone flooring 		Craft from recipe
+Simple square tiling	Simple square tiling 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Stylish tiling	Stylish tiling 		Sparkling Skylands (Natural)
+Craft from recipe
+Hexagonal flooring	Hexagonal flooring 		Withered Wastelands (Natural)
+Craft from recipe
+Shop flooring	Shop flooring 		Craft from recipe
+Triangle-design flooring	Triangle-design flooring 		Craft from recipe
+Iron-plate flooring	Iron-plate flooring 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Iron tiling	Iron tiling 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Neon flooring	Neon flooring 		Withered Wastelands (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Cyber flooring	Cyber flooring 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Arched tiling	Arched tiling 		Withered Wastelands (Natural)
+Craft from recipe
+Stone tiling	Stone tiling 		Rocky Ridges (Natural)
+Craft from recipe
+Square tiling	Square tiling 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Mosaic tiling	Mosaic tiling 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Brick flooring	Brick flooring 		Craft from recipe
+Stylish stone flooring	Stylish stone flooring 		Rocky Ridges (Natural)
+Craft from recipe
+Fish-scaling flooring	Fish-scaling flooring 		
+Asphalt road	Asphalt road 		Sparkling Skylands (Natural)
+Craft from recipe
+Marked road (horizontal)	Marked road (horizontal) 		Sparkling Skylands (Natural)
+Craft from recipe
+Marked road (vertical)	Marked road (vertical) 		Craft from recipe
+Gray circle flooring	Gray circle flooring 		Bleak Beach (Natural)
+Hay pile	Hay pile 		Withered Wastelands (Natural)
+Craft from recipe
+Iron plating	Iron plating 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Cube light	Cube light 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Foundation	Foundation 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Levee	Levee 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Craft from recipe
+Scrap cube	Scrap cube 		Sparkling Skylands (Natural)
+Craft from recipe
+Polka-dot print	Polka-dot print 		Craft from recipe
+Vertical-stripe print	Vertical-stripe print 		Craft from recipe
+Horizontal-stripe print	Horizontal-stripe print 		Craft from recipe
+Gingham print	Gingham print 		Craft from recipe
+Tartan print	Tartan print 		Craft from recipe
+Argyle print	Argyle print 		Craft from recipe
+Houndstooth print	Houndstooth print 		Craft from recipe
+Vine print	Vine print 		Craft from recipe
+Swirl print	Swirl print 		Craft from recipe
+Zig-zag print	Zig-zag print 		Craft from recipe
+Leaf print	Leaf print 		Craft from recipe
+Flower print	Flower print 		Craft from recipe
+Star print	Star print 		Craft from recipe
+Curry print	Curry print 		Craft from recipe
+Berry print	Berry print 		Craft from recipe
+Poké Ball print	Poké Ball print 		Craft from recipe
+Stylish Poké Ball print	Stylish Poké Ball print 		Craft from recipe
+Field grass	Field grass 		Withered Wastelands (Natural)
+Palette Town (Natural)
+Seashore grass	Seashore grass 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Alpine grass	Alpine grass 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Sky-high grass	Sky-high grass 		Sparkling Skylands (Natural)
+Ordinary soil	Ordinary soil 		Withered Wastelands (Natural)
+Palette Town (Natural)
+Seashell soil	Seashell soil 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Striped soil	Striped soil 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Pure-white soil	Pure-white soil 		Sparkling Skylands (Natural)
+Clay	Clay 		Bleak Beach (Natural)
+Ordinary sand	Ordinary sand 		Withered Wastelands (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Beach sand	Beach sand 		Bleak Beach (Natural)
+Palette Town (Natural)
+Skyland sand	Skyland sand 		Sparkling Skylands (Natural)
+Volcanic ash	Volcanic ash 		Rocky Ridges (Natural)
+Sandstone	Sandstone 		Withered Wastelands (Natural)
+Cliff rock	Cliff rock 		Withered Wastelands (Natural)
+Palette Town (Natural)
+Spotted cliff rock	Spotted cliff rock 		Withered Wastelands (Natural)
+Palette Town (Natural)
+Red cliff rock	Red cliff rock 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Red spotted cliff rock	Red spotted cliff rock 		Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Black cliff rock	Black cliff rock 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Black spotted cliff rock	Black spotted cliff rock 		Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Skyland cliff rock	Skyland cliff rock 		Sparkling Skylands (Natural)
+Skyland spotted cliff rock	Skyland spotted cliff rock 		Sparkling Skylands (Natural)
+White rock	White rock 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Palette Town (Natural)
+Coarse rock	Coarse rock 		Sparkling Skylands (Natural)
+Light brown rock	Light brown rock 		Sparkling Skylands (Natural)
+Red rock	Red rock 		
+Yellow rock	Yellow rock 		Rocky Ridges (Natural)
+Black rock	Black rock 		Rocky Ridges (Natural)
+Palette Town (Natural)
+Lava rock	Lava rock 		Rocky Ridges (Natural)
+Cave rock	Cave rock 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Ocean rock	Ocean rock 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Reddish-brown cave rock	Reddish-brown cave rock 		
+Volcanic rock	Volcanic rock 		Rocky Ridges (Natural)
+Carved white rock	Carved white rock 		Craft from recipe
+Carved coarse rock	Carved coarse rock 		Craft from recipe
+Carved light-brown rock	Carved light-brown rock 		Craft from recipe
+Carved red rock	Carved red rock 		Craft from recipe
+Carved yellow rock	Carved yellow rock 		Rocky Ridges (Natural)
+Craft from recipe
+Copper deposit	Copper deposit 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Palette Town (Natural)
+Iron deposit	Iron deposit 		Rocky Ridges (Natural)
+Gold deposit	Gold deposit 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Pokémetal deposit	Pokémetal deposit 		Withered Wastelands (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Mossy soil	Mossy soil 		Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Palette Town (Natural)
+Gravel	Gravel 		Withered Wastelands (Natural)
+Limestone	Limestone 		Sparkling Skylands (Natural)
+Glowing stone	Glowing stone 		Rocky Ridges (Natural)
+Mysterious stone	Mysterious stone 		Sparkling Skylands (Natural)
+Ice	Ice 		Palette Town (Natural)
+Rusted Wall	Rusted Wall 	
+Note: Not registered in collection 	
+Cracked sandstone	Cracked sandstone 		Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Damaged square tiling	Damaged square tiling 	
+Note: Not registered in collection 	Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Muddy tiling	Muddy tiling 	
+Note: Not registered in collection 	Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Rusted iron-plate flooring	Rusted iron-plate flooring 	
+Note: Not registered in collection 	Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Damaged stone flooring	Damaged stone flooring 	
+Note: Not registered in collection 	Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Damaged stone flooring	Damaged stone flooring 	
+Note: Not registered in collection 	Withered Wastelands (Natural)
+Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Damaged mosaic tiling	Damaged mosaic tiling 	
+Note: Not registered in collection 	Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Damaged wooden flooring	Damaged wooden flooring 	
+Note: Not registered in collection 	Bleak Beach (Natural)
+Rocky Ridges (Natural)
+Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Damaged asphalt road	Damaged asphalt road 	
+Note: Not registered in collection 	Sparkling Skylands (Natural)
+Take photo and 3D print, or Magnet Rise and hold Y
+Barren ordinary soil	Barren ordinary soil 	
+Note: Not registered in collection 	Withered Wastelands (Natural)
+Palette Town (Natural)
+Barren striped soil	Barren striped soil 	
+Note: Not registered in collection 	Rocky Ridges (Natural)
+Barren pure-white soil	Barren pure-white soil 	
+Note: Not registered in collection 	Sparkling Skylands (Natural)
+Dry alpine grass	Dry alpine grass 	
+Note: Not registered in collection 	
+
+List of Kits
+
+Picture 	Name 	Description 	Locations
+Leaf den kit	Leaf den kit 	Gather some Pokémon and build away! This makes a den for medium-sized Pokémon or smaller 	PC Shop
+Leaf hut kit	Leaf hut kit 	Gather some Pokémon and build away! This makes a hut that any Pokémon could easily live in 	PC Shop
+Leaf cottage kit	Leaf cottage kit 	Gather some Pokémon and build away! This makes a place where two Pokémon can relax. 	PC Shop
+Leaf house kit	Leaf house kit 	Gather some Pokémon and build away! Let's make a ginormous house where everyone can live together 	PC Shop
+Sand den kit	Sand den kit 	Gather some Pokémon and build away! This makes a den for medium-sized Pokémon or smaller 	PC Shop
+Sand hut kit	Sand hut kit 	Gather some Pokémon and build away! This makes a hut that any Pokémon could easily live in 	PC Shop
+Sand cottage kit	Sand cottage kit 	Gather some Pokémon and build away! This makes a place where two Pokémon can relax. 	PC Shop
+Sand house kit	Sand house kit 	Gather some Pokémon and build away! Let's make a ginormous house where everyone can live together 	PC Shop
+Stone den kit	Stone den kit 	Gather some Pokémon and build away! This makes a den for medium-sized Pokémon or smaller 	PC Shop
+Stone hut kit	Stone hut kit 	Gather some Pokémon and build away! This makes a hut that any Pokémon could easily live in 	PC Shop
+Stone cottage kit	Stone cottage kit 	Gather some Pokémon and build away! This makes a place where two Pokémon can relax. 	PC Shop
+Stone house kit	Stone house kit 	Gather some Pokémon and build away! Let's make a ginormous house where everyone can live together 	PC Shop
+City den kit	City den kit 	Gather some Pokémon and build away! This makes a den for medium-sized Pokémon or smaller 	PC Shop
+City hut kit	City hut kit 	Gather some Pokémon and build away! This makes a hut that any Pokémon could easily live in 	PC Shop
+City cottage kit	City cottage kit 	Gather some Pokémon and build away! This makes a place where two Pokémon can relax. 	PC Shop
+City house kit	City house kit 	Gather some Pokémon and build away! Let's make a ginormous house where everyone can live together 	PC Shop
+Poké Ball house kit	Poké Ball house kit 	Gather some Pokémon and build away! This makes a house that looks like a giant Poké Ball. 	Complete Tinkmaster's Request in Sparkling Skylands
+Poké Mart kit	Poké Mart kit 	Gather some Pokémon and build away! This makes a store that somehow always feels a little exciting 	Complete Tinkmaster's Request in Sparkling Skylands
+Wasteland Pokémon Center kit	Wasteland Pokémon Center kit 	Use this to remodel a Pokémon Center to make it look just like the Wasteland Pokémon Center 	Reach Rank 10 in Withered Wastelands
+Beach Pokémon Center kit	Beach Pokémon Center kit 	Use this to remodel a Pokémon Center to make it look just like the Beach Pokémon Center 	Reach Rank 10 in Bleak Beach
+Ridge Pokémon Center kit	Ridge Pokémon Center kit 	Use this to remodel a Pokémon Center to make it look just like the Ridge Pokémon Center 	Reach Rank 10 in Rocky Ridges
+Skyland Pokémon Center kit	Skyland Pokémon Center kit 	Use this to remodel a Pokémon Center to make it look just like the Skyland Pokémon Center 	Reach Rank 10 in Sparkling Skylands
+Windmill kit	Windmill kit 	Gather some Pokémon and build away! This makes a generator that turns wind energy into loads of power 	PC Shop
+Waterwheel kit	Waterwheel kit 	Gather some Pokémon and build away! This makes a generator that uses water to produce tons of power 	PC Shop
+Furnace kit	Furnace kit 	Gather some Pokémon and build away! This makes a generator that burns stuff to produce heaps of power 	PC Shop
+Charging station kit	Charging station kit 	Gather some Pokémon and build away! This makes a device that's perfect for charging things up 	PC Shop
+Pikachu fountain kit	Pikachu fountain kit 	Gather some Pokémon and build away! This makes a found that would look great all lit up 	PC Shop
+Moonlight dance statue kit	Moonlight dance statue kit 	Gather some Pokémon and build away! This will make you want to dance as you're building it 	PC Shop
+Pink hut kit	Pink hut kit 	Gather some Pokémon and build away! This makes a cute plaster house 	PC Shop
+Orange hut kit	Orange hut kit 	Gather some Pokémon and build away! This makes a fancy brick house 	PC Shop
+Gray hut kit	Gray hut kit 	Gather some Pokémon and build away! This makes a cool stone house 	PC Shop
+Gray cottage kit	Gray cottage kit 	Gather some Pokémon and build away! This makes a stately house well-suited for luxuriating 	Inside ripples of water
+Yellow hut kit	Yellow hut kit 	Gather some Pokémon and build away! This makes a flashy concrete house 	PC Shop
+Log cabin kit	Log cabin kit 	Gather some Pokémon and build away! This makes a house that has a pleasing woodsy aroma 	
+Small office kit	Small office kit 	Gather some Pokémon and build away! This makes a place where you can really focus on your work 	
+Relaxing park kit	Relaxing park kit 	Gather some Pokémon and build away! This makes a park with an iconic Chansey tree 	Reach Rank 8 in Withered Wastelands and put in shop
+Stylish Café kit	Stylish Café kit 	Gather some Pokémon and build away! This makes a lovely café where you can take a little breather. 	Reach Rank 8 in Bleak Beach and put in shop
+Concert stage kit	Concert stage kit 	Gather some Pokémon and build away! This makes a stage big enough to hold all your friends 	Reach Rank 8 in Rocky Ridges and put in shop
+Fountain plaza kit	Fountain plaza kit 	Gather some Pokémon and build away! This makes a plaza that's perfect for meetups 	Reach Rank 8 in Sparkling Skylands and put in shop
+Altar of the Flame kit	Altar of the Flame kit 	Gather some Pokémon and build away! This makes an altar accompanied by roaring flames 	Palette Town
+Abandoned Power Plant kit	Abandoned Power Plant kit 	Gather some Pokémon and build away! This makes an abandoned power plant teeming with electricity. 	Palette Town
+Freezing Chambers kit	Freezing Chambers kit 	Gather some Pokémon and build away! This makes frozen mountains with a mystical atmosphere 	Palette Town
+
+List of Key Items
+
+Picture 	Name 	Description 	Locations
+Bouldery Badge	Bouldery Badge 	Proof that one has overcome a difficult trial. It sparkles with gray light. 	
+Cascade-like Badge	Cascade-like Badge 	Proof that one has overcome a difficult trial. It sparkles with blue light 	
+Thunderish Badge	Thunderish Badge 	Proof that one has overcome a difficult trial. It sparkles with orange light 	
+Rainbowish Badge	Rainbowish Badge 	Proof that one has overcome a difficult trial. It sparkles with rainbow light 	
+Soul-like Badge	Soul-like Badge 	Proof that one has overcome a difficult trial. It sparkles with pink light 	
+Marshy Badge	Marshy Badge 	Proof that one has overcome a difficult trial. It sparkles with golden light 	
+Volcanoey Badge	Volcanoey Badge 	Proof that one has overcome a difficult trial. It sparkles with red light 	
+Earth Badge	Earth Badge 	Proof that one has overcome a difficult trial. It sparkles with green light 	
+Mysterious Gogggles	Mysterious Gogggles 	Goggles with mysterious power. Wearing these allows you to peek into someone's cloud island 	
+
+List of Other
+
+Picture 	Name 	Description 	Locations
+Dowsing Machine	Dowsing Machine 		Craft from recipe
+Neo Dowsing Machine	Neo Dowsing Machine 		Craft from recipe
+Craft
+Party Popper	Party Popper 		Craft from recipe
+Reach Environment level 5 of Withered Wasteland
+Star Piece	Star Piece 		Craft from recipe
+Crafting
+Paint balloon (white)	Paint balloon (white) 		Craft from recipe
+Paint balloon (red)	Paint balloon (red) 		Craft from recipe
+Paint balloon (yellow)	Paint balloon (yellow) 		Craft from recipe
+Paint balloon (green)	Paint balloon (green) 		Craft from recipe
+Paint balloon (rose)	Paint balloon (rose) 		Craft from recipe
+Paint balloon (pink)	Paint balloon (pink) 		Craft from recipe
+Paint balloon (orange)	Paint balloon (orange) 		Craft from recipe
+Paint balloon (purple)	Paint balloon (purple) 		Craft from recipe
+Paint balloon (brown)	Paint balloon (brown) 		Craft from recipe
+Paint balloon (beige)	Paint balloon (beige) 		Craft from recipe
+Paint balloon (black)	Paint balloon (black) 		Craft from recipe
+Paint balloon (lime)	Paint balloon (lime) 		Craft from recipe
+Paint balloon (plum)	Paint balloon (plum) 		Craft from recipe
+Paint balloon (navy)	Paint balloon (navy) 		Craft from recipe
+Paint balloon (blue)	Paint balloon (blue) 		Craft from recipe
+Paint balloon (cyan)	Paint balloon (cyan) 		Craft from recipe
+Paint balloon (gray)	Paint balloon (gray) 		Craft from recipe
+Paint balloon (aquamarine)	Paint balloon (aquamarine) 		Craft from recipe
+Firework (white)	Firework (white) 		Craft from recipe
+Firework (red)	Firework (red) 		Craft from recipe
+Firework (green)	Firework (green) 		Craft from recipe
+Firework (yellow)	Firework (yellow) 		Craft from recipe
+Firework (blue)	Firework (blue) 		Craft from recipe
+Stone tiling (wallpaper)	Stone tiling (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Wooden wall (wallpaper)	Wooden wall (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Mosaic tiling (wallpaper)	Mosaic tiling (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Woven carpeting (wallpaper)	Woven carpeting (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Gold wall (wallpaper)	Gold wall (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Patterned aged-stone wall (wallpaper)	Patterned aged-stone wall (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	
+Aged-stone flooring (wallpaper)	Aged-stone flooring (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Crystal wall (wallpaper)	Crystal wall (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Modern carpeting (wallpaper)	Modern carpeting (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Iron-plate flooring (wallpaper)	Iron-plate flooring (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Brick wall (wallpaper)	Brick wall (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Concrete wall (wallpaper)	Concrete wall (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Cloth wall (wallpaper)	Cloth wall (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Levee (wallpaper)	Levee (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Iron tiling (wallpaper)	Iron tiling (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Hay pile (wallpaper)	Hay pile (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Striped wall (wallpaper)	Striped wall (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Cyber flooring (wallpaper)	Cyber flooring (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Neon flooring (wallpaper)	Neon flooring (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Modern wall (wallpaper)	Modern wall (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Scrap cube (wallpaper)	Scrap cube (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Puffy-tree pillar (wallpaper)	Puffy-tree pillar (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Triangle-design flooring (wallpaper)	Triangle-design flooring (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Grass flooring (wallpaper)	Grass flooring (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Argyle print (wallpaper)	Argyle print (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Berry print (wallpaper)	Berry print (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Pokéball print (wallpaper)	Pokéball print (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Marble (wallpaper)	Marble (wallpaper) 	Wallpaper that can be used in larger houses. You can appliy it to walls, floors and even ceilings 	Craft from recipe
+Large Lost Relic	Large Lost Relic 		In glowing terrain
+Small Lost Relic	Small Lost Relic 		In glowing terrain
+Title Screen	Title Screen 	Music CD #1 If you have a music player, you can listen to an exciting tune 	In glowing terrain
+Pallet Town	Pallet Town 	Music CD #2 If you have a music player, you can listen to a tune for a tranquil town 	In glowing terrain
+Oak's Lab	Oak's Lab 	Music CD #3 If you have a music player, you can listen to 	In glowing terrain
+Road to Viridian City	Road to Viridian City 	Music CD #4 If you have a music player, you can listen to an uplifting tune 	In glowing terrain
+Pewter City Theme	Pewter City Theme 	Music CD #5 If you have a music player, you can listen to a tune for a bustling town 	In Pewter Museum in Rocky Ridges
+In glowing terrain
+Pokémon Center	Pokémon Center 	Music CD #6 If you have a music player, you can listen to a tune that puts your mind at ease 	In glowing terrain
+Caves of Mt. Moon	Caves of Mt. Moon 	Music CD #7 If you have a music player, you can listen to a mystifying tune 	In glowing terrain
+Road to Cerulean City	Road to Cerulean City 	Music CD #8 If you have a music player, you can listen to a lighthearted tuune. 	In glowing terrain
+Fuchsia City Theme	Fuchsia City Theme 	Music CD #9 If you have a music player, you can listen to for a refreshing town 	In glowing terrain
+Pokémon Gym	Pokémon Gym 	Music CD #10 If you have a music player, you can listen to a powerful tune 	In glowing terrain
+Road to Bill	Road to Bill 	Music CD #11 If you have a music player, you can listen to a valiant tune 	In glowing terrain
+Vermilion City Theme	Vermilion City Theme 	Music CD #12 If you have a music player, you can listen to for a town chock-full of energy 	In glowing terrain
+The S.S. Anne	The S.S. Anne 	Music CD #13 If you have a music player, you can listen to a tune that reminds you of luxury 	Aboard the S.S. Anne in Bleak Beach
+In glowing terrain
+Rocket Hideout	Rocket Hideout 	Music CD #14 If you have a music player, you can listen to a terrifying tune 	In glowing terrain
+Silph Co.	Silph Co. 	Music CD #15 If you have a music player, you can listen to a suspicious tune 	In glowing terrain
+Battle! (Gym Leader Battle)	Battle! (Gym Leader Battle) 	Music CD #16 If you have a music player, you can listen to a heart-pumping tune 	In glowing terrain
+Union Cave	Union Cave 	Music CD #17 If you have a music player, you can listen to an eerie tune 	In glowing terrain
+Ecruteak City	Ecruteak City 	Music CD #18 If you have a music player, you can listen to 	In glowing terrain
+Bell Tower	Bell Tower 	Music CD #19 If you have a music player, you can listen to a dignified tune 	In glowing terrain
+Fortree City	Fortree City 	Music CD #20 If you have a music player, you can listen to a low-key tune 	In glowing terrain
+Sootopolis City	Sootopolis City 	Music CD #21 If you have a music player, you can listen to a dreamy tune. 	In glowing terrain
+Route 209 (Day)	Route 209 (Day) 	Music CD #22 If you have a music player, you can listen to a nostalgic tune 	In glowing terrain
+Mt. Coronet	Mt. Coronet 	Music CD #23 If you have a music player, you can listen to a celestial tune 	In glowing terrain
+Game Corner	Game Corner 	Music CD #24 If you have a music player, you can listen to an upbeat, fast-paced tune 	In glowing terrain
+Driftveil City	Driftveil City 	Music CD #25 If you have a music player, you can listen to a nautical tune 	In glowing terrain
+Route 10 (Unova)	Route 10 (Unova) 	Music CD #26 If you have a music player, you can listen to a tense tune 	In glowing terrain
+Dress Up With Props	Dress Up With Props 	Music CD #27 If you have a music player, you can listen to 	In glowing terrain
+Snowbelle City	Snowbelle City 	Music CD #28 If you have a music player, you can listen to a melancholy tune. 	In glowing terrain
+Boutique	Boutique 	Music CD #29 If you have a music player, you can listen to 	In glowing terrain
+Super Training!	Super Training! 	Music CD #30 If you have a music player, you can listen to an energetic tune 	In glowing terrain
+Contest Spectacular	Contest Spectacular 	Music CD #31 If you have a music player, you can listen to a fune tune. 	In glowing terrain
+Hau'oli City (Day)	Hau'oli City (Day) 	Music CD #32 If you have a music player, you can listen to a tropical tune 	In glowing terrain
+Aether Paradise	Aether Paradise 	Music CD #33 If you have a music player, you can listen to a mysterious tune 	In glowing terrain
+Ultra Ruin	Ultra Ruin 	Music CD #34 If you have a music player, you can listen to a tune full of static and jumbled noises 	In glowing terrain
+Wild Area (North)	Wild Area (North) 	Music CD #35 If you have a music player, you can listen to a dynamic tune. 	In glowing terrain
+Wyndon	Wyndon 	Music CD #36 If you have a music player, you can listen to 	In glowing terrain
+Rose Tower	Rose Tower 	Music CD #37 If you have a music player, you can listen to a high-tempo tune. 	In glowing terrain
+Battle! (Gym Leader) 1	Battle! (Gym Leader) 1 	Music CD #38 If you have a music player, you can listen to an invigorating tune. 	In glowing terrain
+Jubilife Village	Jubilife Village 	Music CD #39 If you have a music player, you can listen to a warm, nostalgic tune 	In glowing terrain
+South Province	South Province 	Music CD #40 If you have a music player, you can listen to 	In glowing terrain
+The Academy	The Academy 	Music CD #41 If you have a music player, you can listen to 	In glowing terrain
+Area Zero	Area Zero 	Music CD #42 If you have a music player, you can listen to that feels special somehow 	In glowing terrain
+Battle! (Gym Leader) 2	Battle! (Gym Leader) 2 	Music CD #43 If you have a music player, you can listen to that fills you with courage 	In glowing terrain
+Nugget	Nugget 		In glowing terrain
+Silver Bottle Cap	Silver Bottle Cap 		In glowing terrain
+Gold Bottle Cap	Gold Bottle Cap 		In glowing terrain
+Heart Scale	Heart Scale 		In glowing terrain
+Miracle Seed	Miracle Seed 		In glowing terrain
+Hard Stone	Hard Stone 		In glowing terrain
+Metal Coat	Metal Coat 		In glowing terrain
+Twisted Spoon	Twisted Spoon 		In glowing terrain
+Silver Powder	Silver Powder 		In glowing terrain
+Black Belt	Black Belt 		In glowing terrain
+Silk Scarf	Silk Scarf 		In glowing terrain
+Sharp Beak	Sharp Beak 		In glowing terrain
+Poison Barb	Poison Barb 		In glowing terrain
+Spell Tag	Spell Tag 		In glowing terrain
+Charcoal	Charcoal 		In glowing terrain
+Soft Sand	Soft Sand 		In glowing terrain
+Fairy Feather	Fairy Feather 		In glowing terrain
+Leftovers	Leftovers 		In glowing terrain
+Lucky Egg	Lucky Egg 		In glowing terrain
+Destiny Knot	Destiny Knot 		In glowing terrain
+Life Orb	Life Orb 		In glowing terrain
+Iron Ball	Iron Ball 		In glowing terrain
+Metal Powder	Metal Powder 		In glowing terrain
+Big Root	Big Root 		In glowing terrain
+Weakness Policy	Weakness Policy 		In glowing terrain
+Terrain Extender	Terrain Extender 		In glowing terrain
+Light Clay	Light Clay 		In glowing terrain
+Sticky Barb	Sticky Barb 		In glowing terrain
+Quick Claw	Quick Claw 		In glowing terrain
+Ability Shield	Ability Shield 		In glowing terrain
+Room Service	Room Service 		In glowing terrain
+Ring Target	Ring Target 		In glowing terrain
+Clear Amulet	Clear Amulet 		In glowing terrain
+Rainbow Feather	Rainbow Feather 		From Ho-Oh
+Silver Feather	Silver Feather 		From Lugia
+Party cooking pot	Party cooking pot 		
+Small narrow rug	Small narrow rug 		
+Poké Ball Doormat	Poké Ball Doormat 		Craft from recipe
+Ditto rug	Ditto rug 		Craft from recipe
+Slowpoke rug	Slowpoke rug 		In glowing terrain
+Charizard Rug	Charizard Rug 		In glowing terrain
+Small square rug	Small square rug 		Craft from recipe
+Oblong rug	Oblong rug 		Craft from recipe
+Ratan rug	Ratan rug 		
+Large round rug	Large round rug 		Craft from recipe
+Poké Ball Mat	Poké Ball Mat 		Craft from recipe
+Large narrow rug	Large narrow rug 		Craft from recipe
+Large square rug	Large square rug 		
+Soft mat	Soft mat 		
+Balloon Poster	Balloon Poster 		Craft from recipe
+Dance poster	Dance poster 		Craft from recipe
+Oil painting poster	Oil painting poster 		Craft from recipe
+Sunny Poster	Sunny Poster 		Craft from recipe
+Ice cream poster	Ice cream poster 		Craft from recipe
+Windmill poster	Windmill poster 		Craft from recipe
+Townscape poster	Townscape poster 		Craft from recipe
+Watercolor poster	Watercolor poster 		Craft from recipe
+Passionate poster	Passionate poster 		Craft from recipe
+Speed poster	Speed poster 		
+Growth poster	Growth poster 		Craft from recipe
+Drink poster	Drink poster 		Craft from recipe
+Food poster	Food poster 		Craft from recipe
+Technology poster	Technology poster 		Craft from recipe
+Golden poster	Golden poster 		Craft from recipe
+Ocean poster	Ocean poster 		Craft from recipe
+Meadow poster	Meadow poster 		Craft from recipe
+Ninja poster	Ninja poster 		Craft from recipe
+Town map	Town map 		
+Team Rocket Wall Hanging	Team Rocket Wall Hanging 		In glowing terrain
+Skull Fossil	Skull Fossil 		In glowing terrain
+Armor Fossil	Armor Fossil 		In glowing terrain
+Jaw Fossil	Jaw Fossil 		In glowing terrain
+Sail Fossil	Sail Fossil 		In glowing terrain
+Wing Fossil (head)	Wing Fossil (head) 		In glowing terrain
+Wing Fossil (right wing)	Wing Fossil (right wing) 		In glowing terrain
+Wing Fossil (left wing)	Wing Fossil (left wing) 		In glowing terrain
+Wing fossil (body)	Wing fossil (body) 		In glowing terrain
+Wing Fossil (tail)	Wing Fossil (tail) 		In glowing terrain
+Headbutt Fossil (head)	Headbutt Fossil (head) 		In glowing terrain
+Headbutt Fossil (body)	Headbutt Fossil (body) 		In glowing terrain
+Headbutt Fossil (tail)	Headbutt Fossil (tail) 		In glowing terrain
+Shield Fossil (Head)	Shield Fossil (Head) 		In glowing terrain
+Shield Fossil (Body)	Shield Fossil (Body) 		In glowing terrain
+Shield Fossil (tail)	Shield Fossil (tail) 		In glowing terrain
+Despot Fossil (head)	Despot Fossil (head) 		In glowing terrain
+Despot Fossil (body)	Despot Fossil (body) 		In glowing terrain
+Despot Fossil (legs)	Despot Fossil (legs) 		In glowing terrain
+Despot Fossil (tail)	Despot Fossil (tail) 		In glowing terrain
+Tundra Fossil (head)	Tundra Fossil (head) 		In glowing terrain
+Tundra Fossil (body)	Tundra Fossil (body) 		In glowing terrain
+Tundra Fossil (tail)	Tundra Fossil (tail) 		In glowing terrain
+Mysterious Slate A	Mysterious Slate A 		In glowing terrain
+Mysterious Slate B	Mysterious Slate B 		In glowing terrain
+Mysterious Slate C	Mysterious Slate C 		In glowing terrain
+Mysterious Slate D	Mysterious Slate D 		In glowing terrain
+Mysterious Slate E	Mysterious Slate E 		In glowing terrain
+Mysterious Slate F	Mysterious Slate F 		In glowing terrain
+Mysterious Slate G	Mysterious Slate G 		In glowing terrain
+Mysterious Slate H	Mysterious Slate H 		In glowing terrain
+Mysterious Slate I	Mysterious Slate I 		In glowing terrain
+Mysterious Slate J	Mysterious Slate J 		In glowing terrain
+Mysterious Slate K	Mysterious Slate K 		In glowing terrain
+Mysterious Slate L	Mysterious Slate L 		In glowing terrain
+Mysterious Slate M	Mysterious Slate M 		In glowing terrain
+Mysterious Slate N	Mysterious Slate N 		In glowing terrain
+Mysterious Slate O	Mysterious Slate O 		In glowing terrain
+Mysterious Slate P	Mysterious Slate P 		In glowing terrain
+Mysterious Slate Q	Mysterious Slate Q 		In glowing terrain
+Mysterious Slate R	Mysterious Slate R 		In glowing terrain
+Mysterious Slate S	Mysterious Slate S 		In glowing terrain
+Mysterious Slate T	Mysterious Slate T 		In glowing terrain
+Mysterious Slate U	Mysterious Slate U 		In glowing terrain
+Mysterious Slate V	Mysterious Slate V 		In glowing terrain
+Mysterious Slate W	Mysterious Slate W 		In glowing terrain
+Mysterious Slate X	Mysterious Slate X 		In glowing terrain
+Mysterious Slate Y	Mysterious Slate Y 		In glowing terrain
+Mysterious Slate Z	Mysterious Slate Z 		In glowing terrain
+Mysterious Slate	Mysterious Slate 		In glowing terrain
+Professor's treasure trove	Professor's treasure trove 		In Withered Wastelands cave
+Diploma	Diploma 		From developer office in Sparkling Skylands after completing Pokédex
+Picnic blanket	Picnic blanket 	Spread this blanket out on the ground and picnic with Hoppip, Skiploom and other friends! 	Pokémon Center Exchange
+
+List of Lost Relics (L)
+
+Picture 	Name 	Description 	Locations
+Polygonal Shelf	Polygonal Shelf 		
+Avalugg Table	Avalugg Table 		In glowing terrain
+Bouncy blue bathtub	Bouncy blue bathtub 		In glowing terrain
+Arcade machine	Arcade machine 		In glowing terrain
+Funky diffuser	Funky diffuser 		In glowing terrain
+Gold Teeth	Gold Teeth 		In glowing terrain
+Boo-in-the-box	Boo-in-the-box 		In glowing terrain
+Wobbuffet Wobbler	Wobbuffet Wobbler 		In glowing terrain
+Mysterious statue	Mysterious statue 		In glowing terrain
+Fiery Magby statue	Fiery Magby statue 		In glowing terrain
+Gym emblem statue	Gym emblem statue 		In glowing terrain
+Spacesuit	Spacesuit 		In glowing terrain
+Model space shuttle	Model space shuttle 		In glowing terrain
+Spaceship	Spaceship 		In glowing terrain
+Eerie Candle	Eerie Candle 		In glowing terrain
+Bike	Bike 		In glowing terrain
+Horsea fountain	Horsea fountain 		In glowing terrain
+Fishing rod	Fishing rod 		In glowing terrain
+Photo cutout board	Photo cutout board 		In glowing terrain
+Red meteor lamp	Red meteor lamp 		In glowing terrain
+Indigo meteor lamp	Indigo meteor lamp 		In glowing terrain
+Violet meteor lamp	Violet meteor lamp 		In glowing terrain
+Seedot Lamp	Seedot Lamp 		In glowing terrain
+Slowpoke rug	Slowpoke rug 		In glowing terrain
+Charizard Rug	Charizard Rug 		In glowing terrain
+Team Rocket Wall Hanging	Team Rocket Wall Hanging 		In glowing terrain
+
+List of Lost Relics (S)
+
+Picture 	Name 	Description 	Locations
+Nugget	Nugget 		In glowing terrain
+Silver Bottle Cap	Silver Bottle Cap 		In glowing terrain
+Gold Bottle Cap	Gold Bottle Cap 		In glowing terrain
+Heart Scale	Heart Scale 		In glowing terrain
+Miracle Seed	Miracle Seed 		In glowing terrain
+Hard Stone	Hard Stone 		In glowing terrain
+Metal Coat	Metal Coat 		In glowing terrain
+Twisted Spoon	Twisted Spoon 		In glowing terrain
+Silver Powder	Silver Powder 		In glowing terrain
+Black Belt	Black Belt 		In glowing terrain
+Silk Scarf	Silk Scarf 		In glowing terrain
+Sharp Beak	Sharp Beak 		In glowing terrain
+Poison Barb	Poison Barb 		In glowing terrain
+Spell Tag	Spell Tag 		In glowing terrain
+Charcoal	Charcoal 		In glowing terrain
+Soft Sand	Soft Sand 		In glowing terrain
+Fairy Feather	Fairy Feather 		In glowing terrain
+Leftovers	Leftovers 		In glowing terrain
+Lucky Egg	Lucky Egg 		In glowing terrain
+Destiny Knot	Destiny Knot 		In glowing terrain
+Life Orb	Life Orb 		In glowing terrain
+Iron Ball	Iron Ball 		In glowing terrain
+Metal Powder	Metal Powder 		In glowing terrain
+Big Root	Big Root 		In glowing terrain
+Weakness Policy	Weakness Policy 		In glowing terrain
+Terrain Extender	Terrain Extender 		In glowing terrain
+Light Clay	Light Clay 		In glowing terrain
+Sticky Barb	Sticky Barb 		In glowing terrain
+Quick Claw	Quick Claw 		In glowing terrain
+Ability Shield	Ability Shield 		In glowing terrain
+Room Service	Room Service 		In glowing terrain
+Ring Target	Ring Target 		In glowing terrain
+Clear Amulet	Clear Amulet 		In glowing terrain
+
+List of Fossils
+
+Picture 	Name 	Description 	Locations
+Skull Fossil	Skull Fossil 		In glowing terrain
+Armor Fossil	Armor Fossil 		In glowing terrain
+Jaw Fossil	Jaw Fossil 		In glowing terrain
+Sail Fossil	Sail Fossil 		In glowing terrain
+Wing Fossil (head)	Wing Fossil (head) 		In glowing terrain
+Wing Fossil (right wing)	Wing Fossil (right wing) 		In glowing terrain
+Wing Fossil (left wing)	Wing Fossil (left wing) 		In glowing terrain
+Wing fossil (body)	Wing fossil (body) 		In glowing terrain
+Wing Fossil (tail)	Wing Fossil (tail) 		In glowing terrain
+Headbutt Fossil (head)	Headbutt Fossil (head) 		In glowing terrain
+Headbutt Fossil (body)	Headbutt Fossil (body) 		In glowing terrain
+Headbutt Fossil (tail)	Headbutt Fossil (tail) 		In glowing terrain
+Shield Fossil (Head)	Shield Fossil (Head) 		In glowing terrain
+Shield Fossil (Body)	Shield Fossil (Body) 		In glowing terrain
+Shield Fossil (tail)	Shield Fossil (tail) 		In glowing terrain
+Despot Fossil (head)	Despot Fossil (head) 		In glowing terrain
+Despot Fossil (body)	Despot Fossil (body) 		In glowing terrain
+Despot Fossil (legs)	Despot Fossil (legs) 		In glowing terrain
+Despot Fossil (tail)	Despot Fossil (tail) 		In glowing terrain
+Tundra Fossil (head)	Tundra Fossil (head) 		In glowing terrain
+Tundra Fossil (body)	Tundra Fossil (body) 		In glowing terrain
+Tundra Fossil (tail)	Tundra Fossil (tail) 		In glowing terrain
