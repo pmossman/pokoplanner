@@ -199,6 +199,33 @@ export function suggestSplit(group) {
 }
 
 /**
+ * Suggest splitting a group by ideal habitat type.
+ * Returns null if all Pokemon share the same ideal habitat.
+ * Returns { groups: [{ type, pokemon }], scoreBefore, scoreAfter }
+ */
+export function suggestHabitatTypeSplit(group) {
+  if (group.length < 2) return null;
+
+  const byType = {};
+  for (const p of group) {
+    if (!byType[p.idealHabitat]) byType[p.idealHabitat] = [];
+    byType[p.idealHabitat].push(p);
+  }
+
+  const types = Object.keys(byType);
+  if (types.length < 2) return null;
+
+  const groups = types
+    .map((type) => ({ type, pokemon: byType[type] }))
+    .sort((a, b) => b.pokemon.length - a.pokemon.length);
+
+  const scoreBefore = groupCohesion(group);
+  const scoreAfter = groups.reduce((sum, g) => sum + groupCohesion(g.pokemon), 0);
+
+  return { groups, scoreBefore, scoreAfter };
+}
+
+/**
  * Search/filter Pokemon list.
  */
 export function filterPokemon(allPokemon, { query, idealHabitat, favorite }) {

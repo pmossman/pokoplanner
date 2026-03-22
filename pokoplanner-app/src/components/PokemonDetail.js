@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { sharedFavorites } from '../utils/pokemonUtils';
-import { getHabitatBadgeColor, getFavoriteStyle } from '../utils/themeColors';
+import { getHabitatBadgeColor, getFavoriteStyle, HabitatTypeIcon } from '../utils/themeColors';
 import './PokemonDetail.css';
 
 function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPokemon, ownedPokemon, onToggleOwned }) {
@@ -49,7 +49,7 @@ function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPo
             className="habitat-badge large"
             style={{ backgroundColor: getHabitatBadgeColor(pokemon.idealHabitat) }}
           >
-            {pokemon.idealHabitat}
+            <HabitatTypeIcon type={pokemon.idealHabitat} /> {pokemon.idealHabitat}
           </span>
         </div>
 
@@ -118,7 +118,7 @@ function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPo
                   className="habitat-badge small"
                   style={{ backgroundColor: getHabitatBadgeColor(p.idealHabitat) }}
                 >
-                  {p.idealHabitat}
+                  <HabitatTypeIcon type={p.idealHabitat} /> {p.idealHabitat}
                 </span>
                 <span className="compat-count">
                   {p.shared.length} shared: {p.shared.join(', ')}

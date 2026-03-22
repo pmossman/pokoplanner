@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef } from 'react';
-import { favoriteCounts, rankByCompatibility, filterPokemon, suggestSplit } from '../utils/pokemonUtils';
-import { getHabitatBadgeColor, getFavoriteStyle, getHabitatTheme } from '../utils/themeColors';
+import { favoriteCounts, rankByCompatibility, filterPokemon, suggestSplit, suggestHabitatTypeSplit } from '../utils/pokemonUtils';
+import { getHabitatBadgeColor, getFavoriteStyle, getHabitatTheme, getHabitatInfo, getDominantHabitat, HabitatTypeIcon } from '../utils/themeColors';
 import PokemonCard from './PokemonCard';
 import './HabitatBuilder.css';
 
@@ -34,6 +34,7 @@ function HabitatBuilder({
   const [showSplit, setShowSplit] = useState(false);
   const [showBrowse, setShowBrowse] = useState(false);
   const [highlightFav, setHighlightFav] = useState(null);
+  const [highlightHabitat, setHighlightHabitat] = useState(null);
   const searchRef = useRef(null);
 
   const activeHabitat = habitats.find((h) => h.id === activeHabitatId) || null;
@@ -51,6 +52,23 @@ function HabitatBuilder({
     () => favoriteCounts(habitatPokemon),
     [habitatPokemon]
   );
+
+  const topFavorites = useMemo(() => {
+    if (favCounts.length === 0) return new Set();
+    // Take top 3 by count, but include ties with the 3rd
+    const cutoff = favCounts.length >= 3 ? favCounts[2].count : favCounts[favCounts.length - 1].count;
+    return new Set(favCounts.filter((f) => f.count >= cutoff).map((f) => f.favorite));
+  }, [favCounts]);
+
+  const midFavorites = useMemo(() => {
+    if (habitatPokemon.length === 0) return new Set();
+    const halfCount = habitatPokemon.length / 2;
+    return new Set(
+      favCounts
+        .filter((f) => f.count >= halfCount && !topFavorites.has(f.favorite))
+        .map((f) => f.favorite)
+    );
+  }, [favCounts, habitatPokemon.length, topFavorites]);
 
   const suggestions = useMemo(() => {
     let results;
@@ -76,6 +94,20 @@ function HabitatBuilder({
     [habitatPokemon]
   );
 
+  const habitatTypeSplit = useMemo(
+    () => suggestHabitatTypeSplit(habitatPokemon),
+    [habitatPokemon]
+  );
+
+  // Determine which splits to show:
+  // - Always show habitat type split if there are mixed types
+  // - Show favorite split if it improves on the habitat type split (or if types are uniform)
+  const showHabitatTypeSplit = !!habitatTypeSplit;
+  const showFavoriteSplit = splitResult && (
+    !habitatTypeSplit ||
+    splitResult.scoreAfter > habitatTypeSplit.scoreAfter
+  );
+
   const splitFavCountsA = useMemo(
     () => (splitResult ? favoriteCounts(splitResult.groupA) : []),
     [splitResult]
@@ -87,6 +119,11 @@ function HabitatBuilder({
 
   const habitatTheme = useMemo(
     () => getHabitatTheme(habitatPokemon),
+    [habitatPokemon]
+  );
+
+  const dominantHabitat = useMemo(
+    () => getDominantHabitat(habitatPokemon),
     [habitatPokemon]
   );
 
@@ -159,11 +196,20 @@ function HabitatBuilder({
 
   const habitatSubtitle = (h) => {
     if (h.pokemon.length === 0) return 'Empty';
-    const habitats = [...new Set(h.pokemon.map((p) => p.idealHabitat))];
+    const dom = getDominantHabitat(h.pokemon);
+    const types = dom.tied || [dom.type];
     const topFavs = favoriteCounts(h.pokemon).slice(0, 2).map((f) => f.favorite);
-    const habitatStr = habitats.join(' / ');
-    if (topFavs.length === 0) return habitatStr;
-    return `${habitatStr} · ${topFavs.join(', ')}`;
+    return (
+      <>
+        {types.map((t, i) => (
+          <span key={t}>
+            {i > 0 && ' / '}
+            <HabitatTypeIcon type={t} size={12} /> {t}
+          </span>
+        ))}
+        {topFavs.length > 0 && ` · ${topFavs.join(', ')}`}
+      </>
+    );
   };
 
   const handleAddFromSearch = (pokemon) => {
@@ -185,13 +231,16 @@ function HabitatBuilder({
           </button>
         </div>
         <ul className="habitat-list-nav">
-          {habitats.map((h) => (
+          {habitats.map((h) => {
+            const navTheme = h.pokemon.length > 0 ? getHabitatTheme(h.pokemon) : null;
+            return (
             <li
               key={h.id}
               className={`habitat-nav-item ${
                 h.id === activeHabitatId ? 'active' : ''
               }`}
-              onClick={() => { onSelectHabitat(h.id); setHighlightFav(null); }}
+              style={navTheme ? { background: navTheme.bgGradient, borderColor: navTheme.accentColor } : undefined}
+              onClick={() => { onSelectHabitat(h.id); setHighlightFav(null); setHighlightHabitat(null); }}
             >
               <div className="habitat-nav-info">
                 {editingName === h.id ? (
@@ -268,7 +317,8 @@ function HabitatBuilder({
                 &times;
               </button>
             </li>
-          ))}
+            );
+          })}
         </ul>
         {habitats.length === 0 && (
           <p className="sidebar-empty">
@@ -277,7 +327,8 @@ function HabitatBuilder({
         )}
       </aside>
 
-      <div className="habitat-main" style={{ background: habitatTheme.gradient, borderColor: habitatTheme.accentColor }}>
+      <div className="habitat-content">
+      <div className="habitat-main" style={{ background: habitatTheme.bgGradient, borderColor: habitatTheme.accentColor }}>
         {!activeHabitat ? (
           <div className="welcome-state">
             <div className="welcome-top">
@@ -477,7 +528,7 @@ function HabitatBuilder({
                               backgroundColor: getHabitatBadgeColor(p.idealHabitat),
                             }}
                           >
-                            {p.idealHabitat}
+                            <HabitatTypeIcon type={p.idealHabitat} /> {p.idealHabitat}
                           </span>
                           <button
                             className="inline-add-btn"
@@ -511,7 +562,7 @@ function HabitatBuilder({
               <>
                 <section className="current-pokemon">
                   <h3>Habitat ({habitatPokemon.length})</h3>
-                  <div className="habitat-space">
+                  <div className="habitat-space" style={{ background: habitatTheme.circleGradient }}>
                     {habitatPokemon.map((p, i) => {
                       const angle = (i / habitatPokemon.length) * 2 * Math.PI - Math.PI / 2;
                       const radius = habitatPokemon.length <= 3 ? 70 : 90;
@@ -519,7 +570,8 @@ function HabitatBuilder({
                       const centerY = 140;
                       const x = centerX + Math.cos(angle) * radius - 28;
                       const y = centerY + Math.sin(angle) * radius - 28;
-                      const dimmed = highlightFav && !p.favorites.includes(highlightFav);
+                      const dimmed = (highlightFav && !p.favorites.includes(highlightFav))
+                        || (highlightHabitat && p.idealHabitat !== highlightHabitat);
                       return (
                         <div
                           key={p.id}
@@ -548,30 +600,112 @@ function HabitatBuilder({
                       );
                     })}
                   </div>
+
+                  {dominantHabitat && (
+                    <div className="habitat-type-display">
+                      {dominantHabitat.tied ? (
+                        <>
+                          <div className="habitat-type-tags">
+                            {dominantHabitat.tied.map((type) => {
+                              const info = getHabitatInfo(type);
+                              const typeCount = dominantHabitat.all.find(a => a.type === type)?.count;
+                              const isActive = highlightHabitat === type;
+                              return (
+                                <span
+                                  key={type}
+                                  className={`habitat-type-tag clickable ${isActive ? 'active' : ''}`}
+                                  style={{ backgroundColor: info.bg, color: info.color, borderColor: info.color }}
+                                  onClick={() => { setHighlightHabitat(isActive ? null : type); setHighlightFav(null); }}
+                                >
+                                  <HabitatTypeIcon type={type} /> {type} <span className="habitat-type-count">{typeCount}</span>
+                                </span>
+                              );
+                            })}
+                            {dominantHabitat.all.filter(({ type }) => !dominantHabitat.tied.includes(type)).map(({ type, count }) => {
+                              const info = getHabitatInfo(type);
+                              const isActive = highlightHabitat === type;
+                              return (
+                                <span
+                                  key={type}
+                                  className={`habitat-type-tag minor clickable ${isActive ? 'active' : ''}`}
+                                  style={{ backgroundColor: info.bg, color: info.color, borderColor: info.color, opacity: isActive ? 1 : 0.6 }}
+                                  onClick={() => { setHighlightHabitat(isActive ? null : type); setHighlightFav(null); }}
+                                >
+                                  <HabitatTypeIcon type={type} /> {type} <span className="habitat-type-count">{count}</span>
+                                </span>
+                              );
+                            })}
+                          </div>
+                          <p className="habitat-type-hint">
+                            Tied ideal habitat — consider splitting into separate habitats
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          <div className="habitat-type-tags">
+                            {dominantHabitat.all.map(({ type, count }, i) => {
+                              const info = getHabitatInfo(type);
+                              const isDominant = i === 0;
+                              const isActive = highlightHabitat === type;
+                              // Only make tags clickable when there are multiple types
+                              const isClickable = dominantHabitat.all.length > 1;
+                              return (
+                                <span
+                                  key={type}
+                                  className={`habitat-type-tag ${isDominant ? '' : 'minor'} ${isClickable ? 'clickable' : ''} ${isActive ? 'active' : ''}`}
+                                  style={{
+                                    backgroundColor: info.bg,
+                                    color: info.color,
+                                    borderColor: info.color,
+                                    opacity: (isDominant || isActive) ? 1 : 0.55,
+                                  }}
+                                  onClick={isClickable ? () => { setHighlightHabitat(isActive ? null : type); setHighlightFav(null); } : undefined}
+                                >
+                                  <HabitatTypeIcon type={type} size={isDominant ? 14 : 12} /> {isDominant ? `${type} Habitat` : type} <span className="habitat-type-count">{count}</span>
+                                </span>
+                              );
+                            })}
+                          </div>
+                          {dominantHabitat.all.length > 1 && (() => {
+                            const minorityCount = dominantHabitat.all.slice(1).reduce((sum, a) => sum + a.count, 0);
+                            return (
+                              <p className="habitat-type-hint">
+                                {minorityCount} Pokemon prefer{minorityCount === 1 ? 's' : ''} a different habitat type
+                              </p>
+                            );
+                          })()}
+                        </>
+                      )}
+                    </div>
+                  )}
                 </section>
 
                 <section className="favorite-breakdown">
-                  <h3>Favorite Overlap {highlightFav && <span className="highlight-label">— filtering: {highlightFav} <button className="clear-highlight" onClick={() => setHighlightFav(null)}>&times;</button></span>}</h3>
-                  {!highlightFav && <p className="fav-hint">Click a row to highlight Pokemon with that favorite</p>}
+                  <h3>Favorite Overlap {highlightFav && <span className="highlight-label">— filtering: {highlightFav} <button className="clear-highlight" onClick={() => setHighlightFav(null)}>&times;</button></span>}{highlightHabitat && <span className="highlight-label">— showing: {highlightHabitat} <button className="clear-highlight" onClick={() => setHighlightHabitat(null)}>&times;</button></span>}</h3>
+                  {!highlightFav && !highlightHabitat && <p className="fav-hint">Click a row to highlight Pokemon with that favorite</p>}
                   <div className="fav-bars">
                     {favCounts.map(({ favorite, count }, i) => {
                       const ratio = count / habitatPokemon.length;
-                      const emphasis = 0.35 + ratio * 0.65;
+                      const isTop = topFavorites.has(favorite);
+                      const isMid = !isTop && ratio >= 0.5;
                       const favStyle = getFavoriteStyle(favorite);
+                      const tier = isTop ? 'top' : isMid ? 'mid' : 'low';
+                      const labelColor = isTop ? favStyle.text : isMid ? favStyle.text : '#bbb';
+                      const trackBg = isTop ? favStyle.bg : isMid ? favStyle.bg : '#f0f0ee';
+                      const fillBg = isTop ? favStyle.border : isMid ? favStyle.border : '#ddd';
                       return (
                         <div
                           key={favorite}
-                          className={`fav-bar-row clickable ${highlightFav === favorite ? 'active' : ''}`}
-                          onClick={() => setHighlightFav(highlightFav === favorite ? null : favorite)}
-                          style={{ opacity: emphasis }}
+                          className={`fav-bar-row clickable ${highlightFav === favorite ? 'active' : ''} fav-bar-${tier}`}
+                          onClick={() => { setHighlightFav(highlightFav === favorite ? null : favorite); setHighlightHabitat(null); }}
                         >
-                          <span className="fav-label" style={{ color: favStyle.text }}>{favorite}</span>
-                          <div className="fav-bar-track" style={{ backgroundColor: favStyle.bg }}>
+                          <span className="fav-label" style={{ color: labelColor }}>{favorite}</span>
+                          <div className="fav-bar-track" style={{ backgroundColor: trackBg }}>
                             <div
                               className="fav-bar-fill"
                               style={{
                                 width: `${ratio * 100}%`,
-                                background: favStyle.border,
+                                background: fillBg,
                               }}
                             />
                           </div>
@@ -584,7 +718,15 @@ function HabitatBuilder({
                   </div>
                 </section>
 
-                {splitResult && (
+              </>
+            )}
+          </>
+        )}
+      </div>
+
+      {activeHabitat && (
+        <div className="habitat-below">
+            {habitatPokemon.length > 0 && (showHabitatTypeSplit || showFavoriteSplit) && (
                   <section className="split-section">
                     <div className="split-header">
                       <h3>Suggested Split</h3>
@@ -597,97 +739,141 @@ function HabitatBuilder({
                     </div>
                     {showSplit && (
                       <div className="split-preview">
-                        <p className="split-description">
-                          Splitting this group would improve internal favorite
-                          overlap. Here's the suggested split:
-                        </p>
-                        <div className="split-groups">
-                          <div className="split-group">
-                            <h4>Group A ({splitResult.groupA.length})</h4>
-                            <div className="split-pokemon-list">
-                              {splitResult.groupA.map((p) => (
-                                <div key={p.id} className="split-pokemon-item">
-                                  {p.sprite && (
-                                    <img
-                                      className="habitat-item-sprite"
-                                      src={p.sprite}
-                                      alt={p.name}
-                                    />
-                                  )}
-                                  <span>{p.name}</span>
-                                </div>
-                              ))}
-                            </div>
-                            <div className="split-fav-bars">
-                              {splitFavCountsA.slice(0, 5).map(({ favorite, count }) => (
-                                <div key={favorite} className="fav-bar-row">
-                                  <span className="fav-label">{favorite}</span>
-                                  <div className="fav-bar-track">
-                                    <div
-                                      className="fav-bar-fill"
-                                      style={{
-                                        width: `${(count / splitResult.groupA.length) * 100}%`,
-                                      }}
-                                    />
+                        {/* Habitat Type Split */}
+                        {showHabitatTypeSplit && (
+                          <div className="split-variant">
+                            <h4 className="split-variant-title">
+                              <HabitatTypeIcon type={habitatTypeSplit.groups[0].type} size={16} /> Split by Ideal Habitat
+                            </h4>
+                            <p className="split-description">
+                              This group has mixed ideal habitats. Splitting by type groups Pokemon that prefer the same environment.
+                            </p>
+                            <div className="split-groups" style={{ gridTemplateColumns: habitatTypeSplit.groups.length > 2 ? `repeat(${habitatTypeSplit.groups.length}, 1fr)` : '1fr 1fr' }}>
+                              {habitatTypeSplit.groups.map(({ type, pokemon: groupPokemon }) => {
+                                const info = getHabitatInfo(type);
+                                const groupFavCounts = favoriteCounts(groupPokemon);
+                                return (
+                                  <div key={type} className="split-group" style={{ background: info.gradient || info.bg, borderColor: info.color }}>
+                                    <h4 style={{ color: info.color }}>
+                                      <HabitatTypeIcon type={type} size={14} /> {type} ({groupPokemon.length})
+                                    </h4>
+                                    <div className="split-pokemon-list">
+                                      {groupPokemon.map((p) => (
+                                        <div key={p.id} className="split-pokemon-item">
+                                          {p.sprite && (
+                                            <img className="habitat-item-sprite" src={p.sprite} alt={p.name} />
+                                          )}
+                                          <span>{p.name}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                    <div className="split-fav-bars">
+                                      {groupFavCounts.slice(0, 5).map(({ favorite, count }) => {
+                                        const favStyle = getFavoriteStyle(favorite);
+                                        return (
+                                          <div key={favorite} className="fav-bar-row">
+                                            <span className="fav-label" style={{ color: favStyle.text }}>{favorite}</span>
+                                            <div className="fav-bar-track" style={{ backgroundColor: favStyle.bg }}>
+                                              <div className="fav-bar-fill" style={{ width: `${(count / groupPokemon.length) * 100}%`, background: favStyle.border }} />
+                                            </div>
+                                            <span className="fav-count">{count}/{groupPokemon.length}</span>
+                                          </div>
+                                        );
+                                      })}
+                                    </div>
                                   </div>
-                                  <span className="fav-count">
-                                    {count}/{splitResult.groupA.length}
-                                  </span>
-                                </div>
-                              ))}
+                                );
+                              })}
                             </div>
+                            <button
+                              className="apply-split-btn"
+                              onClick={() => {
+                                // Split into first group vs rest combined, or handle multiple groups
+                                const firstGroup = habitatTypeSplit.groups[0].pokemon;
+                                const rest = habitatTypeSplit.groups.slice(1).flatMap(g => g.pokemon);
+                                onSplit(firstGroup, rest);
+                                setShowSplit(false);
+                              }}
+                            >
+                              Apply Split ({habitatTypeSplit.groups.length > 2
+                                ? `${habitatTypeSplit.groups[0].type} vs Rest`
+                                : `${habitatTypeSplit.groups[0].type} / ${habitatTypeSplit.groups[1].type}`})
+                            </button>
                           </div>
-                          <div className="split-group">
-                            <h4>Group B ({splitResult.groupB.length})</h4>
-                            <div className="split-pokemon-list">
-                              {splitResult.groupB.map((p) => (
-                                <div key={p.id} className="split-pokemon-item">
-                                  {p.sprite && (
-                                    <img
-                                      className="habitat-item-sprite"
-                                      src={p.sprite}
-                                      alt={p.name}
-                                    />
-                                  )}
-                                  <span>{p.name}</span>
-                                </div>
-                              ))}
-                            </div>
-                            <div className="split-fav-bars">
-                              {splitFavCountsB.slice(0, 5).map(({ favorite, count }) => (
-                                <div key={favorite} className="fav-bar-row">
-                                  <span className="fav-label">{favorite}</span>
-                                  <div className="fav-bar-track">
-                                    <div
-                                      className="fav-bar-fill"
-                                      style={{
-                                        width: `${(count / splitResult.groupB.length) * 100}%`,
-                                      }}
-                                    />
+                        )}
+
+                        {/* Favorite Overlap Split */}
+                        {showFavoriteSplit && (
+                          <div className="split-variant">
+                            <h4 className="split-variant-title">
+                              Split by Favorites
+                            </h4>
+                            <p className="split-description">
+                              {showHabitatTypeSplit
+                                ? 'This alternative split optimizes for favorite overlap regardless of habitat type.'
+                                : 'Splitting this group would improve internal favorite overlap.'}
+                            </p>
+                            <div className="split-groups">
+                              {[
+                                { label: 'Group A', pokemon: splitResult.groupA, favCounts: splitFavCountsA },
+                                { label: 'Group B', pokemon: splitResult.groupB, favCounts: splitFavCountsB },
+                              ].map(({ label, pokemon: groupPokemon, favCounts: gFavCounts }) => {
+                                const groupTheme = getHabitatTheme(groupPokemon);
+                                const groupDom = getDominantHabitat(groupPokemon);
+                                const domInfo = groupDom ? getHabitatInfo(groupDom.type) : null;
+                                return (
+                                  <div key={label} className="split-group" style={{ background: groupTheme.bgGradient, borderColor: groupTheme.accentColor }}>
+                                    <h4>
+                                      {label} ({groupPokemon.length})
+                                      {domInfo && (
+                                        <span className="split-group-habitat" style={{ color: domInfo.color }}>
+                                          {' '}<HabitatTypeIcon type={groupDom.type} size={12} /> {groupDom.type}
+                                        </span>
+                                      )}
+                                    </h4>
+                                    <div className="split-pokemon-list">
+                                      {groupPokemon.map((p) => (
+                                        <div key={p.id} className="split-pokemon-item">
+                                          {p.sprite && (
+                                            <img className="habitat-item-sprite" src={p.sprite} alt={p.name} />
+                                          )}
+                                          <span>{p.name}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                    <div className="split-fav-bars">
+                                      {gFavCounts.slice(0, 5).map(({ favorite, count }) => {
+                                        const favStyle = getFavoriteStyle(favorite);
+                                        return (
+                                          <div key={favorite} className="fav-bar-row">
+                                            <span className="fav-label" style={{ color: favStyle.text }}>{favorite}</span>
+                                            <div className="fav-bar-track" style={{ backgroundColor: favStyle.bg }}>
+                                              <div className="fav-bar-fill" style={{ width: `${(count / groupPokemon.length) * 100}%`, background: favStyle.border }} />
+                                            </div>
+                                            <span className="fav-count">{count}/{groupPokemon.length}</span>
+                                          </div>
+                                        );
+                                      })}
+                                    </div>
                                   </div>
-                                  <span className="fav-count">
-                                    {count}/{splitResult.groupB.length}
-                                  </span>
-                                </div>
-                              ))}
+                                );
+                              })}
                             </div>
+                            <button
+                              className="apply-split-btn"
+                              onClick={() => {
+                                onSplit(splitResult.groupA, splitResult.groupB);
+                                setShowSplit(false);
+                              }}
+                            >
+                              Apply Favorite Split
+                            </button>
                           </div>
-                        </div>
-                        <button
-                          className="apply-split-btn"
-                          onClick={() => {
-                            onSplit(splitResult.groupA, splitResult.groupB);
-                            setShowSplit(false);
-                          }}
-                        >
-                          Apply Split
-                        </button>
+                        )}
                       </div>
                     )}
                   </section>
                 )}
-              </>
-            )}
 
             <section className="suggestions">
               <div className="suggestions-header">
@@ -742,13 +928,15 @@ function HabitatBuilder({
                       favWeights={p.favWeights}
                       maxFavWeight={p.maxFavWeight}
                       highlightFav={highlightFav}
+                      topFavorites={topFavorites}
+                      midFavorites={midFavorites}
                     />
                   ))}
                 </div>
               )}
             </section>
-          </>
-        )}
+        </div>
+      )}
       </div>
     </div>
   );

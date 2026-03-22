@@ -1,32 +1,44 @@
-import { getHabitatBadgeColor, getFavoriteStyle } from '../utils/themeColors';
+import { getHabitatBadgeColor, getFavoriteStyle, HabitatTypeIcon } from '../utils/themeColors';
 import './PokemonCard.css';
 
-function PokemonCard({ pokemon, onClick, onAdd, inHabitat, compact, score, sharedFavs, favWeights, maxFavWeight, highlightFav }) {
+function PokemonCard({ pokemon, onClick, onAdd, inHabitat, compact, score, sharedFavs, favWeights, maxFavWeight, highlightFav, topFavorites, midFavorites }) {
   const habitatColor = getHabitatBadgeColor(pokemon.idealHabitat);
 
-  // Sort favorites: weighted ones first (by weight desc), then unweighted
-  const sortedFavorites = favWeights
-    ? [...pokemon.favorites].sort((a, b) => (favWeights[b] || 0) - (favWeights[a] || 0))
-    : pokemon.favorites;
+  // Sort favorites: top habitat favorites first, then by weight desc
+  const sortedFavorites = [...pokemon.favorites].sort((a, b) => {
+    const aTop = topFavorites && topFavorites.has(a) ? 1 : 0;
+    const bTop = topFavorites && topFavorites.has(b) ? 1 : 0;
+    if (aTop !== bTop) return bTop - aTop;
+    if (favWeights) return (favWeights[b] || 0) - (favWeights[a] || 0);
+    return 0;
+  });
 
   const favTagStyle = (f) => {
     const base = getFavoriteStyle(f);
-    if (favWeights && favWeights[f] && maxFavWeight) {
-      const intensity = favWeights[f] / maxFavWeight;
-      // Boost saturation based on weight
-      const opacity = 0.4 + intensity * 0.6;
+    const isTop = topFavorites && topFavorites.has(f);
+    const isMid = !isTop && midFavorites && midFavorites.has(f);
+    if (isTop) {
       return {
         backgroundColor: base.bg,
         color: base.text,
         borderColor: base.border,
-        boxShadow: `inset 0 0 0 100px rgba(${hexToRgb(base.border)}, ${opacity * 0.3})`,
-        fontWeight: intensity > 0.3 ? '700' : '400',
+        fontWeight: '700',
+      };
+    }
+    if (isMid) {
+      return {
+        backgroundColor: base.bg,
+        color: base.text,
+        borderColor: base.border,
+        fontWeight: '600',
+        opacity: 0.6,
       };
     }
     return {
-      backgroundColor: base.bg,
-      color: base.text,
-      borderColor: base.border,
+      backgroundColor: '#f5f5f3',
+      color: '#bbb',
+      borderColor: '#e8e8e6',
+      fontWeight: '400',
     };
   };
 
@@ -41,7 +53,7 @@ function PokemonCard({ pokemon, onClick, onAdd, inHabitat, compact, score, share
           className="habitat-badge"
           style={{ backgroundColor: habitatColor }}
         >
-          {pokemon.idealHabitat}
+          <HabitatTypeIcon type={pokemon.idealHabitat} /> {pokemon.idealHabitat}
         </span>
       </div>
 

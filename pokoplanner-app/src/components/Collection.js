@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { filterPokemon } from '../utils/pokemonUtils';
-import { getHabitatBadgeColor } from '../utils/themeColors';
+import { getHabitatBadgeColor, HabitatTypeIcon } from '../utils/themeColors';
 import './Collection.css';
 
 function Collection({
@@ -115,7 +115,7 @@ function Collection({
                 className="habitat-badge"
                 style={{ backgroundColor: getHabitatBadgeColor(p.idealHabitat) }}
               >
-                {p.idealHabitat}
+                <HabitatTypeIcon type={p.idealHabitat} /> {p.idealHabitat}
               </span>
             </div>
           );
