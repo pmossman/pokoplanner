@@ -289,7 +289,7 @@ function splitIntoGroups(group, maxSize) {
 /**
  * Search/filter Pokemon list.
  */
-export function filterPokemon(allPokemon, { query, idealHabitat, favorite }) {
+export function filterPokemon(allPokemon, { query, idealHabitat, favorite, specialty }) {
   let results = allPokemon;
 
   if (query) {
@@ -307,6 +307,10 @@ export function filterPokemon(allPokemon, { query, idealHabitat, favorite }) {
 
   if (favorite) {
     results = results.filter((p) => p.favorites.includes(favorite));
+  }
+
+  if (specialty) {
+    results = results.filter((p) => p.specialties && p.specialties.includes(specialty));
   }
 
   return results;

@@ -1,19 +1,19 @@
 .pokemon-card {
-  background: #fff;
-  border: 1px solid #e0e0de;
-  border-radius: 14px;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
   padding: 0.75rem;
   cursor: pointer;
   transition: all 0.2s;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
 }
 
 .pokemon-card:hover {
   border-color: #bbb;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
 }
 
 .card-header {
@@ -71,11 +71,11 @@
 
 .favorite-tag {
   padding: 0.15rem 0.4rem;
-  background: #f0f0ee;
-  border-radius: 6px;
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-tag);
   font-size: 0.7rem;
-  color: #888;
-  border: 1px solid #e0e0de;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
 }
 
 .favorite-tag.shared {
@@ -110,8 +110,8 @@
   position: absolute;
   bottom: 100%;
   left: 0;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-input);
   border-radius: 10px;
   padding: 0.4rem 0.6rem;
   z-index: 10;
@@ -144,14 +144,14 @@
 .add-btn {
   width: 100%;
   padding: 0.4rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-btn);
   background: transparent;
   color: #666;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 600;
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-ui);
   transition: all 0.2s;
 }
 
@@ -163,7 +163,7 @@
 
 .add-btn.added {
   color: #ccc;
-  border-color: #e0e0de;
+  border-color: var(--color-border);
   cursor: default;
 }
 

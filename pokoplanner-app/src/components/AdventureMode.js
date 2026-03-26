@@ -1,7 +1,11 @@
-import { useState, useMemo, useCallback } from 'react';
-import { getLocationInfo } from '../utils/themeColors';
+import { useState, useMemo, useCallback, useEffect } from 'react';
+import { usePokemonData } from '../contexts/PokemonDataContext';
+import { habitatDisplayName } from '../utils/habitatHelpers';
+import { getLocationInfo, getDominantHabitat, getHabitatBadgeColor, HabitatTypeIcon } from '../utils/themeColors';
 import { filterPokemon } from '../utils/pokemonUtils';
 import LocationView from './LocationView';
+import AllPokemonView from './AllPokemonView';
+import { TbBooks } from 'react-icons/tb';
 import './AdventureMode.css';
 
 const LOCATION_ORDER = [
@@ -13,18 +17,9 @@ const LOCATION_ORDER = [
 ];
 
 function AdventureMode({
-  allPokemon,
-  allFavorites,
-  allIdealHabitats,
-  allLocations,
-  pokemonById,
-  ownedPokemon,
-  onToggleOwned,
   pokemonLocations,
   getPokemonLocation,
   onMovePokemon,
-  unlockedLocations,
-  onToggleLocation,
   habitats,
   onCreateHabitat,
   onCreateHabitatWithPokemon,
@@ -34,14 +29,27 @@ function AdventureMode({
   onRemoveFromHabitat,
   onClearHabitat,
   onSplitHabitat,
-  onSelectPokemon,
+  navigateTarget,
+  onNavigateComplete,
 }) {
+  const { allPokemon, pokemonById, ownedPokemon, toggleOwned } = usePokemonData();
+
   const [selectedLocation, setSelectedLocation] = useState('Withered Wastelands');
   const [registerQuery, setRegisterQuery] = useState('');
   const [dragOverLocation, setDragOverLocation] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [pendingLocationMove, setPendingLocationMove] = useState(null);
 
   const hasOwned = ownedPokemon.size > 0;
+
+  // Handle navigation from PokemonDetail → habitat
+  const [pendingExpandHabitatId, setPendingExpandHabitatId] = useState(null);
+  useEffect(() => {
+    if (!navigateTarget) return;
+    setSelectedLocation(navigateTarget.location);
+    setPendingExpandHabitatId(navigateTarget.habitatId);
+    onNavigateComplete();
+  }, [navigateTarget, onNavigateComplete]);
 
   // Group owned Pokemon by their current location
   const pokemonByLocation = useMemo(() => {
@@ -77,18 +85,52 @@ function AdventureMode({
   const handleLocationDrop = useCallback((e, destLocation) => {
     e.preventDefault();
     setDragOverLocation(null);
+    setIsDragging(false);
     const pokemonId = e.dataTransfer.getData('text/pokemon-id');
-    if (pokemonId && destLocation !== selectedLocation) {
+    const sourceHabitatId = e.dataTransfer.getData('text/source-habitat-id');
+    if (!pokemonId) return;
+    // If already at this location, do nothing
+    const currentLoc = getPokemonLocation(pokemonId);
+    if (currentLoc === destLocation) return;
+
+    const pokemon = pokemonById.get(pokemonId);
+    if (!pokemon) return;
+
+    if (sourceHabitatId) {
+      // Moving from a habitat to a different location — needs confirmation
+      const sourceHabitat = habitats.find(h => h.id === sourceHabitatId);
+      setPendingLocationMove({
+        pokemon,
+        sourceHabitatId,
+        sourceHabitat,
+        sourceHabitatName: sourceHabitat ? habitatDisplayName(sourceHabitat) : 'home',
+        targetLocation: destLocation,
+      });
+    } else {
       onMovePokemon(pokemonId, destLocation);
     }
-  }, [onMovePokemon, selectedLocation]);
+  }, [onMovePokemon, getPokemonLocation, pokemonById, habitats]);
+
+  const confirmLocationMove = useCallback(() => {
+    if (!pendingLocationMove) return;
+    const { pokemon, sourceHabitatId, sourceHabitat, targetLocation } = pendingLocationMove;
+    onRemoveFromHabitat(pokemon.id, sourceHabitatId);
+    onMovePokemon(pokemon.id, targetLocation);
+    // Auto-delete habitat if it's now empty
+    if (sourceHabitat && sourceHabitat.pokemon.length <= 1) {
+      onDeleteHabitat(sourceHabitatId);
+    }
+    setPendingLocationMove(null);
+  }, [pendingLocationMove, onRemoveFromHabitat, onMovePokemon, onDeleteHabitat]);
+
+  const cancelLocationMove = useCallback(() => {
+    setPendingLocationMove(null);
+  }, []);
 
   const handleLocationDragOver = useCallback((e, loc) => {
     e.preventDefault();
-    if (loc !== selectedLocation) {
-      setDragOverLocation(loc);
-    }
-  }, [selectedLocation]);
+    setDragOverLocation(loc);
+  }, []);
 
   const squirtle = pokemonById.get('squirtle');
 
@@ -100,7 +142,7 @@ function AdventureMode({
           <h2>Your Pokopia Adventure</h2>
           <p className="onboarding-subtitle">
             As you meet Pokemon in Pokopia, add them here to track where they are
-            and plan the perfect habitats for each location.
+            and plan the perfect homes for each location.
           </p>
 
           <div className="onboarding-squirtle">
@@ -117,7 +159,7 @@ function AdventureMode({
               </p>
               <button
                 className="onboarding-register-btn"
-                onClick={() => onToggleOwned('squirtle')}
+                onClick={() => toggleOwned('squirtle')}
               >
                 I've met Squirtle!
               </button>
@@ -144,7 +186,7 @@ function AdventureMode({
                     <div
                       key={p.id}
                       className={`register-result-item ${isOwned ? 'owned' : ''}`}
-                      onClick={() => onToggleOwned(p.id)}
+                      onClick={() => toggleOwned(p.id)}
                     >
                       {p.sprite && (
                         <img className="register-result-sprite" src={p.sprite} alt={p.name} />
@@ -171,31 +213,47 @@ function AdventureMode({
       onDragEnd={() => setIsDragging(false)}
       onDrop={() => setIsDragging(false)}
     >
+      <p className="mode-description">
+        Track your progress as you play — register Pokemon you've met and plan homes at each location.
+      </p>
+
       {/* Location selector — also drop targets for moving Pokemon */}
       <div className="location-selector">
+        <button
+          className={`location-card all-pokemon-tab ${selectedLocation === null ? 'selected' : ''}`}
+          style={{
+            background: selectedLocation === null ? '#f0eee8' : '#faf9f6',
+            borderColor: selectedLocation === null ? '#998' : 'transparent',
+          }}
+          onClick={() => setSelectedLocation(null)}
+        >
+          <div className="location-card-top">
+            <TbBooks size={18} style={{ color: '#887' }} />
+          </div>
+          <span className="location-card-name" style={{ color: '#776' }}>My Pokédex</span>
+          <span className="location-card-count">{ownedPokemon.size}/{allPokemon.length}</span>
+        </button>
+
         {LOCATION_ORDER.map((loc) => {
           const info = getLocationInfo(loc);
           const Icon = info.Icon;
           const count = pokemonByLocation[loc]?.length || 0;
-          const isUnlocked = unlockedLocations.includes(loc);
           const isSelected = selectedLocation === loc;
           const isDragOver = dragOverLocation === loc;
 
           return (
             <button
               key={loc}
-              className={`location-card ${isSelected ? 'selected' : ''} ${!isUnlocked ? 'locked' : ''} ${isDragOver ? 'drag-over' : ''} ${isDragging && isUnlocked && !isSelected ? 'drop-hint' : ''}`}
+              className={`location-card ${isSelected ? 'selected' : ''} ${isDragOver ? 'drag-over' : ''} ${isDragging && !isSelected ? 'drop-hint' : ''}`}
               style={{
                 background: isSelected ? info.gradient : info.bg,
                 borderColor: isSelected ? info.color : isDragOver ? info.color : 'transparent',
                 '--loc-color': info.color,
               }}
-              onClick={() => {
-                if (isUnlocked) setSelectedLocation(loc);
-              }}
-              onDragOver={(e) => isUnlocked && handleLocationDragOver(e, loc)}
+              onClick={() => setSelectedLocation(loc)}
+              onDragOver={(e) => handleLocationDragOver(e, loc)}
               onDragLeave={() => setDragOverLocation(null)}
-              onDrop={(e) => isUnlocked && handleLocationDrop(e, loc)}
+              onDrop={(e) => handleLocationDrop(e, loc)}
             >
               {isDragOver ? (
                 <div className="drop-prompt">
@@ -205,22 +263,10 @@ function AdventureMode({
                 <>
                   <div className="location-card-top">
                     {Icon && <Icon size={18} style={{ color: info.color }} />}
-                    {!isUnlocked && <span className="lock-icon">🔒</span>}
                   </div>
                   <span className="location-card-name" style={{ color: info.color }}>{loc}</span>
-                  {isUnlocked && count > 0 && (
+                  {count > 0 && (
                     <span className="location-card-count">{count}</span>
-                  )}
-                  {!isUnlocked && (
-                    <button
-                      className="unlock-btn"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onToggleLocation(loc);
-                      }}
-                    >
-                      Unlock
-                    </button>
                   )}
                 </>
               )}
@@ -230,31 +276,85 @@ function AdventureMode({
       </div>
 
       {/* Selected location content */}
-      <LocationView
-        location={selectedLocation}
-        allPokemon={allPokemon}
-        allFavorites={allFavorites}
-        allIdealHabitats={allIdealHabitats}
-        pokemonById={pokemonById}
-        pokemonAtLocation={pokemonByLocation[selectedLocation] || []}
-        allOwnedPokemon={ownedPokemon}
-        onToggleOwned={onToggleOwned}
-        getPokemonLocation={getPokemonLocation}
-        onMovePokemon={onMovePokemon}
-        unlockedLocations={unlockedLocations}
-        habitats={locationHabitats}
-        inHabitatIds={inHabitatIds}
-        onCreateHabitat={onCreateHabitat}
-        onCreateHabitatWithPokemon={onCreateHabitatWithPokemon}
-        onAddToHabitat={onAddToHabitat}
-        onDeleteHabitat={onDeleteHabitat}
-        onRenameHabitat={onRenameHabitat}
-        onRemoveFromHabitat={onRemoveFromHabitat}
-        onClearHabitat={onClearHabitat}
-        onSplitHabitat={onSplitHabitat}
-        onSelectPokemon={onSelectPokemon}
-        allFavorites={allFavorites}
-      />
+      {selectedLocation === null ? (
+        <AllPokemonView
+          getPokemonLocation={getPokemonLocation}
+          ownedPokemon={ownedPokemon}
+          toggleOwned={toggleOwned}
+          onMovePokemon={onMovePokemon}
+          habitats={habitats}
+          onRemoveFromHabitat={onRemoveFromHabitat}
+          onDeleteHabitat={onDeleteHabitat}
+        />
+      ) : (
+        <LocationView
+          location={selectedLocation}
+          pokemonAtLocation={pokemonByLocation[selectedLocation] || []}
+          getPokemonLocation={getPokemonLocation}
+          onMovePokemon={onMovePokemon}
+
+          habitats={locationHabitats}
+          allHabitats={habitats}
+          inHabitatIds={inHabitatIds}
+          onCreateHabitat={onCreateHabitat}
+          onCreateHabitatWithPokemon={onCreateHabitatWithPokemon}
+          onAddToHabitat={onAddToHabitat}
+          onDeleteHabitat={onDeleteHabitat}
+          onRenameHabitat={onRenameHabitat}
+          onRemoveFromHabitat={onRemoveFromHabitat}
+          onClearHabitat={onClearHabitat}
+          onSplitHabitat={onSplitHabitat}
+          pendingExpandHabitatId={pendingExpandHabitatId}
+          onExpandHandled={() => setPendingExpandHabitatId(null)}
+        />
+      )}
+
+      {/* Confirmation modal for cross-location habitat moves */}
+      {pendingLocationMove && (() => {
+        const src = pendingLocationMove.sourceHabitat;
+        const srcDom = src ? getDominantHabitat(src.pokemon) : null;
+        const otherPokemon = src ? src.pokemon.filter(p => p.id !== pendingLocationMove.pokemon.id) : [];
+        return (
+          <div className="detail-overlay" onClick={cancelLocationMove}>
+            <div className="confirm-modal" onClick={(e) => e.stopPropagation()}>
+              {pendingLocationMove.pokemon.sprite && (
+                <img className="confirm-sprite" src={pendingLocationMove.pokemon.sprite} alt={pendingLocationMove.pokemon.name} />
+              )}
+              <p className="confirm-text">
+                Move <strong>{pendingLocationMove.pokemon.name}</strong> to <strong>{pendingLocationMove.targetLocation}</strong>?
+              </p>
+              {src && (
+                <div className="confirm-habitat-summary">
+                  <div className="confirm-habitat-header">
+                    {srcDom && (
+                      <span className="habitat-badge small" style={{ backgroundColor: getHabitatBadgeColor(srcDom.type) }}>
+                        <HabitatTypeIcon type={srcDom.type} size={10} /> {srcDom.type}
+                      </span>
+                    )}
+                    <span className="confirm-habitat-name">{pendingLocationMove.sourceHabitatName}</span>
+                  </div>
+                  {otherPokemon.length > 0 && (
+                    <div className="confirm-habitat-sprites">
+                      {otherPokemon.slice(0, 8).map(p => (
+                        p.sprite && <img key={p.id} src={p.sprite} alt={p.name} title={p.name} />
+                      ))}
+                      {otherPokemon.length > 8 && <span className="confirm-habitat-more">+{otherPokemon.length - 8}</span>}
+                    </div>
+                  )}
+                  {otherPokemon.length === 0 && (
+                    <span className="confirm-habitat-empty">This will leave the home empty</span>
+                  )}
+                </div>
+              )}
+              <p className="confirm-subtext">This will remove them from their home and change their location.</p>
+              <div className="confirm-actions">
+                <button className="confirm-yes" onClick={confirmLocationMove}>Move</button>
+                <button className="confirm-no" onClick={cancelLocationMove}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }

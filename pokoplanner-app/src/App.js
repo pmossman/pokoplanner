@@ -1,34 +1,20 @@
 import { useState, useCallback, useEffect, useMemo } from 'react';
 import data from './data/pokemon.json';
+import { migrateHabitats } from './utils/migration';
+import { useHabitatState, resolveHabitats } from './hooks/useHabitatState';
+import PokemonDataContext from './contexts/PokemonDataContext';
 import AdventureMode from './components/AdventureMode';
 import HabitatBuilder from './components/HabitatBuilder';
 import PokemonDetail from './components/PokemonDetail';
+import Settings from './components/Settings';
+import { TbSettings } from 'react-icons/tb';
 import './App.css';
 
-const STORAGE_KEY = 'pokoplanner-habitats';
+// Run migration before any state initializes
+migrateHabitats();
+
 const OWNED_KEY = 'pokoplanner-owned';
 const LOCATIONS_KEY = 'pokoplanner-pokemon-locations';
-const UNLOCKED_KEY = 'pokoplanner-unlocked-locations';
-
-const DEFAULT_UNLOCKED = ['Withered Wastelands', 'Palette Town'];
-
-function loadHabitats() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      return JSON.parse(saved).map((h) => ({
-        ...h,
-        customName: h.customName !== undefined ? h.customName : (h.name || null),
-        location: h.location || null,
-      }));
-    }
-  } catch {}
-  return [];
-}
-
-function saveHabitats(habitats) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(habitats));
-}
 
 function loadOwned() {
   try {
@@ -54,46 +40,39 @@ function savePokemonLocations(locations) {
   localStorage.setItem(LOCATIONS_KEY, JSON.stringify(locations));
 }
 
-function loadUnlockedLocations() {
-  try {
-    const saved = localStorage.getItem(UNLOCKED_KEY);
-    if (saved) return JSON.parse(saved);
-  } catch {}
-  return DEFAULT_UNLOCKED;
-}
-
-function saveUnlockedLocations(unlocked) {
-  localStorage.setItem(UNLOCKED_KEY, JSON.stringify(unlocked));
-}
-
-let nextId = Date.now();
-function genId() {
-  return String(nextId++);
-}
 
 function App() {
   const [activeTab, setActiveTab] = useState('adventure');
   const [selectedPokemon, setSelectedPokemon] = useState(null);
-  const [habitats, setHabitats] = useState(loadHabitats);
+  const [showSettings, setShowSettings] = useState(false);
+  const [navigateTarget, setNavigateTarget] = useState(null); // { location, habitatId }
+
+  // Separate habitat state for each mode (stores only Pokemon IDs)
+  const sandbox = useHabitatState('pokoplanner-sandbox-habitats');
+  const adventure = useHabitatState('pokoplanner-adventure-habitats');
+
+  // Adventure-specific state
   const [ownedPokemon, setOwnedPokemon] = useState(loadOwned);
   const [pokemonLocations, setPokemonLocations] = useState(loadPokemonLocations);
-  const [unlockedLocations, setUnlockedLocations] = useState(loadUnlockedLocations);
-  const [activeHabitatId, setActiveHabitatId] = useState(() => {
-    const saved = loadHabitats();
-    return saved.length > 0 ? saved[0].id : null;
-  });
 
   const pokemonById = useMemo(
     () => new Map(data.pokemon.map((p) => [p.id, p])),
     []
   );
 
-  useEffect(() => { saveHabitats(habitats); }, [habitats]);
+  // Resolve habitats: pokemonIds → full pokemon objects for display
+  const resolvedAdventureHabitats = useMemo(
+    () => resolveHabitats(adventure.habitats, pokemonById),
+    [adventure.habitats, pokemonById]
+  );
+  const resolvedSandboxHabitats = useMemo(
+    () => resolveHabitats(sandbox.habitats, pokemonById),
+    [sandbox.habitats, pokemonById]
+  );
+
   useEffect(() => { saveOwned(ownedPokemon); }, [ownedPokemon]);
   useEffect(() => { savePokemonLocations(pokemonLocations); }, [pokemonLocations]);
-  useEffect(() => { saveUnlockedLocations(unlockedLocations); }, [unlockedLocations]);
 
-  const activeHabitat = habitats.find((h) => h.id === activeHabitatId) || null;
 
   const getPokemonLocation = useCallback((id) => {
     return pokemonLocations[id] || pokemonById.get(id)?.primaryLocation || 'Withered Wastelands';
@@ -111,156 +90,105 @@ function App() {
     });
   }, []);
 
-  const movePokemon = useCallback((pokemonId, location) => {
+  const movePokemon = useCallback((pokemonId, newLocation) => {
+    // Remove from any habitats at the old location before moving
+    const oldLocation = getPokemonLocation(pokemonId);
+    if (oldLocation !== newLocation) {
+      const rawHabitats = activeTab === 'adventure' ? adventure.habitats : sandbox.habitats;
+      for (const h of rawHabitats) {
+        if (h.location === oldLocation && h.pokemonIds.includes(pokemonId)) {
+          if (activeTab === 'adventure') {
+            adventure.removeFromHabitat(pokemonId, h.id);
+          } else {
+            sandbox.removeFromHabitat(pokemonId, h.id);
+          }
+        }
+      }
+    }
     setPokemonLocations((prev) => {
       const pokemon = pokemonById.get(pokemonId);
-      // If moving to default location, remove the override
-      if (pokemon && pokemon.primaryLocation === location) {
+      if (pokemon && pokemon.primaryLocation === newLocation) {
         const next = { ...prev };
         delete next[pokemonId];
         return next;
       }
-      return { ...prev, [pokemonId]: location };
+      return { ...prev, [pokemonId]: newLocation };
     });
-  }, [pokemonById]);
+  }, [pokemonById, getPokemonLocation, activeTab, adventure, sandbox]);
 
-  const toggleLocation = useCallback((location) => {
-    setUnlockedLocations((prev) => {
-      if (prev.includes(location)) {
-        return prev.filter((l) => l !== location);
-      }
-      return [...prev, location];
-    });
-  }, []);
 
-  const createHabitat = useCallback((location = null) => {
-    const id = genId();
-    setHabitats((prev) => [...prev, { id, customName: null, pokemon: [], location }]);
-    setActiveHabitatId(id);
-    return id;
-  }, []);
-
-  const createHabitatWithPokemon = useCallback((name, pokemon, location = null) => {
-    const id = genId();
-    setHabitats((prev) => [...prev, { id, customName: name, pokemon, location }]);
-    setActiveHabitatId(id);
-  }, []);
-
-  const deleteHabitat = useCallback((id) => {
-    setHabitats((prev) => prev.filter((h) => h.id !== id));
-    setActiveHabitatId((prevActive) => {
-      if (prevActive !== id) return prevActive;
-      const remaining = habitats.filter((h) => h.id !== id);
-      return remaining.length > 0 ? remaining[0].id : null;
-    });
-  }, [habitats]);
-
-  const renameHabitat = useCallback((id, customName) => {
-    setHabitats((prev) =>
-      prev.map((h) => (h.id === id ? { ...h, customName } : h))
-    );
-  }, []);
-
-  const setHabitatLocation = useCallback((id, location) => {
-    setHabitats((prev) =>
-      prev.map((h) => (h.id === id ? { ...h, location } : h))
-    );
-  }, []);
-
-  const addToHabitat = useCallback((pokemon) => {
-    setActiveHabitatId((currentId) => {
-      let targetId = currentId;
-      setHabitats((prev) => {
-        if (prev.length === 0) {
-          targetId = genId();
-          return [{ id: targetId, customName: null, pokemon: [pokemon], location: null }];
+  // Unregister a Pokemon — remove from owned, and from any habitats
+  const unregisterPokemon = useCallback((pokemonId) => {
+    // Remove from all habitats first
+    const rawHabitats = activeTab === 'adventure' ? adventure.habitats : sandbox.habitats;
+    for (const h of rawHabitats) {
+      if (h.pokemonIds.includes(pokemonId)) {
+        if (activeTab === 'adventure') {
+          adventure.removeFromHabitat(pokemonId, h.id);
+          if (h.pokemonIds.length <= 1) adventure.deleteHabitat(h.id);
+        } else {
+          sandbox.removeFromHabitat(pokemonId, h.id);
+          if (h.pokemonIds.length <= 1) sandbox.deleteHabitat(h.id);
         }
-        if (!targetId) targetId = prev[0].id;
-        return prev.map((h) => {
-          if (h.id !== targetId) return h;
-          if (h.pokemon.find((p) => p.id === pokemon.id)) return h;
-          return { ...h, pokemon: [...h.pokemon, pokemon] };
-        });
-      });
-      return targetId;
+      }
+    }
+    // Remove from owned
+    setOwnedPokemon((prev) => {
+      const next = new Set(prev);
+      next.delete(pokemonId);
+      return next;
     });
-    setActiveTab('builder');
-  }, []);
-
-  // Add a Pokemon to a specific habitat by ID (for adventure mode drag-drop)
-  const addToSpecificHabitat = useCallback((pokemon, habitatId) => {
-    setHabitats((prev) =>
-      prev.map((h) => {
-        if (h.id !== habitatId) return h;
-        if (h.pokemon.find((p) => p.id === pokemon.id)) return h;
-        return { ...h, pokemon: [...h.pokemon, pokemon] };
-      })
-    );
-  }, []);
-
-  const removeFromAnyHabitat = useCallback((pokemonId, habitatId) => {
-    setHabitats((prev) =>
-      prev.map((h) =>
-        h.id === habitatId
-          ? { ...h, pokemon: h.pokemon.filter((p) => p.id !== pokemonId) }
-          : h
-      )
-    );
-  }, []);
-
-  const clearAnyHabitat = useCallback((habitatId) => {
-    setHabitats((prev) =>
-      prev.map((h) =>
-        h.id === habitatId ? { ...h, pokemon: [] } : h
-      )
-    );
-  }, []);
-
-  const splitAnyHabitat = useCallback((habitatId, groupA, groupB) => {
-    const newId = genId();
-    setHabitats((prev) => {
-      const current = prev.find((h) => h.id === habitatId);
-      const location = current?.location || null;
-      const updated = prev.map((h) => {
-        if (h.id !== habitatId) return h;
-        return { ...h, pokemon: groupA, customName: null };
-      });
-      updated.push({ id: newId, customName: null, pokemon: groupB, location });
-      return updated;
+    // Clear custom location
+    setPokemonLocations((prev) => {
+      const next = { ...prev };
+      delete next[pokemonId];
+      return next;
     });
-  }, []);
+  }, [activeTab, adventure, sandbox]);
 
-  const removeFromHabitat = useCallback((pokemonId) => {
-    setHabitats((prev) =>
-      prev.map((h) =>
-        h.id === activeHabitatId
-          ? { ...h, pokemon: h.pokemon.filter((p) => p.id !== pokemonId) }
-          : h
-      )
-    );
-  }, [activeHabitatId]);
+  // Check if a Pokemon is in any habitat
+  const getUnregisterInfo = useCallback((pokemonId) => {
+    const rawHabitats = activeTab === 'adventure' ? adventure.habitats : sandbox.habitats;
+    const inHome = rawHabitats.some((h) => h.pokemonIds.includes(pokemonId));
+    return { handler: unregisterPokemon, inHome };
+  }, [activeTab, adventure, sandbox, unregisterPokemon]);
 
-  const clearHabitat = useCallback(() => {
-    setHabitats((prev) =>
-      prev.map((h) =>
-        h.id === activeHabitatId ? { ...h, pokemon: [] } : h
-      )
-    );
-  }, [activeHabitatId]);
+  // Find which habitat a Pokemon is in and navigate to it
+  const navigateToHabitat = useCallback((pokemonId) => {
+    const rawHabitats = activeTab === 'adventure' ? adventure.habitats : sandbox.habitats;
+    const habitat = rawHabitats.find(h => h.pokemonIds.includes(pokemonId));
+    if (!habitat) return;
+    setSelectedPokemon(null);
+    if (activeTab === 'adventure') {
+      const loc = habitat.location || getPokemonLocation(pokemonId);
+      setNavigateTarget({ location: loc, habitatId: habitat.id });
+    }
+  }, [activeTab, adventure.habitats, sandbox.habitats, getPokemonLocation]);
 
-  const splitHabitat = useCallback((groupA, groupB) => {
-    const newId = genId();
-    setHabitats((prev) => {
-      const current = prev.find((h) => h.id === activeHabitatId);
-      const location = current?.location || null;
-      const updated = prev.map((h) => {
-        if (h.id !== activeHabitatId) return h;
-        return { ...h, pokemon: groupA, customName: null };
-      });
-      updated.push({ id: newId, customName: null, pokemon: groupB, location });
-      return updated;
-    });
-  }, [activeHabitatId]);
+  // Get resolved habitat info for a Pokemon (for display in PokemonDetail)
+  const getPokemonHabitat = useCallback((pokemonId) => {
+    const resolved = activeTab === 'adventure' ? resolvedAdventureHabitats : resolvedSandboxHabitats;
+    return resolved.find(h => h.pokemon.some(p => p.id === pokemonId)) || null;
+  }, [activeTab, resolvedAdventureHabitats, resolvedSandboxHabitats]);
+
+  // Reload all state from localStorage (after backup restore or reset)
+  const reloadAllState = useCallback(() => {
+    setOwnedPokemon(loadOwned());
+    setPokemonLocations(loadPokemonLocations());
+    sandbox.reloadFromStorage();
+    adventure.reloadFromStorage();
+  }, [sandbox, adventure]);
+
+  const dataContext = useMemo(() => ({
+    allPokemon: data.pokemon,
+    allFavorites: data.allFavorites,
+    allIdealHabitats: data.allIdealHabitats,
+    allSpecialties: data.allSpecialties,
+    pokemonById,
+    ownedPokemon,
+    toggleOwned,
+    selectPokemon: setSelectedPokemon,
+  }), [pokemonById, ownedPokemon, toggleOwned]);
 
   return (
     <div className="app">
@@ -284,74 +212,77 @@ function App() {
             onClick={() => setActiveTab('builder')}
           >
             Sandbox
-            {habitats.length > 0 && (
-              <span className="tab-count">{habitats.length}</span>
+            {resolvedSandboxHabitats.length > 0 && (
+              <span className="tab-count">{resolvedSandboxHabitats.length}</span>
             )}
           </button>
         </nav>
+        <button
+          className="settings-gear"
+          onClick={() => setShowSettings(true)}
+          title="Settings"
+        >
+          <TbSettings size={20} />
+        </button>
       </header>
 
-      <main className="app-main">
-        {activeTab === 'adventure' && (
-          <AdventureMode
-            allPokemon={data.pokemon}
-            allFavorites={data.allFavorites}
-            allIdealHabitats={data.allIdealHabitats}
-            allLocations={data.allLocations}
-            pokemonById={pokemonById}
-            ownedPokemon={ownedPokemon}
-            onToggleOwned={toggleOwned}
-            pokemonLocations={pokemonLocations}
-            getPokemonLocation={getPokemonLocation}
-            onMovePokemon={movePokemon}
-            unlockedLocations={unlockedLocations}
-            onToggleLocation={toggleLocation}
-            habitats={habitats}
-            onCreateHabitat={createHabitat}
-            onCreateHabitatWithPokemon={createHabitatWithPokemon}
-            onAddToHabitat={addToSpecificHabitat}
-            onDeleteHabitat={deleteHabitat}
-            onRenameHabitat={renameHabitat}
-            onRemoveFromHabitat={removeFromAnyHabitat}
-            onClearHabitat={clearAnyHabitat}
-            onSplitHabitat={splitAnyHabitat}
-            onSelectPokemon={setSelectedPokemon}
-            allFavorites={data.allFavorites}
+      <PokemonDataContext.Provider value={dataContext}>
+        <main className="app-main">
+          {activeTab === 'adventure' && (
+            <AdventureMode
+              pokemonLocations={pokemonLocations}
+              getPokemonLocation={getPokemonLocation}
+              onMovePokemon={movePokemon}
+              habitats={resolvedAdventureHabitats}
+              onCreateHabitat={adventure.createHabitat}
+              onCreateHabitatWithPokemon={adventure.createHabitatWithPokemon}
+              onAddToHabitat={adventure.addToHabitat}
+              onDeleteHabitat={adventure.deleteHabitat}
+              onRenameHabitat={adventure.renameHabitat}
+              onRemoveFromHabitat={adventure.removeFromHabitat}
+              onClearHabitat={adventure.clearHabitat}
+              onSplitHabitat={adventure.splitHabitat}
+              navigateTarget={navigateTarget}
+              onNavigateComplete={() => setNavigateTarget(null)}
+            />
+          )}
+
+          {activeTab === 'builder' && (
+            <HabitatBuilder
+              habitats={resolvedSandboxHabitats}
+              activeHabitatId={sandbox.activeHabitatId}
+              onSelectHabitat={sandbox.setActiveHabitatId}
+              onCreate={sandbox.createHabitat}
+              onCreateWithPokemon={sandbox.createHabitatWithPokemon}
+              onDelete={sandbox.deleteHabitat}
+              onRename={sandbox.renameHabitat}
+              onAdd={sandbox.addToActiveHabitat}
+              onAddToSpecific={sandbox.addToHabitat}
+              onRemove={sandbox.removeFromHabitat}
+              onClear={sandbox.clearHabitat}
+              onSplit={sandbox.splitHabitat}
+            />
+          )}
+        </main>
+
+        {selectedPokemon && (
+          <PokemonDetail
+            pokemon={selectedPokemon}
+            onClose={() => setSelectedPokemon(null)}
+            habitatPokemon={[]}
+            mode={activeTab === 'adventure' ? 'adventure' : 'sandbox'}
+            getPokemonLocation={activeTab === 'adventure' ? getPokemonLocation : null}
+            onUnregister={getUnregisterInfo(selectedPokemon.id)}
+            currentHabitat={getPokemonHabitat(selectedPokemon.id)}
+            onNavigateToHabitat={navigateToHabitat}
           />
         )}
+      </PokemonDataContext.Provider>
 
-        {activeTab === 'builder' && (
-          <HabitatBuilder
-            allPokemon={data.pokemon}
-            allFavorites={data.allFavorites}
-            allIdealHabitats={data.allIdealHabitats}
-            habitats={habitats}
-            activeHabitatId={activeHabitatId}
-            onSelectHabitat={setActiveHabitatId}
-            onCreate={createHabitat}
-            onCreateWithPokemon={createHabitatWithPokemon}
-            onDelete={deleteHabitat}
-            onRename={renameHabitat}
-            onAdd={addToHabitat}
-            onRemove={removeFromHabitat}
-            onClear={clearHabitat}
-            onSplit={splitHabitat}
-            onSelectPokemon={setSelectedPokemon}
-            ownedPokemon={ownedPokemon}
-            onToggleOwned={toggleOwned}
-          />
-        )}
-      </main>
-
-      {selectedPokemon && (
-        <PokemonDetail
-          pokemon={selectedPokemon}
-          allPokemon={data.pokemon}
-          onClose={() => setSelectedPokemon(null)}
-          onAddToHabitat={addToHabitat}
-          habitatPokemon={activeHabitat ? activeHabitat.pokemon : []}
-          ownedPokemon={ownedPokemon}
-          onToggleOwned={toggleOwned}
+      {showSettings && (
+        <Settings
+          onClose={() => setShowSettings(false)}
+          onReload={reloadAllState}
         />
       )}
     </div>

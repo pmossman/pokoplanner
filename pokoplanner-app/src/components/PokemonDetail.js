@@ -1,11 +1,19 @@
-import { useMemo } from 'react';
+import { useState, useMemo } from 'react';
+import { usePokemonData } from '../contexts/PokemonDataContext';
 import { sharedFavorites } from '../utils/pokemonUtils';
-import { getHabitatBadgeColor, getFavoriteStyle, getLocationInfo, HabitatTypeIcon } from '../utils/themeColors';
+import { getHabitatBadgeColor, getFavoriteStyle, getLocationInfo, HabitatTypeIcon, getDominantHabitat } from '../utils/themeColors';
+import { habitatDisplayName } from '../utils/habitatHelpers';
 import './PokemonDetail.css';
 
-function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPokemon, ownedPokemon, onToggleOwned }) {
-  const compatiblePokemon = useMemo(() => {
-    return allPokemon
+function PokemonDetail({ pokemon, onClose, habitatPokemon, mode, getPokemonLocation, onUnregister, currentHabitat, onNavigateToHabitat }) {
+  const { allPokemon, ownedPokemon, toggleOwned, pokemonById } = usePokemonData();
+  const [confirmUnregister, setConfirmUnregister] = useState(false);
+
+  const { localCompat, otherCompat } = useMemo(() => {
+    const pool = mode === 'adventure'
+      ? allPokemon.filter((p) => ownedPokemon.has(p.id))
+      : allPokemon;
+    const sorted = pool
       .filter((p) => p.id !== pokemon.id)
       .map((p) => ({
         ...p,
@@ -13,16 +21,30 @@ function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPo
       }))
       .filter((p) => p.shared.length > 0)
       .sort((a, b) => {
-        // Prefer same habitat, then by shared count
         const aHab = a.idealHabitat === pokemon.idealHabitat ? 1 : 0;
         const bHab = b.idealHabitat === pokemon.idealHabitat ? 1 : 0;
         if (bHab !== aHab) return bHab - aHab;
         return b.shared.length - a.shared.length;
-      })
-      .slice(0, 15);
-  }, [pokemon, allPokemon]);
+      });
 
-  const inHabitat = habitatPokemon.some((p) => p.id === pokemon.id);
+    if (mode !== 'adventure' || !getPokemonLocation) {
+      return { localCompat: sorted.slice(0, 15), otherCompat: [] };
+    }
+
+    const pokemonLoc = getPokemonLocation(pokemon.id);
+    const local = [];
+    const other = [];
+    for (const p of sorted) {
+      const loc = getPokemonLocation(p.id);
+      if (loc === pokemonLoc) {
+        if (local.length < 10) local.push(p);
+      } else {
+        if (other.length < 10) other.push({ ...p, currentLocation: loc });
+      }
+      if (local.length >= 10 && other.length >= 10) break;
+    }
+    return { localCompat: local, otherCompat: other };
+  }, [pokemon, allPokemon, ownedPokemon, mode, getPokemonLocation]);
 
   return (
     <div className="detail-overlay" onClick={onClose}>
@@ -45,20 +67,31 @@ function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPo
             </span>
             <h2>{pokemon.name}</h2>
           </div>
-          <span
-            className="habitat-badge large"
-            style={{ backgroundColor: getHabitatBadgeColor(pokemon.idealHabitat) }}
-          >
-            <HabitatTypeIcon type={pokemon.idealHabitat} /> {pokemon.idealHabitat}
-          </span>
         </div>
 
-        <button
-          className={`owned-btn ${ownedPokemon.has(pokemon.id) ? 'is-owned' : ''}`}
-          onClick={() => onToggleOwned(pokemon.id)}
-        >
-          {ownedPokemon.has(pokemon.id) ? '\u2713 Owned' : 'Mark as Owned'}
-        </button>
+        {ownedPokemon.has(pokemon.id) ? (
+          <div className="detail-registration">
+            <span className="owned-badge">✓ Registered</span>
+            {confirmUnregister ? (
+              <span className="unregister-confirm">
+                <span className="unregister-confirm-text">
+                  {onUnregister?.inHome ? 'This will remove them from their home. Unregister?' : 'Unregister?'}
+                </span>
+                <button className="unregister-confirm-yes" onClick={() => { onUnregister?.handler(pokemon.id); onClose(); }}>Yes</button>
+                <button className="unregister-confirm-no" onClick={() => setConfirmUnregister(false)}>Cancel</button>
+              </span>
+            ) : (
+              <button className="unregister-btn" onClick={() => setConfirmUnregister(true)}>Unregister</button>
+            )}
+          </div>
+        ) : (
+          <button
+            className="owned-btn"
+            onClick={() => toggleOwned(pokemon.id)}
+          >
+            Register
+          </button>
+        )}
 
         <div className="detail-section">
           <h3>Favorites</h3>
@@ -87,18 +120,65 @@ function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPo
         </div>
 
         <div className="detail-section">
-          <h3>Location</h3>
+          <h3>Current Location</h3>
           <div className="detail-location">
             {(() => {
-              const locInfo = getLocationInfo(pokemon.primaryLocation);
+              const currentLoc = getPokemonLocation ? getPokemonLocation(pokemon.id) : pokemon.primaryLocation;
+              const locInfo = getLocationInfo(currentLoc);
+              const isAssigned = ownedPokemon.has(pokemon.id);
               return (
-                <span className="location-badge" style={{ backgroundColor: locInfo.bg, color: locInfo.color, borderColor: locInfo.color }}>
-                  {locInfo.Icon && <locInfo.Icon size={14} />} {pokemon.primaryLocation}
-                </span>
+                <>
+                  {isAssigned ? (
+                    <span className="location-badge" style={{ backgroundColor: locInfo.bg, color: locInfo.color, borderColor: locInfo.color }}>
+                      {locInfo.Icon && <locInfo.Icon size={14} />} {currentLoc}
+                    </span>
+                  ) : (
+                    <span className="location-badge not-assigned">Not Assigned</span>
+                  )}
+                </>
               );
             })()}
           </div>
         </div>
+
+        <div className="detail-section">
+          <h3>Ideal Habitat</h3>
+          <div className="detail-location">
+            <span
+              className="habitat-badge large"
+              style={{ backgroundColor: getHabitatBadgeColor(pokemon.idealHabitat) }}
+            >
+              <HabitatTypeIcon type={pokemon.idealHabitat} /> {pokemon.idealHabitat}
+            </span>
+          </div>
+        </div>
+
+        {currentHabitat && (
+          <div className="detail-section">
+            <h3>Current Home</h3>
+            <div
+              className="detail-current-home"
+              onClick={() => onNavigateToHabitat?.(pokemon.id)}
+              title="Click to view this home"
+            >
+              {(() => {
+                const dom = getDominantHabitat(currentHabitat.pokemon);
+                return (
+                  <>
+                    {dom && (
+                      <span className="habitat-badge small" style={{ backgroundColor: getHabitatBadgeColor(dom.type) }}>
+                        <HabitatTypeIcon type={dom.type} size={10} /> {dom.type}
+                      </span>
+                    )}
+                    <span className="detail-home-name">{habitatDisplayName(currentHabitat)}</span>
+                    <span className="detail-home-count">{currentHabitat.pokemon.length} Pokemon</span>
+                    <span className="detail-home-arrow">→</span>
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+        )}
 
         <div className="detail-section">
           <h3>Encounter Spots</h3>
@@ -111,36 +191,63 @@ function PokemonDetail({ pokemon, allPokemon, onClose, onAddToHabitat, habitatPo
           </ul>
         </div>
 
-        <button
-          className={`add-btn large ${inHabitat ? 'added' : ''}`}
-          onClick={() => !inHabitat && onAddToHabitat(pokemon)}
-          disabled={inHabitat}
-        >
-          {inHabitat ? 'Already in Habitat' : '+ Add to Habitat Builder'}
-        </button>
-
         <div className="detail-section">
-          <h3>Most Compatible Pokemon</h3>
-          <div className="compat-list">
-            {compatiblePokemon.map((p) => (
-              <div key={p.id} className="compat-item">
-                {p.sprite && (
-                  <img className="compat-sprite" src={p.sprite} alt={p.name} />
-                )}
-                <span className="compat-name">{p.name}</span>
-                <span
-                  className="habitat-badge small"
-                  style={{ backgroundColor: getHabitatBadgeColor(p.idealHabitat) }}
-                >
-                  <HabitatTypeIcon type={p.idealHabitat} /> {p.idealHabitat}
-                </span>
-                <span className="compat-count">
-                  {p.shared.length} shared: {p.shared.join(', ')}
-                </span>
-              </div>
-            ))}
-          </div>
+          <h3>{otherCompat.length > 0 ? 'Most Compatible — Same Location' : 'Most Compatible Pokemon'}</h3>
+          {localCompat.length > 0 ? (
+            <div className="compat-list">
+              {localCompat.map((p) => (
+                <div key={p.id} className="compat-item">
+                  {p.sprite && (
+                    <img className="compat-sprite" src={p.sprite} alt={p.name} />
+                  )}
+                  <span className="compat-name">{p.name}</span>
+                  <span
+                    className="habitat-badge small"
+                    style={{ backgroundColor: getHabitatBadgeColor(p.idealHabitat) }}
+                  >
+                    <HabitatTypeIcon type={p.idealHabitat} /> {p.idealHabitat}
+                  </span>
+                  <span className="compat-count">
+                    {p.shared.length} shared: {p.shared.join(', ')}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="compat-empty">No compatible Pokemon at this location yet.</p>
+          )}
         </div>
+
+        {otherCompat.length > 0 && (
+          <div className="detail-section">
+            <h3>Most Compatible — Other Locations</h3>
+            <div className="compat-list">
+              {otherCompat.map((p) => {
+                const locInfo = getLocationInfo(p.currentLocation);
+                return (
+                  <div key={p.id} className="compat-item">
+                    {p.sprite && (
+                      <img className="compat-sprite" src={p.sprite} alt={p.name} />
+                    )}
+                    <span className="compat-name">{p.name}</span>
+                    <span className="compat-location" style={{ color: locInfo.color }}>
+                      {locInfo.Icon && <locInfo.Icon size={11} />} {p.currentLocation}
+                    </span>
+                    <span
+                      className="habitat-badge small"
+                      style={{ backgroundColor: getHabitatBadgeColor(p.idealHabitat) }}
+                    >
+                      <HabitatTypeIcon type={p.idealHabitat} /> {p.idealHabitat}
+                    </span>
+                    <span className="compat-count">
+                      {p.shared.length} shared: {p.shared.join(', ')}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

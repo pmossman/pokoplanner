@@ -111,7 +111,7 @@ function PokemonCard({ pokemon, onClick, onAdd, inHabitat, compact, score, share
           }}
           disabled={inHabitat}
         >
-          {inHabitat ? 'In Habitat' : '+ Add'}
+          {inHabitat ? 'In Home' : '+ Add'}
         </button>
       )}
     </div>

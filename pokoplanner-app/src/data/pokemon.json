@@ -1599,7 +1599,7 @@
       ],
       "flavor": "Bitter flavors",
       "specialties": [
-        "Recyvle"
+        "Recycle"
       ],
       "habitats": [
         {
@@ -1690,7 +1690,7 @@
       "id": "professor-tangrowth",
       "number": 41,
       "name": "Professor Tangrowth",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Humid",
       "favorites": [
         "Lots of nature",
@@ -1897,7 +1897,7 @@
       "id": "ditto",
       "number": 47,
       "name": "Ditto",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Bright",
       "favorites": [
         "None"
@@ -3699,6 +3699,42 @@
       ],
       "nationalDex": 59,
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png"
+    },
+    {
+      "id": "farfetchd",
+      "number": 90,
+      "name": "Farfetch'd",
+      "primaryLocation": "Withered Wastelands",
+      "idealHabitat": "Warm",
+      "favorites": [
+        "Soft stuff",
+        "Nice breezes",
+        "Wooden stuff",
+        "Slender objects",
+        "Exercise"
+      ],
+      "flavor": "Spicy flavors",
+      "specialties": [
+        "Chop",
+        "Build"
+      ],
+      "habitats": [
+        {
+          "name": "All packed up",
+          "rarity": "Common",
+          "time": "Morning, Day, Evening, Night",
+          "weather": "Sun, Cloud, Rain",
+          "locations": [
+            "Withered Wastelands",
+            "Bleak Beach",
+            "Rocky Ridges",
+            "Sparkling Skylands",
+            "Palette Town"
+          ]
+        }
+      ],
+      "nationalDex": 83,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png"
     },
     {
       "id": "grimer",
@@ -11739,7 +11775,7 @@
       "id": "kyogre",
       "number": 289,
       "name": "Kyogre",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Humid",
       "favorites": [
         "Lots of water",
@@ -11760,7 +11796,7 @@
       "id": "raikou",
       "number": 290,
       "name": "Raikou",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Bright",
       "favorites": [
         "Electronics",
@@ -11781,7 +11817,7 @@
       "id": "entei",
       "number": 291,
       "name": "Entei",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Warm",
       "favorites": [
         "Lots of fire",
@@ -11802,7 +11838,7 @@
       "id": "suicune",
       "number": 292,
       "name": "Suicune",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Humid",
       "favorites": [
         "Lots of water",
@@ -11823,7 +11859,7 @@
       "id": "volcanion",
       "number": 293,
       "name": "Volcanion",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Warm",
       "favorites": [
         "Lots of fire",
@@ -11844,7 +11880,7 @@
       "id": "articuno",
       "number": 294,
       "name": "Articuno",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Cool",
       "favorites": [
         "Lots of water",
@@ -11865,7 +11901,7 @@
       "id": "zapdos",
       "number": 295,
       "name": "Zapdos",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Bright",
       "favorites": [
         "Electronics",
@@ -11886,7 +11922,7 @@
       "id": "moltres",
       "number": 296,
       "name": "Moltres",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Warm",
       "favorites": [
         "Lots of fire",
@@ -11907,7 +11943,7 @@
       "id": "lugia",
       "number": 297,
       "name": "Lugia",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Humid",
       "favorites": [
         "Strange stuff",
@@ -11928,7 +11964,7 @@
       "id": "ho-oh",
       "number": 298,
       "name": "Ho-Oh",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Warm",
       "favorites": [
         "Lots of fire",
@@ -11949,7 +11985,7 @@
       "id": "mewtwo",
       "number": 299,
       "name": "Mewtwo",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Dark",
       "favorites": [
         "Strange stuff",
@@ -11970,7 +12006,7 @@
       "id": "mew",
       "number": 300,
       "name": "Mew",
-      "primaryLocation": "Dream Island",
+      "primaryLocation": "Palette Town",
       "idealHabitat": "Warm",
       "favorites": [
         "Strange stuff",
@@ -12068,7 +12104,6 @@
     "Party",
     "Rarify",
     "Recycle",
-    "Recyvle",
     "Search",
     "Storage",
     "Teleport",
@@ -12079,7 +12114,6 @@
   ],
   "allLocations": [
     "Bleak Beach",
-    "Dream Island",
     "Palette Town",
     "Rocky Ridges",
     "Sparkling Skylands",
