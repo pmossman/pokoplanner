@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pokoplanner/static/css/main.4d5a04f2.css",
-    "main.js": "/pokoplanner/static/js/main.a4d647b6.js",
+    "main.css": "/pokoplanner/static/css/main.7ad0b03f.css",
+    "main.js": "/pokoplanner/static/js/main.1abec343.js",
     "static/js/453.933b04d4.chunk.js": "/pokoplanner/static/js/453.933b04d4.chunk.js",
     "index.html": "/pokoplanner/index.html",
-    "main.4d5a04f2.css.map": "/pokoplanner/static/css/main.4d5a04f2.css.map",
-    "main.a4d647b6.js.map": "/pokoplanner/static/js/main.a4d647b6.js.map",
+    "main.7ad0b03f.css.map": "/pokoplanner/static/css/main.7ad0b03f.css.map",
+    "main.1abec343.js.map": "/pokoplanner/static/js/main.1abec343.js.map",
     "453.933b04d4.chunk.js.map": "/pokoplanner/static/js/453.933b04d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d5a04f2.css",
-    "static/js/main.a4d647b6.js"
+    "static/css/main.7ad0b03f.css",
+    "static/js/main.1abec343.js"
   ]
 }
