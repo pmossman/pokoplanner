@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.serebii.net)",
+      "WebFetch(domain:pokopia.wiki.fextralife.com)",
+      "WebFetch(domain:game8.co)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh api:*)",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); [print\\(f''''{d[\"\"type\"\"]:10s} {d[\"\"name\"\"]}''''\\) for d in data]\")",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npx create-react-app@latest pokoplanner-app)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/JEschete/PokopiaPlanning/main/reference/Pokopia.csv\" -o /home/parker/pokoplanner/raw_data/Pokopia.csv)",
+      "Bash(python3:*)",
+      "Bash(npm start:*)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/JEschete/PokopiaPlanning/main/reference/Item%20List.txt\" -o /home/parker/pokoplanner/raw_data/ItemList.txt)",
+      "WebFetch(domain:pokeapi.co)",
+      "Bash(npx react-scripts:*)",
+      "WebFetch(domain:pixelframe.design)",
+      "WebFetch(domain:pokopia.pokemon.com)",
+      "WebFetch(domain:pokopia.online)",
+      "WebFetch(domain:www.rpgfan.com)",
+      "WebFetch(domain:www.gematsu.com)",
+      "Bash(ls:*)",
+      "Bash(node:*)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:pokopiadex.com)",
+      "WebFetch(domain:bulbapedia.bulbagarden.net)",
+      "Bash(git add:*)"
+    ]
+  }
+}
