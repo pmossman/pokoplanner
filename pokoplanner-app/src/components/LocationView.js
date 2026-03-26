@@ -5,6 +5,7 @@ import { habitatDisplayName } from '../utils/habitatHelpers';
 import { TbInfoCircle } from 'react-icons/tb';
 import HabitatCard from './HabitatCard';
 import UnhousedSection from './UnhousedSection';
+import PlacementMenu from './PlacementMenu';
 import './HabitatBuilder.css';
 
 function LocationView({
@@ -47,6 +48,9 @@ function LocationView({
 
   // Confirmation modal
   const [pendingMove, setPendingMove] = useState(null);
+
+  // Placement menu
+  const [placementPokemon, setPlacementPokemon] = useState(null);
 
   // Pool state
   const [poolSearch, setPoolSearch] = useState('');
@@ -349,6 +353,7 @@ function LocationView({
               onMovePokemon={onMovePokemon}
               allHabitats={allHabitats || habitats}
               onRemoveFromHabitat={onRemoveFromHabitat}
+              onPlacePokemon={setPlacementPokemon}
             />
           </div>
 
@@ -435,6 +440,19 @@ function LocationView({
             )}
           </div>
         </div>
+      )}
+
+      {/* Placement menu */}
+      {placementPokemon && (
+        <PlacementMenu
+          pokemon={placementPokemon}
+          habitats={habitats}
+          unhoused={pokemonAtLocation.filter(p => !inHabitatIds.has(p.id))}
+          onAddToHabitat={onAddToHabitat}
+          onCreateHabitatWithPokemon={onCreateHabitatWithPokemon}
+          onClose={() => setPlacementPokemon(null)}
+          location={location}
+        />
       )}
 
       {/* Confirmation modal */}

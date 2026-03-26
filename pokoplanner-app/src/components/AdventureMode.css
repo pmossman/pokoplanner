@@ -471,6 +471,48 @@
   cursor: default;
 }
 
+/* Place button — opens placement menu */
+.place-btn {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 2;
+  padding: 0;
+  line-height: 1;
+}
+
+.location-pokemon:hover .place-btn {
+  opacity: 1;
+}
+
+.place-btn:hover {
+  background: var(--color-accent-hover);
+  transform: scale(1.1);
+}
+
+/* Always show on touch devices */
+@media (hover: none) {
+  .place-btn {
+    opacity: 1;
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+  }
+}
+
 .location-pokemon.in-habitat .location-pokemon-sprite {
   pointer-events: auto;
   cursor: pointer;
@@ -2077,4 +2119,275 @@
   display: flex;
   gap: 0.4rem;
   justify-content: flex-end;
+}
+
+/* ── Placement Menu ── */
+.placement-menu {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1rem;
+  max-width: 420px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  margin-top: 8vh;
+}
+
+.placement-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.placement-pokemon {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.placement-sprite {
+  width: 56px;
+  height: 56px;
+  image-rendering: pixelated;
+}
+
+.placement-pokemon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.placement-pokemon-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.placement-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+  padding: 0 0.3rem;
+  line-height: 1;
+}
+
+.placement-close:hover {
+  color: #555;
+}
+
+.placement-section {
+  margin-bottom: 0.75rem;
+}
+
+.placement-section h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.placement-hint {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+}
+
+/* Home rows */
+.placement-homes {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.placement-home-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: 10px;
+  background: var(--color-bg-surface);
+  cursor: pointer;
+  transition: all 0.12s;
+  font-family: var(--font-ui);
+  width: 100%;
+  text-align: left;
+}
+
+.placement-home-row:hover {
+  background: var(--color-bg-warm);
+  border-color: var(--color-accent);
+}
+
+.placement-home-row.compatible {
+  border-left: 3px solid var(--color-accent);
+}
+
+.placement-home-left {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.placement-home-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.placement-home-count {
+  font-size: 0.72rem;
+  color: var(--color-text-faint);
+  flex-shrink: 0;
+}
+
+.placement-home-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.placement-shared-count {
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.placement-type-match {
+  font-size: 0.65rem;
+  color: #5a9;
+  font-weight: 700;
+  background: #eaf6f0;
+  padding: 0.1rem 0.35rem;
+  border-radius: 5px;
+}
+
+/* Companion suggestions */
+.placement-companions {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.placement-companion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: 10px;
+  background: var(--color-bg-surface);
+  cursor: pointer;
+  transition: all 0.12s;
+  font-family: var(--font-ui);
+  width: 100%;
+  text-align: left;
+}
+
+.placement-companion:hover {
+  background: var(--color-bg-warm);
+}
+
+.placement-companion.selected {
+  border-color: var(--color-accent);
+  background: rgba(var(--color-accent-rgb), 0.06);
+}
+
+.placement-companion-sprite {
+  width: 36px;
+  height: 36px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.placement-companion-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+  min-width: 70px;
+}
+
+.placement-companion-favs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.placement-fav-tag {
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 0.05rem 0.3rem;
+  border-radius: 5px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.placement-check {
+  font-size: 0.85rem;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border-medium);
+  color: var(--color-text-faint);
+  flex-shrink: 0;
+  transition: all 0.12s;
+}
+
+.placement-check.checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  font-size: 0.7rem;
+}
+
+.placement-create-btn {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 10px;
+  background: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  transition: all 0.15s;
+}
+
+.placement-create-btn:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+@media (max-width: 700px) {
+  .placement-menu {
+    margin-top: 2vh;
+    max-height: 90vh;
+    border-radius: 14px;
+    padding: 0.75rem;
+  }
+  .placement-fav-tag {
+    font-size: 0.55rem;
+  }
 }

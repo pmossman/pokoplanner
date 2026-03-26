@@ -43,6 +43,7 @@ function UnhousedSection({
   onMovePokemon,
   allHabitats,
   onRemoveFromHabitat,
+  onPlacePokemon,
 }) {
   const { selectPokemon } = usePokemonData();
   const [detailedView, setDetailedView] = useState(false);
@@ -186,6 +187,9 @@ function UnhousedSection({
               <div className="location-pokemon-sprite" onClick={() => selectPokemon(p)}>
                 {p.sprite && <img src={p.sprite} alt={p.name} />}
               </div>
+              {onPlacePokemon && (
+                <button className="place-btn" onClick={() => onPlacePokemon(p)} title="Find a home">▸</button>
+              )}
               <span className="location-pokemon-name">
                 {p.name}
               </span>
