@@ -26,7 +26,24 @@
       "Bash(npm run:*)",
       "WebFetch(domain:pokopiadex.com)",
       "WebFetch(domain:bulbapedia.bulbagarden.net)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(npm install:*)",
+      "Bash(wc -l /tmp/claude-1000/-home-parker-pokoplanner/6df66676-a107-4e68-bd4e-3e5f43663d72/tasks/*.output)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//tmp/claude-1000/-home-parker-pokoplanner/6df66676-a107-4e68-bd4e-3e5f43663d72/tasks/**)",
+      "Bash(done)",
+      "Bash(grep -c '\"\"primaryLocation\"\": \"\"Dream Island\"\"' /home/parker/pokoplanner/pokoplanner-app/src/data/pokemon.json)",
+      "Bash(grep -c '\"\"Dream Island\"\"' /home/parker/pokoplanner/pokoplanner-app/src/data/pokemon.json)",
+      "Read(//mnt/d/Downloads/**)",
+      "Bash(curl -s -L \"https://serebii.net/pokemonpokopia/pokedex/farfetchd.shtml\")",
+      "Bash(curl -s -L \"https://serebii.net/pokemonpokopia/pokedex/farfetch''''d.shtml\")",
+      "WebFetch(domain:serebii.net)",
+      "Bash(git checkout:*)",
+      "Bash(git:*)",
+      "Bash(gh auth:*)"
     ]
   }
 }

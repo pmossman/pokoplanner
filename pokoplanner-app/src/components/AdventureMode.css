@@ -939,8 +939,9 @@
   gap: 0.75rem;
 }
 
-/* Stack on narrow screens */
+/* ── Mobile Responsive ── */
 @media (max-width: 700px) {
+  /* Stack two-column layout */
   .location-two-col {
     flex-direction: column;
   }
@@ -949,6 +950,113 @@
     width: 100%;
     position: static;
     max-height: none;
+  }
+
+  /* Horizontal scrolling location tabs */
+  .location-selector {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+  .location-selector::-webkit-scrollbar {
+    display: none;
+  }
+  .location-card {
+    min-width: 80px;
+    flex-shrink: 0;
+    padding: 0.4rem 0.5rem;
+  }
+  .location-card-name {
+    font-size: 0.6rem;
+  }
+
+  /* Smaller pool grid tiles */
+  .pool-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 0.3rem;
+  }
+  .location-pokemon-sprite img,
+  .location-pokemon-sprite {
+    width: 56px;
+    height: 56px;
+  }
+  .location-pokemon-name {
+    font-size: 0.65rem;
+  }
+
+  /* Stack unhoused header */
+  .unhoused-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .unhoused-header-right {
+    margin-left: 0;
+    width: 100%;
+  }
+  .pool-search-input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Shrink habitat cards */
+  .habitat-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Shrink mini circles in collapsed cards */
+  .habitat-card-mini-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  /* Info box */
+  .location-info-box {
+    font-size: 0.78rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* All Pokemon grid */
+  .all-pokemon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 0.3rem;
+  }
+  .all-pokemon-sprite-wrap,
+  .all-pokemon-sprite {
+    width: 56px;
+    height: 56px;
+  }
+  .all-pokemon-name {
+    font-size: 0.65rem;
+  }
+  .all-pokemon-filters {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .all-pokemon-search {
+    min-width: 0;
+    width: 100%;
+  }
+  .all-pokemon-select {
+    width: 100%;
+  }
+
+  /* Add pokemon panel */
+  .add-pokemon-panel {
+    max-height: 300px;
+  }
+
+  /* Recommendation cards */
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mode description */
+  .mode-description {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
   }
 }
 
